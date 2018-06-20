@@ -12,6 +12,9 @@ namespace TestLeetcode
         {
             var r= ZigZag.Zigzag1("PAYPALISHIRING", 4);
             Assert.AreEqual(r, "PINALSIGYAHRPI");
+
+            r = ZigZag.Zigzag2("PAYPALISHIRING", 3);
+            Assert.AreEqual(r, "PAHNAPLSIIGYIR");
         }
     }
 }
