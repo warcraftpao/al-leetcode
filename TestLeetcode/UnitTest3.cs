@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.Easy;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,5 +17,26 @@ namespace TestLeetcode
             r = ZigZag.Zigzag2("PAYPALISHIRING", 3);
             Assert.AreEqual(r, "PAHNAPLSIIGYIR");
         }
+
+        [TestMethod]
+        public void TestReverseInteger()
+        {
+            var r = ReverseInteger.Reverse(123);
+            Assert.AreEqual(r, 321);
+
+            r = ReverseInteger.Reverse(-123);
+            Assert.AreEqual(r,-321);
+
+            r = ReverseInteger.Reverse(120);
+            Assert.AreEqual(r, 21);
+
+            r = ReverseInteger.Reverse(2147483647);
+            Assert.AreEqual(r, 0);
+
+            r = ReverseInteger.Reverse(-2147483648);
+            Assert.AreEqual(r, 0);
+        }
+
+         
     }
 }
