@@ -41,13 +41,13 @@ namespace TestLeetcode
         }
 
         [TestMethod]
-        public void Testpadinrome()
+        public void TestLongestPalindromeSubstring()
         {
-            var r = Palindrome.LongestPalindrome("cabaabad");
+            var r = LongestPalindromeSubstring.Solution1("cabaabad");
             Assert.AreEqual(r, "abaaba");
 
 
-            r = Palindrome.LongestPalindrome("cabakabadddcf");
+            r = LongestPalindromeSubstring.Solution1("cabakabadddcf");
             Assert.AreEqual(r, "abakaba");
         }
     }

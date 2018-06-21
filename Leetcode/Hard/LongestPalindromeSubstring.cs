@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Leetcode.Hard
 {
-    public  class Palindrome
+    public  class LongestPalindromeSubstring
     {
         // https://blog.csdn.net/qq_39630587/article/details/79405536
         /// <summary>
@@ -17,7 +17,7 @@ namespace Leetcode.Hard
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string LongestPalindrome(string input)
+        public static string Solution1(string input)
         {
             var s = ProcessString(input);
             var center = 0;//当前最大回文字符串的中心位置

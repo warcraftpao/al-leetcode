@@ -55,5 +55,25 @@ namespace TestLeetcode
             r = StringToInteger.Atoi("111111111111111");
             Assert.AreEqual(r, 0);
         }
+
+        [TestMethod]
+        public void TestPalindromeNumber()
+        {
+            var r = PalindromeNumber.Solution(-123);
+            Assert.AreEqual(r, false);
+            
+            r = PalindromeNumber.Solution(10);
+            Assert.AreEqual(r, false);
+
+            r = PalindromeNumber.IsPalindrome(1234321);
+            Assert.AreEqual(r, true);
+
+            r = PalindromeNumber.IsPalindrome(123321);
+            Assert.AreEqual(r, true);
+
+            r = PalindromeNumber.Solution(0);
+            Assert.AreEqual(r, true);
+        }
+
     }
 }
