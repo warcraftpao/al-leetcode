@@ -49,6 +49,7 @@
     <Compile Include="Hard\Padinrome.cs" />
     <Compile Include="Middle\AddTwoNumbers.cs" />
     <Compile Include="Middle\MaxSubstringWithoutRepeatChar.cs" />
+    <Compile Include="Middle\StringToInteger.cs" />
     <Compile Include="Middle\ZigZag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

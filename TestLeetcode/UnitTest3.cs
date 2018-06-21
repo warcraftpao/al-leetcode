@@ -37,6 +37,23 @@ namespace TestLeetcode
             Assert.AreEqual(r, 0);
         }
 
-         
+        [TestMethod]
+        public void TestStringToInteger()
+        {
+            var r = StringToInteger.Atoi("123213123");
+            Assert.AreEqual(r, 123213123);
+
+            r = StringToInteger.Atoi("  -123213123");
+            Assert.AreEqual(r, -123213123);
+
+            r = StringToInteger.Atoi("asd 222");
+            Assert.AreEqual(r, 0);
+
+            r = StringToInteger.Atoi(" 444 asadasdsa");
+            Assert.AreEqual(r, 444);
+           
+            r = StringToInteger.Atoi("111111111111111");
+            Assert.AreEqual(r, 0);
+        }
     }
 }
