@@ -48,6 +48,7 @@
     <Compile Include="Easy\TwoSum.cs" />
     <Compile Include="Hard\FindMedianSortedArrays.cs" />
     <Compile Include="Hard\LongestPalindromeSubstring.cs" />
+    <Compile Include="Hard\RegularExpressionMatching.cs" />
     <Compile Include="Middle\AddTwoNumbers.cs" />
     <Compile Include="Middle\MaxSubstringWithoutRepeatChar.cs" />
     <Compile Include="Middle\StringToInteger.cs" />

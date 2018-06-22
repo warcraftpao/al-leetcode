@@ -1,5 +1,6 @@
 ﻿using System;
 using Leetcode.Easy;
+using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -75,5 +76,25 @@ namespace TestLeetcode
             Assert.AreEqual(r, true);
         }
 
+
+        [TestMethod]
+        public void TestRegularExpressionMatching()
+        {
+            var r = RegularExpressionMatching.IsMatch("aa", "a");
+            Assert.AreEqual(r, false);
+
+            r = RegularExpressionMatching.IsMatch("aa", "a*");
+            Assert.AreEqual(r, true);
+
+            r = RegularExpressionMatching.IsMatch("ab", ".*");
+            Assert.AreEqual(r, true);
+
+            r = RegularExpressionMatching.IsMatch("aab", "c*a*b");
+            Assert.AreEqual(r, true);
+
+            r = RegularExpressionMatching.IsMatch("mississippi", "mis*is*p*.");
+            Assert.AreEqual(r, false);
+
+        }
     }
 }
