@@ -96,5 +96,16 @@ namespace TestLeetcode
             Assert.AreEqual(r, false);
 
         }
+
+        [TestMethod]
+        public void TestContainerWithMostWater()
+        {
+
+            var arr = new  [] {5, 7, 8, 1, 15, 3, 4};
+            var r = ContainerWithMostWater.GetMax(arr);
+            Assert.AreEqual(r, 60);
+             
+
+        }
     }
 }
