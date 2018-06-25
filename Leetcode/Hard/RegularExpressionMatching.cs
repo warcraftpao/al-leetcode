@@ -73,17 +73,20 @@ namespace Leetcode.Hard
                     return true;
                 }
 
-                //通配符可以匹配1到多个字符的情况，在当前字符符合的情况下进行循环（循环去看当前s的下一个字符是否匹配通配符）
-                //递归s往后移动1位，p移动2位跑
                 int i = 0;
+                //为什么这里不截掉字符，因为即使s完全匹配p的前2位，还是需要继续匹配的
+                //当前字符匹配的情况，需要穷举子串
                 while (i < s.Length && (s[i] == p[0] || p[0] == '.'))
                 {
-                    if (IsMatch(s.Substring(i + 1), p.Substring(2))) //~~~~移动s和p 判定双方的子串是否匹配
+                    //~~~~移动s和p 判定双方的子串是否匹配，意思就是看子串里是否能有匹配的情况
+                    if (IsMatch(s.Substring(i + 1), p.Substring(2)))
                     {
                         return true;
                     }
+                    //子串都不匹配，再来移动s
                     i++; //~~~移动s，不移动p
                 }
+                //到这里肯定是挂了
                 return false;
             }
         }
