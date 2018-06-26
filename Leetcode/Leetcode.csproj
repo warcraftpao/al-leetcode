@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DataStructure\LinkedList.cs" />
     <Compile Include="DP\Coins.cs" />
+    <Compile Include="Easy\LongestCommonPrefix.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\ReverseIntegercs.cs" />
     <Compile Include="Easy\TwoSum.cs" />

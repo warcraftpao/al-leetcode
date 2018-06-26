@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.Easy;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,6 +34,15 @@ namespace TestLeetcode
 
             i = IntegerAndRoman.RtoI("MCMXCIV");
             Assert.AreEqual(i, 1994);
+        }
+
+        public void TestLongestCommonPrefix()
+        {
+            var r= LongestCommonPrefix.S1(new [] {"abcefg", "abcd", "ab"});
+            Assert.AreEqual(r, "ab");
+
+            r = LongestCommonPrefix.S1(new[] { "abcefg", "abcd", "dddd" });
+            Assert.AreEqual(r, "");
         }
     }
 }
