@@ -36,12 +36,16 @@ namespace TestLeetcode
             Assert.AreEqual(i, 1994);
         }
 
+        [TestMethod]
         public void TestLongestCommonPrefix()
         {
             var r= LongestCommonPrefix.S1(new [] {"abcefg", "abcd", "ab"});
             Assert.AreEqual(r, "ab");
 
-            r = LongestCommonPrefix.S1(new[] { "abcefg", "abcd", "dddd" });
+            r = LongestCommonPrefix.S2Binary(new[] { "abckkkkefg", "abckk", "abckkkdddd" });
+            Assert.AreEqual(r, "abckk");
+
+            r = LongestCommonPrefix.S2Binary(new[] { "", "abckk", "abckkkdddd" });
             Assert.AreEqual(r, "");
         }
     }
