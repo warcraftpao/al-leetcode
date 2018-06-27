@@ -1,5 +1,6 @@
 ﻿using System;
 using Leetcode.Easy;
+using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -47,6 +48,14 @@ namespace TestLeetcode
 
             r = LongestCommonPrefix.S2Binary(new[] { "", "abckk", "abckkkdddd" });
             Assert.AreEqual(r, "");
+        }
+
+        [TestMethod]
+        public void Test3Sum()
+        {
+             var r = ThreeSum.S1(new int[] {-1, 0, 1, 2, -1, -4, -2} ,0);
+            Assert.AreEqual(r.Count, 3);
+
         }
     }
 }
