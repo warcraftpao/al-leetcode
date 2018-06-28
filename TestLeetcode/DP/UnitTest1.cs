@@ -22,5 +22,12 @@ namespace TestLeetcode.DP
             r = Coins.MinCoinNumber(new[] {1, 3, 7, 18 }, 23);
             Assert.AreEqual(r,4);
         }
+
+        [TestMethod]
+        public void TestLIS()
+        {
+            var r = LIS.S1(new[] {7, 3, 4, 1, 5, 6, 2, 6, 7});
+            Assert.AreEqual(r, 6);
+        }
     }
 }
