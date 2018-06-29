@@ -58,6 +58,29 @@ namespace Leetcode.CommonTools
         /// 随机打印一个三角形，空置的一半不去用就行了
         /// </summary>
         /// <param name="row"></param>
+        /// <param name="nums">nums = (row*row + row)/2</param>
+        /// <returns></returns>
+        public static int[,] MakeTriangle(int row, int[] nums)
+        {
+            var k = 0;
+            var triangle = new int[row, row];
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    triangle[i, j] = nums[k];
+                    k++;
+                }
+            }
+
+            return triangle;
+        }
+
+
+        /// <summary>
+        /// 打印一个预定值的三角形，空置的一半不去用就行了
+        /// </summary>
+        /// <param name="row"></param>
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns></returns>
