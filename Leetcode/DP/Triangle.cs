@@ -16,20 +16,6 @@ namespace Leetcode.DP
                 
             }
         }
-
-        public static int[,] MakeTriangle(int row)
-        {
-            Random r= new Random();
-            var triangle = new int[row, row];
-            for (int i = 0; i < row; i++)
-            {
-                for (int j = 0; j < i; j++)
-                {
-                    triangle[i, j] = r.Next(1, 100);
-                }
-            }
-
-            return triangle;
-        }
+ 
     }
 }

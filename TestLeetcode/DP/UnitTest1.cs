@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.CommonTools;
 using Leetcode.DP;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,6 +29,14 @@ namespace TestLeetcode.DP
         {
             var r = LIS.S1(new[] {7, 3, 4, 1, 5, 6, 2, 6, 7});
             Assert.AreEqual(r, 6);
+        }
+
+        [TestMethod]
+        public void TestAppleGrid()
+        {
+            var arr = Tools.MakeBooked2DArr(4,5, new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20});
+            var r = AppleGrid.GetApplesAMAP(arr);
+            Assert.AreEqual(r, 108);
         }
     }
 }
