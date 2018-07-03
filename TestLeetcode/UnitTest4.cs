@@ -57,5 +57,13 @@ namespace TestLeetcode
             Assert.AreEqual(r.Count, 3);
 
         }
+
+        [TestMethod]
+        public void Test3SumClosest()
+        {
+            var r = ThreeSumClosest.S1(new int[] { -1, 2, 1, -4 }, 1);
+            Assert.AreEqual(r, 2);
+
+        }
     }
 }

@@ -46,4 +46,50 @@ namespace Leetcode.Hard
             return r;
         }
     }
+
+    public class ThreeSumClosest
+    {
+        public static int S1(int[] arr, int target)
+        {
+            //和target差多少
+            var distanceClosest = int.MaxValue;
+            var sumClosest = 0;
+            Array.Sort(arr);
+            for (var i = 0; i < arr.Length - 2; i++)//最后2位不用循环
+            {
+                var left = target - arr[i];
+                var begin = i + 1;
+                var end = arr.Length - 1;
+                while (begin < end)//双指针，分别指向剩下2个值的最大最小可能
+                {
+                    var sum = arr[i] + arr[begin] + arr[end];
+                    var distance = Math.Abs(sum - target);
+
+                    if (sum < target)
+                    {
+                        begin++;
+                    }
+                    else if (sum > target)
+                    {
+
+                        end--;
+                    }
+                    else
+                    {
+                        return sum;
+                    }
+
+                    if (distance < distanceClosest)
+                    {
+                        sumClosest = sum;
+                        distanceClosest = distance;
+                    }
+
+                }
+            }
+            return sumClosest;
+        }
+
+
+    }
 }
