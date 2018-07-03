@@ -63,7 +63,15 @@ namespace TestLeetcode
         {
             var r = ThreeSumClosest.S1(new int[] { -1, 2, 1, -4 }, 1);
             Assert.AreEqual(r, 2);
-
         }
+
+        [TestMethod]
+        public void TestCombinePhoneNumbers()
+        {
+            var r = CombinePhoneNumber.S1("234");
+            Assert.AreEqual(r.Count, 27);
+            Assert.IsTrue(r.Contains("adg"));
+        }
+
     }
 }
