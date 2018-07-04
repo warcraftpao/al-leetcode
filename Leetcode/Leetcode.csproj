@@ -52,6 +52,7 @@
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\ReverseIntegercs.cs" />
     <Compile Include="Easy\TwoSum.cs" />
+    <Compile Include="Easy\ValidParentheses.cs" />
     <Compile Include="Hard\3Sumcs.cs" />
     <Compile Include="Hard\FindMedianSortedArrays.cs" />
     <Compile Include="Hard\LongestPalindromeSubstring.cs" />
