@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Leetcode.Easy;
 using Leetcode.Hard;
 using Leetcode.Middle;
@@ -63,6 +64,13 @@ namespace TestLeetcode
         {
             var r = ThreeSumClosest.S1(new int[] { -1, 2, 1, -4 }, 1);
             Assert.AreEqual(r, 2);
+        }
+
+        [TestMethod]
+        public void Test4Sum()
+        {
+            var r = FourSum.S1(new int[] { 1, 0, -1, 0, -2, 2 }, 0);
+            Assert.AreEqual(r.Count, 3);
         }
 
         [TestMethod]

@@ -19,6 +19,10 @@ namespace Leetcode.Hard
                 if (arr[i] > target)
                     break;
 
+                //如果和上一个元素相同，比如10个数字， a1和a2相等：
+                //比较情况有 a1，a2，a10--- a1，a3，a10-- a1,a4,a10
+                //a2,a3,a10,--- a2,a4,a10
+                //因为a1，a2相同，所以可以忽略a2
                 if (i > 0 && arr[i] == arr[i - 1])
                     continue;
 
@@ -91,5 +95,52 @@ namespace Leetcode.Hard
         }
 
 
+    }
+
+    public class FourSum
+    {
+        public static List<List<int>> S1(int[] arr, int target)
+        {
+            var ret = new List<List<int>>();
+            Array.Sort(arr);
+            var len = arr.Length;
+            for (var i = 0; i < len -3 ; i++)
+            {
+                //第二个元素开始
+                if(i >0 && arr[i] == arr[i -1])
+                    continue;
+
+                for (var j = i + 1; j < len -2; j++)
+                {
+                    //理由同上
+                    if(j > i + 1 && arr[j] == arr[j-1])
+                        continue;
+
+                   
+                    var begin = j + 1;
+                    var end = len - 1;
+                    while (begin < end)
+                    {
+                        var sum = arr[i] + arr[j] + arr[begin] + arr[end];
+                        if (sum < target)
+                        {
+                            begin++;
+                        }
+                        else if (sum > target)
+                        {
+                            end--;
+                        }
+                        else
+                        {
+                            ret.Add(new List<int> {arr[i], arr[j], arr[begin], arr[end]});
+                            begin++;
+                            end--;
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
     }
 }
