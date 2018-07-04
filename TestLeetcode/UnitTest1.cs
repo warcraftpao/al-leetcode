@@ -26,29 +26,18 @@ namespace TestLeetcode
         [TestMethod]
         public void TestAddTwoNumbers()
         {
-            var node1 = BuildListNode(new int[] {3, 1, 4});
-            var node2 = BuildListNode(new int[] {9, 8, 7});
+            var node1 = LinkedList.BuildListNode(new int[] {3, 1, 4});
+            var node2 = LinkedList.BuildListNode(new int[] {9, 8, 7});
             var val1 = AddTwoNumbers.AddTwoNumbers1(node1, node2);
             Assert.AreEqual(val1, 1202);
 
-            var node3 = BuildListNode(new int[] { 0, 3, 4 });
-            var node4 = BuildListNode(new int[] { 9, 8, 7 });
+            var node3 = LinkedList.BuildListNode(new int[] { 0, 3, 4 });
+            var node4 = LinkedList.BuildListNode(new int[] { 9, 8, 7 });
             var val2 = AddTwoNumbers.AddTwoNumbers2(node3, node4);
             Assert.AreEqual(val2, 1219);
         }
 
-        private LinkedList BuildListNode(int[] arr)
-        {
-            var head = new LinkedList();
-            var current = head;
-            foreach (var i in arr)
-            {
-                current.Next = new LinkedList { Val = i };
-                current = current.Next;
-            }
-
-            return head;
-        }
+        
 
         [TestMethod]
         public void TestMaxSubstringWithoutRepeatChar()
