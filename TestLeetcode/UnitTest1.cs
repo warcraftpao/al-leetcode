@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Leetcode.DataStructure;
 using Leetcode.Easy;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -36,13 +37,13 @@ namespace TestLeetcode
             Assert.AreEqual(val2, 1219);
         }
 
-        private ListNode BuildListNode(int[] arr)
+        private LinkedList BuildListNode(int[] arr)
         {
-            var head = new ListNode();
+            var head = new LinkedList();
             var current = head;
             foreach (var i in arr)
             {
-                current.Next = new ListNode  { Val = i };
+                current.Next = new LinkedList { Val = i };
                 current = current.Next;
             }
 

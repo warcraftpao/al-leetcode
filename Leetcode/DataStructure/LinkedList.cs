@@ -9,5 +9,6 @@ namespace Leetcode.DataStructure
     public class LinkedList
     {
         public int Val { get; set; }
+        public LinkedList Next;
     }
 }

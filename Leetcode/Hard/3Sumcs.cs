@@ -97,8 +97,10 @@ namespace Leetcode.Hard
 
     }
 
+    
     public class FourSum
     {
+        //逗比的3次循环
         public static List<List<int>> S1(int[] arr, int target)
         {
             var ret = new List<List<int>>();
@@ -142,5 +144,12 @@ namespace Leetcode.Hard
 
             return ret;
         }
+
+
+        //4 sum hash表思路，两两配对
+        //https://blog.csdn.net/linhuanmars/article/details/24826871
+
+
+
     }
 }
