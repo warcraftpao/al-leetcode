@@ -49,5 +49,13 @@ namespace TestLeetcode
             Assert.AreEqual(head3.Length(), 6);
         }
 
+
+        [TestMethod]
+        public void TestGenerateParentheses()
+        {
+            var r = GenerateParentheses.Generate(3);
+            
+            Assert.IsTrue(r.Contains("(())()"));
+        }
     }
 }
