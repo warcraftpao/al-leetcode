@@ -74,5 +74,21 @@ namespace TestLeetcode
             
             Assert.IsTrue(r.Contains("(())()"));
         }
+
+        [TestMethod]
+        public void TestSwapNodeInPair()
+        {
+            var head1 = LinkedList.BuildListNode(new[] { 1, 2, 3, 4});
+            SwapNodeInPair.Swap(head1);
+
+            Assert.AreEqual(head1.Next.Next.Next.Val, 4);
+            Assert.AreEqual(head1.Next.Val, 2);
+
+            var head2 = LinkedList.BuildListNode(new[] { 1, 2, 3, 4, 5 });
+            SwapNodeInPair.Swap(head2);
+
+            Assert.AreEqual(head2.Next.Next.Next.Val, 4);
+            Assert.AreEqual(head2.Next.Next.Next.Next.Next.Val, 5);
+        }
     }
 }
