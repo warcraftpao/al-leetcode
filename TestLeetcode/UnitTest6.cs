@@ -31,6 +31,13 @@ namespace TestLeetcode
             Assert.AreEqual(arr[1], 1);
             Assert.AreEqual(arr[2], 2);
             Assert.AreEqual(arr[4], 4);
+            /////////////////////////////////////////////////
+            var arr2 = new[] {1, 2, 1, 5, 1, 4};
+            var r2 = RemoveDuplicates.RemoveElementFromArray(arr2, 1);
+            Assert.AreEqual(r2, 3);
+            Assert.AreEqual(arr2[0], 4);
+            Assert.AreEqual(arr2[1], 2);
+            Assert.AreEqual(arr2[2], 5);
         }
     }
 }

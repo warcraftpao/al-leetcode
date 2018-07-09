@@ -27,5 +27,25 @@ namespace Leetcode.Easy
 
             return len +1;//下标+1 =长度
         }
+
+
+        public static int RemoveElementFromArray(int[] arr, int target)
+        {
+            var i = 0;
+            var len = arr.Length;
+            while (i < len)
+            {
+                //有相同的值，把末尾元素移到当前位置，并且数组长-1（还是老问题不是真的resize，只是不去判断最后一位了）
+                if (arr[i] == target)
+                {
+                    arr[i] = arr[len - 1];
+                    len--;
+                }
+                else
+                    i++;
+            }
+
+            return i;
+        }
     }
 }
