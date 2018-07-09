@@ -25,8 +25,12 @@ namespace TestLeetcode
         [TestMethod]
         public void TestRemoveDuplicates()
         {
-            var r = RemoveDuplicates.S1(new[] { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 });
+            var arr = new[] {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+            var r = RemoveDuplicates.RemoveDuplicatedInSortedArray(arr);
             Assert.AreEqual(r, 5);
+            Assert.AreEqual(arr[1], 1);
+            Assert.AreEqual(arr[2], 2);
+            Assert.AreEqual(arr[4], 4);
         }
     }
 }
