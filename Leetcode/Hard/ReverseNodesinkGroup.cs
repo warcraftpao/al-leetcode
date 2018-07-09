@@ -51,7 +51,7 @@ namespace Leetcode.Hard
         /// <param name="tail"></param>
         private static void ReserveList(LinkedList head, LinkedList tail)
         {
-      
+            //其实就是curr.next指向了 next.next
             var curr = head.Next;
             while (curr.Next != tail)
             {
