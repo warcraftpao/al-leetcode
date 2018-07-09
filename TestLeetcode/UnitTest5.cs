@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Leetcode.DataStructure;
 using Leetcode.Easy;
+using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -90,5 +91,8 @@ namespace TestLeetcode
             Assert.AreEqual(head2.Next.Next.Next.Val, 4);
             Assert.AreEqual(head2.Next.Next.Next.Next.Next.Val, 5);
         }
+
+
+        
     }
 }
