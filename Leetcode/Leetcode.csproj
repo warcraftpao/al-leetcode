@@ -62,6 +62,7 @@
     <Compile Include="Middle\AddTwoNumbers.cs" />
     <Compile Include="Middle\CombinePhoneNumber.cs" />
     <Compile Include="Middle\ContainerWithMostWater.cs" />
+    <Compile Include="Middle\DivideTwoIntegers.cs" />
     <Compile Include="Middle\GenerateParentheses.cs" />
     <Compile Include="Middle\IntegerAndRoman.cs" />
     <Compile Include="Middle\MaxSubstringWithoutRepeatChar.cs" />

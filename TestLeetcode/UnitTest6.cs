@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Leetcode.DataStructure;
 using Leetcode.Easy;
 using Leetcode.Hard;
+using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestLeetcode
@@ -38,6 +39,33 @@ namespace TestLeetcode
             Assert.AreEqual(arr2[0], 4);
             Assert.AreEqual(arr2[1], 2);
             Assert.AreEqual(arr2[2], 5);
+        }
+
+
+        [TestMethod]
+        public void TestDivideTwoIntegers1()
+        {
+            var r = DivideTwoIntegers.S1(10, 3);
+            Assert.AreEqual(r, 3);
+
+            r = DivideTwoIntegers.S1(10, -5);
+            Assert.AreEqual(r, -2);
+
+            r = DivideTwoIntegers.S1(-16, -5);
+            Assert.AreEqual(r, 3);
+        }
+
+        [TestMethod]
+        public void TestDivideTwoIntegers2()
+        {
+            var r = DivideTwoIntegers.S2(10, 3);
+            Assert.AreEqual(r, 3);
+
+            r = DivideTwoIntegers.S2(10, -5);
+            Assert.AreEqual(r, -2);
+
+            r = DivideTwoIntegers.S2(-28, -3);
+            Assert.AreEqual(r, 9);
         }
     }
 }
