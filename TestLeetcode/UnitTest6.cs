@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Linq;
 using Leetcode.DataStructure;
 using Leetcode.Easy;
 using Leetcode.Hard;
@@ -66,6 +67,19 @@ namespace TestLeetcode
 
             r = DivideTwoIntegers.S2(-28, -3);
             Assert.AreEqual(r, 9);
+        }
+
+        [TestMethod]
+        public void TestSubstringwithConcatenationofAllWords()
+        {
+            var r = SubstringwithConcatenationofAllWords.S1("barfoothefoobarman", new [] { "foo", "bar" });
+            Assert.IsTrue(r.Contains(0) && r.Contains(9) && r.Length == 2);
+
+            r = SubstringwithConcatenationofAllWords.S1("wordgoodstudentgoodword", new[] { "word", "student" });
+            Assert.IsTrue( r.Length == 0);
+
+            r = SubstringwithConcatenationofAllWords.S1("abbbccc", new[] { "a", "b","b", "b" ,"c"});
+            Assert.IsTrue(r.Length == 1);
         }
     }
 }
