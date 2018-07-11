@@ -81,5 +81,21 @@ namespace TestLeetcode
             r = SubstringwithConcatenationofAllWords.S1("abbbccc", new[] { "a", "b","b", "b" ,"c"});
             Assert.IsTrue(r.Length == 1);
         }
+
+        [TestMethod]
+        public void TestNextPermutation()
+        {
+            var arr = new[] {1, 2, 7, 4, 3, 1};
+            Permutation.NextPermutation(arr);
+            Assert.AreEqual(arr[2], 1);
+            Assert.AreEqual(arr[3], 2);
+            Assert.AreEqual(arr[4], 4);
+            Assert.AreEqual(arr[5], 7);
+
+            arr = new[] { 7, 6,5, 4, 3, 2,1 };
+            Permutation.NextPermutation(arr);
+            Assert.AreEqual(arr[0], 1);
+            Assert.AreEqual(arr[6], 7);
+        }
     }
 }
