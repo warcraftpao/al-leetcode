@@ -54,5 +54,52 @@ namespace Leetcode.Middle
             }
             return -1;
         }
+
+        public static int[] FindFirstAndLastInSortedArr(int[] arr, int target)
+        {
+            return new[] {FindLeftIndex(arr, target), FindRightIndex(arr, target)};
+        }
+
+        private static int FindLeftIndex(int[] arr, int target)
+        {
+            var index = -1;
+            var left = 0;
+            var right = arr.Length - 1;
+            while (left <= right)
+            {
+                var mid = (left + right)/2;
+                if (arr[mid] == target)
+                {
+                    index = mid;
+                    right = mid - 1;//继续往左找
+                }
+                else if (arr[mid] > target)
+                    right = mid - 1;
+                else
+                    left = mid + 1;
+            }
+            return index;
+        }
+
+        private static int FindRightIndex(int[] arr, int target)
+        {
+            var index = -1;
+            var left = 0;
+            var right = arr.Length - 1;
+            while (left <= right)
+            {
+                var mid = (left + right) / 2;
+                if (arr[mid] == target)
+                {
+                    index = mid;
+                    left = mid + 1;//继续往右找
+                }
+                else if (arr[mid] > target)
+                    right = mid - 1;
+                else
+                    left = mid + 1;
+            }
+            return index;
+        }
     }
 }

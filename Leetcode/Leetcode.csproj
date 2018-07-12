@@ -71,7 +71,7 @@
     <Compile Include="Middle\MergeTwoSortedList.cs" />
     <Compile Include="Middle\Permutation.cs" />
     <Compile Include="Middle\RemoveNthFromEnd.cs" />
-    <Compile Include="Middle\SearchinRotatedSortedArray.cs" />
+    <Compile Include="Middle\ArrarSearch.cs" />
     <Compile Include="Middle\StringToInteger.cs" />
     <Compile Include="Middle\SwapNodeInPair.cs" />
     <Compile Include="Middle\ZigZag.cs" />
