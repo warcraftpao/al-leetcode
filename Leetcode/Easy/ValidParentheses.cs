@@ -17,23 +17,23 @@ namespace Leetcode.Easy
             dic.Add(']', '[');
             dic.Add(')', '(');
             dic.Add('}', '{');
-            var queue = new Stack();
+            var stack = new Stack();
 
             for (var i = 0; i < input.Length; i++)
             {
                 if (dic.ContainsValue(input[i]))
-                    queue.Push(input[i]);
+                    stack.Push(input[i]);
                 else if (dic.ContainsKey(input[i]))
                 {
-                    var c = (char) queue.Peek();
+                    var c = (char) stack.Peek();
                     if (c != dic[input[i]])
                         return false;
                     
-                    queue.Pop();
+                    stack.Pop();
                 }
             }
 
-            if (queue.Count > 0)
+            if (stack.Count > 0)
                 return false;
 
             return true;

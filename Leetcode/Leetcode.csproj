@@ -57,6 +57,7 @@
     <Compile Include="Hard\3Sumcs.cs" />
     <Compile Include="Hard\FindMedianSortedArrays.cs" />
     <Compile Include="Hard\LongestPalindromeSubstring.cs" />
+    <Compile Include="Hard\LongestValidParentheses.cs" />
     <Compile Include="Hard\RegularExpressionMatching.cs" />
     <Compile Include="Hard\ReverseNodesinkGroup.cs" />
     <Compile Include="Hard\SubstringwithConcatenationofAllWords.cs" />
