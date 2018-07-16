@@ -101,5 +101,31 @@ namespace Leetcode.Middle
             }
             return index;
         }
+
+        //assume array sorted and with duplicate
+        public static int SearchInsertPosition(int[] arr, int target)
+        {
+            var len = arr.Length;
+            if (target > arr[len - 1])//最后
+                return len;
+            if (target < arr[0])//最前
+                return 0;
+
+            var left = 0;
+            var right = len - 1;
+            while (left <= right)
+            {
+                var mid = (left + right)/2;
+                if (arr[mid] == target)//找到了
+                    return mid;
+
+                if (target > arr[mid])
+                    left = mid + 1;
+                else
+                    right = mid - 1;
+            }
+
+            return target > arr[left] ? left + 1 : left;
+        }
     }
 }

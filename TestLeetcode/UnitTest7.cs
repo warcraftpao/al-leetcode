@@ -41,5 +41,58 @@ namespace TestLeetcode
             Assert.AreEqual(r[0], -1);
             Assert.AreEqual(r[1], -1);
         }
+
+        [TestMethod]
+        public void TestSearchInsertPosition()
+        {
+            var r = ArrarSearch.SearchInsertPosition(new[] {1, 3, 5, 6}, 5);
+            Assert.AreEqual(r, 2);
+
+            r = ArrarSearch.SearchInsertPosition(new[] { 1, 3, 5, 6 }, 2);
+            Assert.AreEqual(r, 1);
+
+            r = ArrarSearch.SearchInsertPosition(new[] { 1, 3, 5, 6 }, 7);
+            Assert.AreEqual(r, 4);
+
+            r = ArrarSearch.SearchInsertPosition(new[] { 1, 3, 5, 6 }, 0);
+            Assert.AreEqual(r, 0);
+        }
+
+        [TestMethod]
+        public void TestValidSudoku()
+        {
+            var arr = new char[9, 9]
+            {
+                {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                {'.', '.', '.', '.', '8', '.', '.', '7', '9'},
+
+            };
+            var r = ValidSudoku.Validate(arr);
+            Assert.AreEqual(r, true);
+            //////////////////////////////////////////////////////////
+            arr = new char[9, 9]
+            {
+                {'8','3','.','.','7','.','.','.','.'},
+                {'6','.','.','1','9','5','.','.','.'},
+                {'.','9','8','.','.','.','.','6','.'},
+                {'8','.','.','.','6','.','.','.','3'},
+                {'4','.','.','8','.','3','.','.','1'},
+                {'7','.','.','.','2','.','.','.','6'},
+                {'.','6','.','.','.','.','2','8','.'},
+                {'.','.','.','4','1','9','.','.','5'},
+                {'.','.','.','.','8','.','.','7','9'},
+
+            };
+            r = ValidSudoku.Validate(arr);
+            Assert.AreEqual(r, false);
+
+        }
     }
 }
