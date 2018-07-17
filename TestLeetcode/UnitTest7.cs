@@ -74,7 +74,7 @@ namespace TestLeetcode
                 {'.', '.', '.', '.', '8', '.', '.', '7', '9'},
 
             };
-            var r = ValidSudoku.Validate(arr);
+            var r = Sudoku.Validate(arr);
             Assert.AreEqual(r, true);
             //////////////////////////////////////////////////////////
             arr = new char[9, 9]
@@ -90,9 +90,30 @@ namespace TestLeetcode
                 {'.','.','.','.','8','.','.','7','9'},
 
             };
-            r = ValidSudoku.Validate(arr);
+            r = Sudoku.Validate(arr);
             Assert.AreEqual(r, false);
 
+        }
+
+        //[TestMethod] todo
+        public void TestSudokuSolver()
+        {
+            var arr = new char[9, 9]
+            {
+                {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+                {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+                {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+                {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                {'.', '.', '.', '.', '8', '.', '.', '7', '9'},
+
+            };
+            Sudoku.Solver(arr);
+            Assert.AreEqual(arr, true);
+            
         }
     }
 }

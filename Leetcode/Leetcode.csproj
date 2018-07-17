@@ -48,6 +48,7 @@
     <Compile Include="DP\Coins.cs" />
     <Compile Include="DP\LIS.cs" />
     <Compile Include="DP\Triangle.cs" />
+    <Compile Include="Easy\CountAndSay.cs" />
     <Compile Include="Easy\LongestCommonPrefix.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\RemoveDuplicates.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Middle\ArrarSearch.cs" />
     <Compile Include="Middle\StringToInteger.cs" />
     <Compile Include="Middle\SwapNodeInPair.cs" />
-    <Compile Include="Middle\ValidSudoku.cs" />
+    <Compile Include="Middle\Sudoku.cs" />
     <Compile Include="Middle\ZigZag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
