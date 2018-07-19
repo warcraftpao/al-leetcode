@@ -27,17 +27,6 @@ namespace TestLeetcode
             Assert.AreEqual(r, "1113213211");
         }
 
-        [TestMethod]
-        public void TestCombinationSum()
-        {
-            var r = CombinationSum.S1(new[] {2,7,3},  7);
-            Assert.AreEqual(r.Count, 2);
-
-            r = CombinationSum.S1(new[] { 2, 3, 5 }, 8);
-            Assert.AreEqual(r.Count, 3);
-
-        }
-
         
 
     }
