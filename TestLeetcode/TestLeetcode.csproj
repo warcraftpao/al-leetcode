@@ -55,6 +55,7 @@
     <Compile Include="DP\UnitTest1.cs" />
     <Compile Include="JumpTest.cs" />
     <Compile Include="TestCombinationSum.cs" />
+    <Compile Include="TestPermutation.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest2.cs" />
