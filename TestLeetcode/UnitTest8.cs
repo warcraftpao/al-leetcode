@@ -27,7 +27,7 @@ namespace TestLeetcode
             Assert.AreEqual(r, "1113213211");
         }
 
-       
+       [TestMethod]
         public void TestRotateImage()
         {
             var arr = new int[3, 3]
