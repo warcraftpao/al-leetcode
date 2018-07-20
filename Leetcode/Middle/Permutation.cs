@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -74,15 +75,20 @@ namespace Leetcode.Middle
             arr[y] = temp;
         }
 
-        //h
-        public static List<List<int>> AllPermutations(int[] arr)
+
+        /// <summary>
+        /// AllPermutations_S1 交换位置的方式比较清晰
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public static List<List<int>> AllPermutations_S1(int[] arr)
         {
            var list = new List<List<int>>();
-            GenerateAll(list, arr, 0);
+            GenerateAll_S1(list, arr, 0);
             return list;
         }
 
-        private static void GenerateAll(List<List<int>> results,  int[] arr, int index)
+        private static void GenerateAll_S1(List<List<int>> results,  int[] arr, int index)
         {
             //循环到最后一个数字的时候加入结果集
             if (arr.Length - 1 == index)
@@ -98,15 +104,51 @@ namespace Leetcode.Middle
 
             //不停的交换数字；
             //思路就是大循环里，第一轮每次把一个数字提到第一位（1和1交换，1和2交换，到1和n交换）
-            //递归开始每次index+1,说明第一个数字固定了，之后的数字和第二位交换，
+            //递归开始每次index+1,第一次递归说明第二个数字固定了，第二次递归说明第三个数字固定了
             //直到交换位置到最后了，加入结果集
             for (var i = index; i < arr.Length ; i++)
             {
                 Swap(arr, i, index);
-                GenerateAll(results, arr, index + 1);
+                GenerateAll_S1(results, arr, index + 1);
                 Swap(arr,i, index);
             }
             
+        }
+
+        //s2的思路感觉很费时间，每次使用一个数字后，递归还是会循环所有数字尝试加入答案
+        public static List<List<int>> AllPermutations_S2(int[] arr)
+        {
+            var used = new bool[arr.Length];
+            var list = new List<List<int>>();
+            var curr = new List<int>();
+            GenerateAll_S2(list, arr, used, curr);
+            return list;
+        }
+
+        private static void GenerateAll_S2(List<List<int>> results, int[] arr, bool[] used, List<int> curr)
+        {
+            if (curr.Count == arr.Length)
+            {
+                var tmp = new List<int>();
+                for (var i = 0; i < curr.Count; i++)
+                {
+                    tmp.Add(curr[i]);
+                }
+                results.Add(tmp);
+                return;
+            }
+
+            for (var i = 0; i < arr.Length - 1; i++)
+            {
+                if (used[i] == false)
+                {
+                    used[i] = true;
+                    curr.Add(arr[i]);
+                }
+                GenerateAll_S2(results, arr, used, curr);
+                used[i] = false;
+                curr.RemoveAt(curr.Count -1);
+            }
         }
     }
 }
