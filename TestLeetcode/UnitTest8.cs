@@ -27,7 +27,7 @@ namespace TestLeetcode
             Assert.AreEqual(r, "1113213211");
         }
 
-        [TestMethod]
+       
         public void TestRotateImage()
         {
             var arr = new int[3, 3]
@@ -58,6 +58,13 @@ namespace TestLeetcode
             Assert.AreEqual(arr[3, 3], 4);
         }
 
+        [TestMethod]
+        public void TestGroupAnagrams()
+        {
+            var r = GroupAnagrams.Group(new[] {"eat", "tea", "tan", "ate", "nat", "bat"});
+            Assert.AreEqual(r.Count, 3);
+
+        }
     }
 
 

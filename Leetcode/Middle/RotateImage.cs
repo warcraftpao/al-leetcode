@@ -19,10 +19,9 @@ namespace Leetcode.Middle
             var reduce = 1;
             for (var i = 0; i < len / 2; i++)
             {
-                var tmp = 0;
                 for (var j = i; j < len - reduce; j++ , reduce++)
                 {
-                    tmp = arr[i, j];
+                    var tmp = arr[i, j];
                     arr[i, j] = arr[len -j -1, i];
                     arr[len - j - 1, i] = arr[len - i -1, len - j -1];
                     arr[len - i -1, len - j -1] = arr[j, len -i -1];
