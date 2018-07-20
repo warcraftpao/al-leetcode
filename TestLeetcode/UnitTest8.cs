@@ -12,7 +12,7 @@ namespace TestLeetcode
         public void TestCountAndSay()
         {
             var r = CountAndSay.BabySay(3);
-            Assert.AreEqual(r,"21");
+            Assert.AreEqual(r, "21");
 
             r = CountAndSay.BabySay(5);
             Assert.AreEqual(r, "111221");
@@ -27,7 +27,7 @@ namespace TestLeetcode
             Assert.AreEqual(r, "1113213211");
         }
 
-       [TestMethod]
+        [TestMethod]
         public void TestRotateImage()
         {
             var arr = new int[3, 3]
@@ -38,9 +38,9 @@ namespace TestLeetcode
 
 
             };
-            RotateImage.Rotate( arr);
+            RotateImage.Rotate(arr);
 
-            Assert.AreEqual(arr[0,0], 7);
+            Assert.AreEqual(arr[0, 0], 7);
 
             arr = new int[4, 4]
             {
@@ -63,9 +63,17 @@ namespace TestLeetcode
         {
             var r = GroupAnagrams.Group(new[] {"eat", "tea", "tan", "ate", "nat", "bat"});
             Assert.AreEqual(r.Count, 3);
-
         }
+
+        [TestMethod]
+        public void TestPowXy()
+        {
+            var r = PowXy.Calc(3, 9);
+            Assert.AreEqual(r, 19683);
+
+            r = PowXy.Calc(3.1, 2);
+            Assert.AreEqual(r, 9.61, 0.01);//注意重载，精度问题
+        }
+
     }
-
-
 }
