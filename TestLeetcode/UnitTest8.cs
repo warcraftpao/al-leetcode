@@ -75,5 +75,12 @@ namespace TestLeetcode
             Assert.AreEqual(r, 9.61, 0.01);//注意重载，精度问题
         }
 
+
+        [TestMethod]
+        public void TestMaximumSubarray()
+        {
+            var r = MaximumSubarray.GetMs(new [] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
+            Assert.AreEqual(r, 6);
+        }
     }
 }

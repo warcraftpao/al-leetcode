@@ -50,6 +50,7 @@
     <Compile Include="DP\Triangle.cs" />
     <Compile Include="Easy\CountAndSay.cs" />
     <Compile Include="Easy\LongestCommonPrefix.cs" />
+    <Compile Include="Easy\MaximumSubarray.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\RemoveDuplicates.cs" />
     <Compile Include="Easy\ReverseIntegercs.cs" />
