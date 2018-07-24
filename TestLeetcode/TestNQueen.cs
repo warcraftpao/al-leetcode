@@ -12,10 +12,17 @@ namespace TestLeetcode
     public  class TestNQueen
     {
         [TestMethod]
-        public void TestQueen1()
+        public void TestQueenSolver()
         {
            var r =  NQueen.NqueenSolver(8);
             Assert.AreEqual(r.Count, 92);
+        }
+
+        [TestMethod]
+        public void TestNqueenResultNumber()
+        {
+            var r = NQueen.NqueenResultNumber(8);
+            Assert.AreEqual(r, 92);
         }
     }
 }
