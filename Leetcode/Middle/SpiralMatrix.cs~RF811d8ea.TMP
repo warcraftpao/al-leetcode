@@ -14,31 +14,31 @@ namespace Leetcode.Middle
             var list = new List<int>();
             var rowNum = matrix.GetLength(0);
             var colNum = matrix.GetLength(1);
-            var repeat = (Math.Max(rowNum, colNum) +1) /2;
+            var repeat = Math.Max(rowNum, colNum) /2;
              
             for (var i = 0; i < repeat; i++)
             {
-                //从左到右  有几列加几个元素
-                for (var col= i; col < rowNum - i; col++) 
+                //从左到右
+                for (var col= i; col < rowNum - i; col++)
                 {
                     list.Add(matrix[i, col]);
                 }
-                //从上到下 第一行都加入了，行数要加+1
+                //从上到下
                 for(var row = i + 1; row < colNum - i; row++)
                 {
-                    list.Add(matrix[row, colNum -i -1]);
-                }
-
-                //从左到右 左边列都被占了，数组本身下标减1，所以-2
-                for(var col = colNum - i - 2 ; col >= i; col--)
-                {
-                    list.Add(matrix[rowNum -i -1, col]);
-                }
-
-                //从上到下 最下面行都被占了数组本身下标减1，所以-2，且第一行也被占了，结束条件也-1
-                for (var row = rowNum-i -2 ; row >  i; row--)
-                {
                     list.Add(matrix[row, i]);
+                }
+
+                //从左到右
+                for(var col = colNum - i -1 ; col >= i; col--)
+                {
+                    list.Add(matrix[rowNum -i, col]);
+                }
+
+                //从上到下
+                for(var row = rowNum-i -1; row >  i; row--)
+                {
+                    list.Add(matrix[row, colNum - i]);
                 }
             }
 
@@ -51,32 +51,37 @@ namespace Leetcode.Middle
             var matrix = new int[n,n];
             //先确定大循环几次，一次剥掉2层
             var num = 1;
-            var rowNum = matrix.GetLength(0);
-            var colNum = matrix.GetLength(1);
-            var repeat = (Math.Max(rowNum, colNum) + 1) / 2;
+            var repeat = n%2 == 0 ? n/2 : n/2 +1;
             for (var i = 0; i < repeat; i++)
             {
+                //左上角的顶点00开始
+                var x = i;
+                var y = i;
                 //从左到右
-                for (var col = i; col < rowNum - i; col++)
+                while (y < n - i - 1)
                 {
-                   matrix[i, col] = num++;
+                    matrix[x, y] = num++;
+                    y++;
                 }
                 //从上到下
-                for (var row = i + 1; row < colNum - i; row++)
+                while (x < n - i - 1)
                 {
-                    matrix[row, colNum - i - 1] = num++;
+                    matrix[x, y] =num++;
+                    x++;
                 }
 
                 //从左到右
-                for (var col = colNum - i - 2; col >= i; col--)
+                while (y >= i + 1)
                 {
-                    matrix[rowNum - i - 1, col] = num++;
+                    matrix[x, y] = num++;
+                    y--;
                 }
 
                 //从上到下
-                for (var row = rowNum - i - 2; row > i; row--)
+                while (x >= i + 1)
                 {
-                    matrix[row, i] = num++;
+                    matrix[x, y] = num++;
+                    x--;
                 }
             }
 

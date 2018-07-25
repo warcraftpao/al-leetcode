@@ -83,19 +83,6 @@ namespace TestLeetcode
             Assert.AreEqual(r, 6);
         }
 
-        [TestMethod]
-        public void TestSpiralMatrix()
-        {
-            var r = SpiralMatrix.Convert(new int[,]
-            {
-                {1, 2, 3, 4, 4},
-                {5, 6, 7, 8, 4},
-                {9, 10, 11, 12, 4},
-
-                {13, 14, 15, 16, 5},
-            });
-            Assert.AreEqual(string.Join("", r), "123444451615141395678121110");
-        }
 
         [TestMethod]
         public void TestLengthOfLastWord()
