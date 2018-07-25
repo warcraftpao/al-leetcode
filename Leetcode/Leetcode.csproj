@@ -74,7 +74,7 @@
     <Compile Include="Middle\IntegerAndRoman.cs" />
     <Compile Include="Middle\JumpGame.cs" />
     <Compile Include="Middle\MaxSubstringWithoutRepeatChar.cs" />
-    <Compile Include="Middle\MergeIntervals.cs" />
+    <Compile Include="Middle\Intervals.cs" />
     <Compile Include="Middle\MergeTwoSortedList.cs" />
     <Compile Include="Middle\Permutation.cs" />
     <Compile Include="Middle\PowXy.cs" />

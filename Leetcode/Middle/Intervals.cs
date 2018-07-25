@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Leetcode.Middle
 {
-    public class MergeIntervals
+    public class Intervals
     {
         public static List<Interval> Merge(Interval[] intervals)
         {
@@ -31,7 +31,41 @@ namespace Leetcode.Middle
             return list;
         }
 
+        //设定为当前interval都不重叠
+        public static List<Interval> Insert(Interval[] intervals,Interval newInterval)
+        {
+            //先排序
+            Array.Sort(intervals);
+            var list = new List<Interval>();
+            var i = 0;
+            //先找到比新区间起点还小的，直接加入
+            while (i < intervals.Length && intervals[i].End < newInterval.Start)
+            {
+                list.Add(intervals[i]);
+                i++;
+            }
 
+            //如果数组没结束，重叠部分出现,先定起点，end没关系，下次while会判
+            if (i < intervals.Length)
+            {
+                list.Add(new Interval(Math.Min(newInterval.Start, intervals[i].Start), newInterval.End));
+            }
+
+            //往后继续扫描直到新节点的end还是大于某个区间开始的，还是重叠的，扩展end
+            while (i < intervals.Length && newInterval.End >= intervals[i].Start)
+            {
+                list[list.Count - 1].End = Math.Max(newInterval.End, intervals[i].End);
+                i++;
+            }
+
+            while (i < intervals.Length)
+            {
+                list.Add(intervals[i]);
+                i++;
+            }
+
+            return list;
+        }
 
         public static Interval[] Sort()
         {
@@ -47,7 +81,7 @@ namespace Leetcode.Middle
     }
 
     
-    //Definition for an interval. end should >= start
+    //Definition for an interval. end should > start
     public class Interval: IComparable
     {
         public int Start;
