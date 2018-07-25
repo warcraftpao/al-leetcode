@@ -1,8 +1,7 @@
-﻿using System;
-using Leetcode.Middle;
+﻿using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestLeetcode
+namespace TestLeetcode.FamilyTest
 {
     [TestClass]
     public class JumpTest

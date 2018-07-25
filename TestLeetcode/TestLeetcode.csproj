@@ -53,10 +53,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DP\UnitTest1.cs" />
-    <Compile Include="JumpTest.cs" />
-    <Compile Include="TestCombinationSum.cs" />
-    <Compile Include="TestNQueen.cs" />
-    <Compile Include="TestPermutation.cs" />
+    <Compile Include="FamilyTest\JumpTest.cs" />
+    <Compile Include="FamilyTest\TestCombinationSum.cs" />
+    <Compile Include="FamilyTest\TestIntervals.cs" />
+    <Compile Include="FamilyTest\TestNQueen.cs" />
+    <Compile Include="FamilyTest\TestPermutation.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest2.cs" />
