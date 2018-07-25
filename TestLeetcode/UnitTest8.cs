@@ -97,6 +97,12 @@ namespace TestLeetcode
             Assert.AreEqual(string.Join("", r), "123444451615141395678121110");
         }
 
-       
+        [TestMethod]
+        public void TestLengthOfLastWord()
+        {
+            var r = LengthOfLastWord.Calc("hello wwwoddd    ");
+            Assert.AreEqual(r, 7);
+        }
+
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="DP\LIS.cs" />
     <Compile Include="DP\Triangle.cs" />
     <Compile Include="Easy\CountAndSay.cs" />
+    <Compile Include="Easy\LengthOfLastWord.cs" />
     <Compile Include="Easy\LongestCommonPrefix.cs" />
     <Compile Include="Easy\MaximumSubarray.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
