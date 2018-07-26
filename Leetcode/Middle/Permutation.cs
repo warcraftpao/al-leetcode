@@ -138,17 +138,96 @@ namespace Leetcode.Middle
                 return;
             }
 
-            for (var i = 0; i < arr.Length - 1; i++)
+            for (var i = 0; i < arr.Length ; i++)
             {
                 if (used[i] == false)
                 {
                     used[i] = true;
                     curr.Add(arr[i]);
+                    GenerateAll_S2(results, arr, used, curr);
+                    used[i] = false;
+                    curr.RemoveAt(curr.Count - 1);
                 }
-                GenerateAll_S2(results, arr, used, curr);
-                used[i] = false;
-                curr.RemoveAt(curr.Count -1);
             }
         }
+
+        #region n!第k个排列组合
+
+        //题目说n最大9 最大n阶乘， 这里用backtracing解
+        public static string GetKthPermutation(int n, int k)
+        {
+            int count = 0;
+            var arr = new int[n];
+            for (var i = 0; i <  n; i++)
+            {
+                arr[i] = i + 1;
+            }
+            string result = "";
+            KthPermutation(ref count, arr, 0, ref result, k);
+            return result;
+        }
+
+        private static void KthPermutation(ref int count, int[] arr, int index, ref string result, int k)
+        {
+            //循环到最后一个数字的时候加入结果集
+            if (arr.Length - 1 == index)
+            {
+                count++;
+                if (count == k)
+                {
+                    var tmp = new List<int>();
+                    for (var i = 0; i < arr.Length; i++)
+                    {
+                        tmp.Add(arr[i]);
+                    }
+                    result= string.Join("", tmp);
+                    return;
+                }
+               
+            }
+           
+            for (var i = index; i < arr.Length; i++)
+            {
+                Swap(arr, i, index);
+                KthPermutation(ref count, arr, index + 1, ref result, k);
+                Swap(arr, i, index);
+            }
+
+        }
+
+
+        //第二个方式，数学找规律。。。。无需backtracing 
+        //n个数字，第一位上每个数字出现的次数是(n-1)! 那么 k / (n-1)！ 可以决定第一个数字（注意下标问题，如果返回1，说明第2个数字还在循环，但是数组下标1对应第二个数字）
+        // k % (n-1)!  变为新的k的（既然到了第二位，前面肯定用掉了诺干个 n-1阶乘的组合次数，取余数就可以了）
+        public static string GetKthPermutationByRule(int n, int k)
+        {
+            k--;
+            var fact = 1;
+            //n-1的阶乘
+            for (var i = n -1; i >= 2; i--)
+            {
+                fact = fact* i;
+            }
+            var digits = new List<int>();
+            var result = "";
+            for (var i = 1; i <= n; i++)
+            {
+                digits.Add(i);
+            }
+            var times = n - 1;
+            while (times>= 0)
+            {
+                var index = k/fact;
+                result += digits[index];
+                digits.RemoveAt(index);
+                k = k%fact;
+                if (times != 0)
+                    fact = fact/ times;
+                times--;
+            }
+            return result;
+        }
+
+        #endregion
     }
 }

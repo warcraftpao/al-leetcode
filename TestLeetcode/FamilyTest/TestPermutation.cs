@@ -29,8 +29,24 @@ namespace TestLeetcode.FamilyTest
             var r = Permutation.AllPermutations_S1(new[] { 1, 2, 3, 4 });
             Assert.AreEqual(r.Count,   4 * 3 * 2);
 
-            r = Permutation.AllPermutations_S1(new[] {1, 2, 3, 4,5});
+            r = Permutation.AllPermutations_S2(new[] {1, 2, 3, 4,5});
             Assert.AreEqual(r.Count, 5*4*3*2);
+        }
+
+        [TestMethod]
+        public void TestGetKthPermutation()
+        {
+            var r = Permutation.GetKthPermutation(4,9);
+            Assert.AreEqual(r , "2314");
+             
+        }
+
+        [TestMethod]
+        public void TestGetKthPermutationByRule()
+        {
+            var r = Permutation.GetKthPermutationByRule(4, 9);
+            Assert.AreEqual(r, "2314");
+
         }
     }
 }
