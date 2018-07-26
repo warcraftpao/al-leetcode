@@ -78,6 +78,7 @@ namespace Leetcode.Middle
 
         /// <summary>
         /// AllPermutations_S1 交换位置的方式比较清晰
+        /// arr本身不重复
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
@@ -116,6 +117,7 @@ namespace Leetcode.Middle
         }
 
         //s2的思路感觉很费时间，每次使用一个数字后，递归还是会循环所有数字尝试加入答案
+        //arr本身不重复
         public static List<List<int>> AllPermutations_S2(int[] arr)
         {
             var used = new bool[arr.Length];
@@ -150,6 +152,54 @@ namespace Leetcode.Middle
                 }
             }
         }
+
+        #region 所给的数字本身可能重复，但是结果集要唯一
+
+        public static List<List<int>> GenerateAllWithDupulicatedArr(int[] arr)
+        {
+            //常规操作，有重复先排序
+            Array.Sort(arr);
+            var list = new List<List<int>>();
+            GenerateAll_d(list, arr, 0);
+            return list;
+        }
+
+
+        private static void GenerateAll_d(List<List<int>> results, int[] arr, int index)
+        {
+            if (arr.Length - 1 == index)
+            {
+                var tmp = new List<int>();
+                for (var i = 0; i < arr.Length; i++)
+                {
+                    tmp.Add(arr[i]);
+                }
+                results.Add(tmp);
+                return;
+            }
+
+            for (var i = index; i < arr.Length; i++)
+            {
+                if (i == index || !FindDuplicate(arr, index, i, arr[i])) //index开始到当前元素之前，和当前元素有重复否？，看链接，因为元素交换即使排序也没用，必须每次在当前情况下查找重复
+                                                                         //这个时候比较笨的used=false true好像更容易理解，和前面数字相同且前面数字被用过就88了
+                {
+                    Swap(arr, i, index);
+                    GenerateAll_d(results, arr, index + 1);
+                    Swap(arr, i, index);
+                }
+            }
+        }
+        //https://www.cnblogs.com/TenosDoIt/p/3662644.html  精华
+        //从数组的[start,end）范围内寻找元素target
+        private static bool FindDuplicate(int[] arr, int start, int end, int target)
+        {
+            for (int i = start; i < end; i++)
+                if (arr[i] == target)
+                    return true;
+            return false;
+        }
+
+        #endregion
 
         #region n!第k个排列组合
 
@@ -197,10 +247,12 @@ namespace Leetcode.Middle
 
 
         //第二个方式，数学找规律。。。。无需backtracing 
-        //n个数字，第一位上每个数字出现的次数是(n-1)! 那么 k / (n-1)！ 可以决定第一个数字（注意下标问题，如果返回1，说明第2个数字还在循环，但是数组下标1对应第二个数字）
+        //n个数字，第一位上每个数字出现的次数是(n-1)! 那么 k / (n-1)！= 第一个数字的index值
         // k % (n-1)!  变为新的k的（既然到了第二位，前面肯定用掉了诺干个 n-1阶乘的组合次数，取余数就可以了）
         public static string GetKthPermutationByRule(int n, int k)
         {
+            //注意下标问题，可以理解为1到fact个组合对应数字1 fact+1 到2*fact对应数字2，但是数组下标要减1，正好第fact* n个时候下标越界
+            //所以k-1 就变成0到fact-1 对应到数字0，
             k--;
             var fact = 1;
             //n-1的阶乘

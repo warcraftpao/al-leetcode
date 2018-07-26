@@ -44,9 +44,20 @@ namespace TestLeetcode.FamilyTest
         [TestMethod]
         public void TestGetKthPermutationByRule()
         {
-            var r = Permutation.GetKthPermutationByRule(4, 9);
-            Assert.AreEqual(r, "2314");
+            var r = Permutation.GetKthPermutationByRule(4,6);
+            Assert.AreEqual(r, "1432");
 
+            r = Permutation.GetKthPermutation(4, 9);
+            Assert.AreEqual(r, "2314");
         }
+
+        [TestMethod]
+        public void TestGenerateAllWithDupulicatedArr()
+        {
+            var r = Permutation.GenerateAllWithDupulicatedArr(new [] { 1, 1, 2 });
+            Assert.AreEqual(r.Count, 3);
+        }
+        
+
     }
 }
