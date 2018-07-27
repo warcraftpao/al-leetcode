@@ -59,6 +59,22 @@ namespace TestLeetcode.DP
             Assert.AreEqual(r, 36);
         }
 
+        [TestMethod]
+        public void TestUniquePathsWithObstas()
+        {
+            var arr = new int[7, 3]
+            {
+                {0, 1, 0},
+                {0, 0, 0},
+                {0, 0, 0},
+                {0, 0, 1},
+                {0, 0, 0},
+                {1, 0, 0},
+                {0, 0, 0},
+            };
         
+            var r = UniquePaths.GetPathNumerWithObstacles_dp_d1(arr);
+            Assert.AreEqual(r, 12);
+        }
     }
 }

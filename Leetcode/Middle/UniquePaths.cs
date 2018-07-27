@@ -78,10 +78,39 @@ namespace Leetcode.Middle
             return dp[n - 1];
         }
 
+        //不管怎么走，一共走n步，随便怎么走都可以，顺序无关，所以组合问题
 
         //数学公式法，排列组合 https://jingyan.baidu.com/article/63acb44ac60d4e61fcc17e2e.html
         //从m+n-2中取出 m-1个的组合
         //排列 6个里取4个排列 分母 6!  分子 (6-4)!  Anm= n!/(n-m)!
         //组合 6个里取4个组合 A64/4!   Cnm= Anm/m!
+
+
+        #region  有障碍物的情况
+        //坐标00有机器人，没有障碍吧
+        public static int GetPathNumerWithObstacles_dp_d1(int[,] arr)
+        {
+            var x = arr.GetLength(0);
+            var y = arr.GetLength(1);
+            var dp = new int[arr.GetLength(0)];
+            dp[0] = 1;
+            for (var i = 0; i < x; i++)
+            {
+                for (var j = 0; j < y; j++)
+                {
+                    if (arr[i, j] == 1)
+                    {
+                        dp[j] = 0;
+                        continue;
+                    }
+                        
+                    if(j >0) //j=0的时候，如果有障碍就是0，如果没障碍，上一层的1还在
+                        dp[j] += dp[j - 1];
+                }
+            }
+
+            return dp[arr.GetLength(1) - 1];
+        }
+        #endregion
     }
 }
