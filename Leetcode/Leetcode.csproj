@@ -53,6 +53,7 @@
     <Compile Include="Easy\LongestCommonPrefix.cs" />
     <Compile Include="Easy\MaximumSubarray.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
+    <Compile Include="Easy\PlusOne.cs" />
     <Compile Include="Easy\RemoveDuplicates.cs" />
     <Compile Include="Easy\ReverseIntegercs.cs" />
     <Compile Include="Easy\TwoSum.cs" />

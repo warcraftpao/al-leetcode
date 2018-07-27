@@ -32,6 +32,17 @@ namespace TestLeetcode
             Assert.AreEqual(r, 5);
         }
 
+        [TestMethod]
+        public void TestPlusOne()
+        {
+            var r = PlusOne.Calc(new [] {1,2,3,4});
+            Assert.AreEqual(r.Length, 4);
 
+            r = PlusOne.Calc(new[] { 9, 9, 9, 9});
+            Assert.AreEqual(r.Length, 5);
+
+            r = PlusOne.Calc(new[] { 9, 4, 9, 9 });
+            Assert.AreEqual(r.Length, 4);
+        }
     }
 }
