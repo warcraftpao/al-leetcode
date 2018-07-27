@@ -8,7 +8,7 @@ namespace Leetcode.Middle
 {
     public class ArrarSearch
     {
-        //关键点 旋转过得数组，随便怎么切，总有一半是有序的(只升序），所以只是判断条件增加，还是没次砍掉一半
+        //关键点 旋转过得数组，随便怎么切，总有一半是有序的(只升序），所以只是判断条件增加，还是每次砍掉一半
         //left mid right
         //1 mid= target over
         //2 target<mid  

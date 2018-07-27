@@ -12,7 +12,7 @@ namespace Leetcode.Hard
     {
         // https://blog.csdn.net/qq_39630587/article/details/79405536
         /// <summary>
-        /// 所有特定都是基于某个回文点上左右是对称的，其左右内部的子串也是对称的
+        /// 所有推理都是机遇回文是左右对称的，其中心点左右内部的子串也有对称性
         /// 这个要仔细思考
         /// </summary>
         /// <param name="input"></param>

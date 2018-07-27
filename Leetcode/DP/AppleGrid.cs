@@ -13,7 +13,6 @@ namespace Leetcode.DP
         {
             var x = arr.GetLength(0);
             var y = arr.GetLength(1);
-            var max = 0;
             var maxApples = new int[x, y];
             for (var i = 0; i < x; i++)
             {

@@ -1,6 +1,7 @@
 ﻿using System;
 using Leetcode.CommonTools;
 using Leetcode.DP;
+using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestLeetcode.DP
@@ -46,5 +47,18 @@ namespace TestLeetcode.DP
             var r = Triangle.GetMax(arr);
             Assert.AreEqual(r, 24);
         }
+
+
+        [TestMethod]
+        public void TestUniquePaths()
+        {
+            var r = UniquePaths.GetPathNumer_dp(7, 3);
+            Assert.AreEqual(r, 28);
+
+            r = UniquePaths.GetPathNumer_dp_d1(8, 3);
+            Assert.AreEqual(r, 36);
+        }
+
+        
     }
 }
