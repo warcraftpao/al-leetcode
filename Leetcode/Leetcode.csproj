@@ -77,6 +77,7 @@
     <Compile Include="Middle\MaxSubstringWithoutRepeatChar.cs" />
     <Compile Include="Middle\Intervals.cs" />
     <Compile Include="Middle\MergeTwoSortedList.cs" />
+    <Compile Include="Middle\MinimumPathSum.cs" />
     <Compile Include="Middle\Permutation.cs" />
     <Compile Include="Middle\PowXy.cs" />
     <Compile Include="Middle\RemoveNthFromEnd.cs" />

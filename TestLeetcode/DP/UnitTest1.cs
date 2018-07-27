@@ -76,5 +76,33 @@ namespace TestLeetcode.DP
             var r = UniquePaths.GetPathNumerWithObstacles_dp_d1(arr);
             Assert.AreEqual(r, 12);
         }
+
+        [TestMethod]
+        public void TestMinimumPathSum()
+        {
+            var arr = new [, ]
+            {
+                {1, 3, 1},
+                {1, 5, 1},
+                {4, 2, 1},
+            };
+
+            var r = MinimumPathSum.GetMin(arr);
+            Assert.AreEqual(r, 7);
+
+            arr = new[,]
+            {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {1, 3, 7, 8},
+                {9, 10, 1, 3},
+                {3, 12, 9, 7},
+            };
+
+            r = MinimumPathSum.GetMin(arr);
+            Assert.AreEqual(r, 28);
+        }
+        
+
     }
 }

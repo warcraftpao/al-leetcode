@@ -92,7 +92,7 @@ namespace Leetcode.Middle
         {
             var x = arr.GetLength(0);
             var y = arr.GetLength(1);
-            var dp = new int[arr.GetLength(0)];
+            var dp = new int[arr.GetLength(1)]; //列数
             dp[0] = 1;
             for (var i = 0; i < x; i++)
             {
