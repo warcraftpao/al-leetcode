@@ -17,7 +17,7 @@ namespace Leetcode.DataStructure
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
-        public static LinkedList BuildListNode(int[] arr)
+        public static LinkedList BuildListNodeFromArray(int[] arr)
         {
             var head = new LinkedList();
             var current = head;

@@ -17,7 +17,7 @@ namespace TestLeetcode
         [TestMethod]
         public void TestReverseNodesinkGroup()
         {
-            var head1 = LinkedList.BuildListNode(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 });
+            var head1 = LinkedList.BuildListNodeFromArray(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 });
             var r = ReverseNodesinkGroup.Reserve(head1, 3);
 
             Assert.AreEqual(r.Next.Next.Next.Val, 1);

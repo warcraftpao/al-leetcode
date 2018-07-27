@@ -180,8 +180,8 @@ namespace Leetcode.Middle
 
             for (var i = index; i < arr.Length; i++)
             {
-                if (i == index || !FindDuplicate(arr, index, i, arr[i])) //index开始到当前元素之前，和当前元素有重复否？，看链接，因为元素交换即使排序也没用，必须每次在当前情况下查找重复
-                                                                         //这个时候比较笨的used=false true好像更容易理解，和前面数字相同且前面数字被用过就88了
+              
+                if (i == index || !FindDuplicate(arr, index, i, arr[i])) 
                 {
                     Swap(arr, i, index);
                     GenerateAll_d(results, arr, index + 1);
@@ -189,7 +189,12 @@ namespace Leetcode.Middle
                 }
             }
         }
-        //https://www.cnblogs.com/TenosDoIt/p/3662644.html  精华
+         
+        // https://segmentfault.com/a/1190000009513703  方法2
+        //这个时候比较笨的used=false true好像更容易理解，和前面数字相同且前面数字被用过才能继续，即重复元素只能出现在更后面，脑补一下，给重复元素也编个号，重复元素只能按序出现
+
+        //https://www.cnblogs.com/TenosDoIt/p/3662644.html  方法1
+        //简单理解为从index开始的元素要和当前元素交换位置，但是如果中间有和当前元素相等的元素，重复元素第一次出现的交换已经排列组合出了涵盖情况
         //从数组的[start,end）范围内寻找元素target
         private static bool FindDuplicate(int[] arr, int start, int end, int target)
         {
