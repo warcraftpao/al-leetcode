@@ -2,6 +2,7 @@
 using System.Linq;
 using Leetcode.DataStructure;
 using Leetcode.Easy;
+using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -54,6 +55,23 @@ namespace TestLeetcode
 
             r = AddBinary.Get("111", "111111");
             Assert.AreEqual(r, "1000110");
+        }
+
+
+        [TestMethod]
+        public void TestTextJustification()
+        {
+            var r = TextJustification.Do(new [] {"Science","is","what","we","understand","well","enough","to","explain",
+                                                    "to","a","computer.","Art","is","everything","else","we","do"} , 20);
+            Assert.AreEqual(r[0], "Science  is  what we");
+            Assert.AreEqual(r[3], "a  computer.  Art is");
+            Assert.AreEqual(r[5], "do                  ");
+
+
+            r = TextJustification.Do(new[] { "What", "must", "be", "acknowledgment", "shall", "be" }, 16);
+            Assert.AreEqual(r[0], "What   must   be");
+            Assert.AreEqual(r[1], "acknowledgment  ");
+            Assert.AreEqual(r[2], "shall be        ");
         }
     }
 }
