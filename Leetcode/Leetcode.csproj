@@ -48,6 +48,7 @@
     <Compile Include="DP\Coins.cs" />
     <Compile Include="DP\LIS.cs" />
     <Compile Include="DP\Triangle.cs" />
+    <Compile Include="Easy\AddBinary.cs" />
     <Compile Include="Easy\CountAndSay.cs" />
     <Compile Include="Easy\LengthOfLastWord.cs" />
     <Compile Include="Easy\LongestCommonPrefix.cs" />

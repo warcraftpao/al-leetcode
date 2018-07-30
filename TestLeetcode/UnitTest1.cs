@@ -44,5 +44,16 @@ namespace TestLeetcode
             r = PlusOne.Calc(new[] { 9, 4, 9, 9 });
             Assert.AreEqual(r.Length, 4);
         }
+
+
+        [TestMethod]
+        public void TestAddBinary()
+        {
+            var r = AddBinary.Get("1010", "1011");
+            Assert.AreEqual(r , "10101");
+
+            r = AddBinary.Get("111", "111111");
+            Assert.AreEqual(r, "1000110");
+        }
     }
 }
