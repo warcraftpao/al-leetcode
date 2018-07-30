@@ -80,7 +80,7 @@ namespace TestLeetcode
             var r = Sqrt.SimpleSqrt(100);
             Assert.AreEqual(r, 10);
 
-            r = Sqrt.SimpleSqrt(731026);
+            r = Sqrt.SimpleSqrt_w2(731026);
             Assert.AreEqual(r, 855);
         }
     }

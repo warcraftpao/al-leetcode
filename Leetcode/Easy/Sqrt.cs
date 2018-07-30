@@ -23,7 +23,19 @@ namespace Leetcode.Easy
                     right = mid;
 
             }
+            //如果left 赋值退出循环说明，mid测试值太小，但是+1后超过right，说明mid跟right一样大了，因为舍弃小数，所以right-1
+            //如果right赋值退出循环说明，mid太大了，left也赶上right了，一样right-1
             return right - 1;
+        }
+
+        //我喜欢这个方法，因为这种情况下2分法不好理解。暴力循环比较好理解，性能没差距
+        public static int SimpleSqrt_w2(int x)
+        {
+            if (x == 0) return 0;
+            for (int i = 1; i <= x / i; i++) //i平方小于x 但是 （i+1）的平方大于x，i就是解 i.xxx是解
+                if (i <= x / i && (i + 1) > x / (i + 1))// Look for the critical point: i*i <= x && (i+1)(i+1) > x
+                    return i;
+            return -1;
         }
     }
 }
