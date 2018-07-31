@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Middle
+﻿namespace Leetcode.Matrix
 {
     //copy的，提示强调的是O(m+n) space 不是时间复杂度
     public class SetMatrixZero

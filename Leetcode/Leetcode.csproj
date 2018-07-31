@@ -87,10 +87,10 @@
     <Compile Include="Middle\PowXy.cs" />
     <Compile Include="Middle\RemoveNthFromEnd.cs" />
     <Compile Include="Middle\ArrarSearch.cs" />
-    <Compile Include="Middle\RotateImage.cs" />
+    <Compile Include="Matrix\RotateImage.cs" />
     <Compile Include="Middle\RotateLinkedList.cs" />
-    <Compile Include="Middle\SetMatrixZero.cs" />
-    <Compile Include="Middle\SpiralMatrix.cs" />
+    <Compile Include="Matrix\SetMatrixZero.cs" />
+    <Compile Include="Matrix\SpiralMatrix.cs" />
     <Compile Include="Middle\StringToInteger.cs" />
     <Compile Include="Middle\SwapNodeInPair.cs" />
     <Compile Include="Middle\Sudoku.cs" />
