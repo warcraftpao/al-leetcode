@@ -91,5 +91,26 @@ namespace TestLeetcode
             Assert.AreEqual(r, 7);
         }
 
+        [TestMethod]
+        public void TestSetMatrixZero()
+        {
+            var arr = new int[,]
+            {
+                {1, 1, 1, 1, 1},
+                {1, 0, 1, 1, 1},
+                {1, 1, 1, 1, 1},
+                {1, 1, 1, 0, 1},
+                {1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 0},
+                {1, 1, 1, 1, 0},
+            };
+            SetMatrixZero.Set(arr);
+
+            Assert.AreEqual(arr[0, 1], 0);
+            Assert.AreEqual(arr[0, 2], 1);
+            Assert.AreEqual(arr[6, 0], 0);
+            Assert.AreEqual(arr[7, 3], 0);
+        }
     }
 }
