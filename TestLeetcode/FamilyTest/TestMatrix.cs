@@ -61,5 +61,22 @@ namespace TestLeetcode.FamilyTest
             Assert.AreEqual(arr[3, 2], 8);
             Assert.AreEqual(arr[3, 3], 4);
         }
-    }
+
+
+	    [TestMethod]
+	    public void TestSearcha2dMatrix()
+	    {
+	        var arr = new int[,]
+	        {
+	            {1, 3, 5, 7},
+	            {10, 11, 16, 20},
+	            {23, 30, 34, 50},
+	            {51, 52, 53, 60},
+	            {100, 101, 102, 180},
+	        };
+	        var r = Searcha2dMatrix.Search(arr, 53);
+
+	        Assert.AreEqual(r, true);
+	    }
+	}
 }
