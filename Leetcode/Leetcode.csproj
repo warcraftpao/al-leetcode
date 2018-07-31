@@ -95,6 +95,7 @@
     <Compile Include="Middle\Sudoku.cs" />
     <Compile Include="Middle\UniquePaths.cs" />
     <Compile Include="Middle\ZigZag.cs" />
+    <Compile Include="NotUnderstandQuestion\SimplifyPath.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
