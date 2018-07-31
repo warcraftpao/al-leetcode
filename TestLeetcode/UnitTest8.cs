@@ -63,5 +63,14 @@ namespace TestLeetcode
             Assert.AreEqual(r, 7);
         }
 
+        [TestMethod]
+        public void TestSortColors()
+        {
+            var arr = new[] {2, 1, 1, 0, 2, 2, 1, 0, 0, 2, 1, 2, 0, 1, 2, 0};
+            SortColors.Sort(arr);
+            Assert.AreEqual(arr[4], 0);
+            Assert.AreEqual(arr[5], 1);
+            Assert.AreEqual(arr[10], 2);
+        }
     }
 }

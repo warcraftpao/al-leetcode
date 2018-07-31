@@ -92,6 +92,7 @@
     <Compile Include="Middle\RotateLinkedList.cs" />
     <Compile Include="Matrix\SetMatrixZero.cs" />
     <Compile Include="Matrix\SpiralMatrix.cs" />
+    <Compile Include="Middle\SortColors.cs" />
     <Compile Include="Middle\StringToInteger.cs" />
     <Compile Include="Middle\SwapNodeInPair.cs" />
     <Compile Include="Middle\Sudoku.cs" />
