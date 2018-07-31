@@ -1,6 +1,7 @@
 ﻿using System;
 using Leetcode.CommonTools;
 using Leetcode.DP;
+using Leetcode.Easy;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -102,7 +103,15 @@ namespace TestLeetcode.DP
             r = MinimumPathSum.GetMin(arr);
             Assert.AreEqual(r, 28);
         }
-        
 
+        [TestMethod]
+        public void TestClimbingStairs()
+        {
+            var r = ClimbingStairs.Climb(10);
+            Assert.AreEqual(r,89);
+
+            r = ClimbingStairs.Climb(3);
+            Assert.AreEqual(r, 3);
+        }
     }
 }
