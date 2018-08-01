@@ -1,5 +1,6 @@
 ﻿using System;
 using Leetcode.Easy;
+using Leetcode.Hard;
 using Leetcode.Matrix;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -71,6 +72,19 @@ namespace TestLeetcode
             Assert.AreEqual(arr[4], 0);
             Assert.AreEqual(arr[5], 1);
             Assert.AreEqual(arr[10], 2);
+        }
+
+        [TestMethod]
+        public void TestMinimumWindowSubstring()
+        {
+            var r = MinimumWindowSubstring.Get("ADOBECODEBANC", "ABC");
+            Assert.AreEqual(r, "BANC");
+
+            r = MinimumWindowSubstring.Get("ADOBECODEBANC", "ABCZ");
+            Assert.AreEqual(r, "");
+
+            r = MinimumWindowSubstring.Get("klasjdajdakk12312klas11111111d", "lds");
+            Assert.AreEqual(r, "lasjd");
         }
     }
 }

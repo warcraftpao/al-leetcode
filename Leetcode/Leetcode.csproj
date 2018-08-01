@@ -84,6 +84,7 @@
     <Compile Include="Middle\Intervals.cs" />
     <Compile Include="Middle\MergeTwoSortedList.cs" />
     <Compile Include="Middle\MinimumPathSum.cs" />
+    <Compile Include="Hard\MinimumWindowSubstring.cs" />
     <Compile Include="Middle\Permutation.cs" />
     <Compile Include="Middle\PowXy.cs" />
     <Compile Include="Middle\RemoveNthFromEnd.cs" />
