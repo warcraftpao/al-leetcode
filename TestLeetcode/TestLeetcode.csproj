@@ -55,6 +55,7 @@
     <Compile Include="Backtracing\UnitTest1.cs" />
     <Compile Include="DP\UnitTest1.cs" />
     <Compile Include="FamilyTest\JumpTest.cs" />
+    <Compile Include="FamilyTest\TestCombinations.cs" />
     <Compile Include="FamilyTest\TestCombinationSum.cs" />
     <Compile Include="FamilyTest\TestIntervals.cs" />
     <Compile Include="FamilyTest\TestLinkedList.cs" />
