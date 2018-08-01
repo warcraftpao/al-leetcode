@@ -84,7 +84,7 @@ namespace Leetcode.Middle
             int idx = 0;
             for (int i = k; i > 0; i >>= 1)//向左位移
             {
-                if ((i & 1) == 1) //==1时候要这个元素
+                if ((i & 1) == 1) // 1的二进制就是1 ，用k的最后一位去和1做&操作，是1就要当前元素，是0就不要
                 {
                     sub.Add(arr[idx]);
                 }

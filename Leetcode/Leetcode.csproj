@@ -99,6 +99,7 @@
     <Compile Include="Middle\SwapNodeInPair.cs" />
     <Compile Include="Middle\Sudoku.cs" />
     <Compile Include="Middle\UniquePaths.cs" />
+    <Compile Include="Middle\WordSearch.cs" />
     <Compile Include="Middle\ZigZag.cs" />
     <Compile Include="NotUnderstandQuestion\SimplifyPath.cs" />
     <Compile Include="Program.cs" />

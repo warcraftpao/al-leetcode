@@ -86,5 +86,27 @@ namespace TestLeetcode
             r = MinimumWindowSubstring.Get("klasjdajdakk12312klas11111111d", "lds");
             Assert.AreEqual(r, "lasjd");
         }
+
+
+        [TestMethod]
+        public void TestWordSearch()
+        {
+            var matrix = new char[,]
+            {
+                {'A', 'B', 'C', 'E'},
+                {'S', 'F', 'C', 'S'},
+                {'A', 'D', 'E', 'E'}
+
+            };
+            var r = WordSearch.Search(matrix, "ABCCED");
+            Assert.AreEqual(r, true);
+
+             r = WordSearch.Search(matrix, "SEE");
+            Assert.AreEqual(r, true);
+
+            r = WordSearch.Search(matrix, "ABCB");
+            Assert.AreEqual(r, false);
+
+        }
     }
 }
