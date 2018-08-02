@@ -28,7 +28,7 @@ namespace TestLeetcode
         public void TestRemoveDuplicates()
         {
             var arr = new[] {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-            var r = RemoveDuplicates.RemoveDuplicatedInSortedArray(arr);
+            var r = RemoveDuplicatesInSortedArray.RemoveDuplicatedInSortedArray(arr);
             Assert.AreEqual(r, 5);
             Assert.AreEqual(arr[1], 1);
             Assert.AreEqual(arr[2], 2);
@@ -39,7 +39,7 @@ namespace TestLeetcode
         public void TestRemoveDuplicates2()
         {
             var arr = new[] {0, 0, 1, 1, 1, 1, 2, 3, 3, 3, 4, 4, 5};
-            var r = RemoveDuplicates.RemoveDuplicatedInSortedArray2(arr);
+            var r = RemoveDuplicatesInSortedArray.RemoveDuplicatedInSortedArray2(arr);
             Assert.AreEqual(r, 10);
             Assert.AreEqual(arr[4], 2);
         }
@@ -47,7 +47,7 @@ namespace TestLeetcode
         public void TestRemoveElementFromArray()
         {
             var arr = new[] { 1, 2, 1, 5, 1, 4 };
-            var r = RemoveDuplicates.RemoveElementFromArray(arr, 1);
+            var r = RemoveDuplicatesInSortedArray.RemoveElementFromArray(arr, 1);
             Assert.AreEqual(r, 3);
             Assert.AreEqual(arr[0], 4);
             Assert.AreEqual(arr[1], 2);

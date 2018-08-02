@@ -92,7 +92,29 @@ namespace TestLeetcode
             Assert.AreEqual(head2.Next.Next.Next.Next.Next.Val, 5);
         }
 
+        [TestMethod]
+        public void TestRemoveDuplicatedFromLinkedList()
+        {
+            var head = LinkedList.BuildListNodeFromArray(new[] {1, 1, 2, 2, 3, 3});
+            var r = RemoveDuplicatesFromSortedList.KeepOnly1(head);
+            Assert.AreEqual(r.Next.Next.Val, 2);
+            Assert.AreEqual(r.Length(), 3);
 
-        
+            head = LinkedList.BuildListNodeFromArray(new[] { 1,1 });
+            r = RemoveDuplicatesFromSortedList.KeepOnly1(head);
+            Assert.AreEqual(r.Next.Val, 1);
+            Assert.AreEqual(r.Length(), 1);
+        }
+
+
+        [TestMethod]
+        public void TestRemoveDuplicatedFromLinkedList2()
+        {
+            var head = LinkedList.BuildListNodeFromArray(new[] { 1, 1 , 2, 3, 3,4,5,5 });
+            var r = RemoveDuplicatesFromSortedList.RemoveAllIfDuplicated(head);
+            Assert.AreEqual(r.Next.Next.Val, 4);
+            Assert.AreEqual(r.Length(), 2);
+             
+        }
     }
 }

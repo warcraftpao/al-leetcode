@@ -27,32 +27,107 @@ namespace Leetcode.Middle
                 if (arr[mid] == target)
                     return mid;
 
-                if (target < arr[mid])
+
+                //参考SearchinRotatedSortedArray2 的写法更简洁，先判断有序且在有序半区舍掉另外一半
+                //左边有序
+                if (arr[left] < arr[mid])
                 {
-                    if (arr[mid] < arr[right]) //右边有序
+                    //在左边
+                    if (target < arr[mid] && target >= arr[left])//有可能target比 arr[left]更小
+                    {
                         right = mid - 1;
-                    else//左边有序
-                    {
-                        if (target < arr[left])//不在左边
-                            left = mid + 1;
-                        else
-                            right = mid - 1;
                     }
-                }
-                else // target > mid
-                {
-                    if (arr[left] < arr[mid]) //左边有序
-                        left = mid + 1;
-                    else//右边有序
+                    //在右边
+                    else
                     {
-                        if (target > arr[right])//不在右边
-                            right = mid - 1;
-                        else
-                            left = mid + 1;
+                        left = mid + 1;
+                    }
+              
+                }
+                //右边有序
+                else
+                {
+                    //在右边
+                    if (target <= arr[left] && target > arr[mid]) //有可能target比arr[right]更大
+                    {
+                        left = mid + 1;
+
+                    }
+                    else
+                    {
+                        right = mid - 1;
+                    }
+
+                }
+
+
+                //if (target < arr[mid])
+                //{
+                //    if (arr[mid] < arr[right]) //右边有序
+                //        right = mid - 1;
+                //    else//左边有序
+                //    {
+                //        if (target < arr[left])//不在左边
+                //            left = mid + 1;
+                //        else
+                //            right = mid - 1;
+                //    }
+                //}
+                //else // target > mid
+                //{
+                //    if (arr[left] < arr[mid] ) //左边有序
+                //        left = mid + 1;
+                //    else//右边有序
+                //    {
+                //        if (target > arr[right])//不在右边
+                //            right = mid - 1;
+                //        else
+                //            left = mid + 1;
+                //    }
+                //}
+            }
+            return -1;
+        }
+
+        //有重复数字
+        public static bool SearchinRotatedSortedArray2(int[] arr, int target)
+        {
+            var left = 0;
+            var right = arr.Length - 1;
+            while (left < right)
+            {
+                var mid = (left + right)/2;
+                if (arr[mid] == target) return true;
+
+                if (arr[mid] == arr[left]) //多出来一种情况，无法判断是否有序。因为重复值
+                    left++;
+                else if (arr[mid] > arr[left]) //判断出左边有序
+                {
+                    //在左边
+                    if (target >= arr[left] && target < arr[mid])
+                    {
+                        right = mid - 1;
+                    }
+                    else
+                    {
+                        left = mid + 1;
+                    }
+
+                }
+                else//arr[m] > arr[left] 右边有序
+                {
+                    //在右边
+                    if (target > arr[mid] && target <= arr[right])
+                    {
+                        left = mid + 1;
+                    }
+                    else
+                    {
+                        right = mid - 1;  
                     }
                 }
             }
-            return -1;
+            return false;
         }
 
         public static int[] FindFirstAndLastInSortedArr(int[] arr, int target)

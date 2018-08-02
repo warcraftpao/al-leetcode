@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Leetcode.Easy
 {
-    public class RemoveDuplicates
+    public class RemoveDuplicatesInSortedArray
     {
         //数组是已经排序的！！！
         //理解有误，的确是返回int，但是数组本身还是要去除重复元素的

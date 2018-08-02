@@ -56,7 +56,8 @@
     <Compile Include="Easy\MaximumSubarray.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\PlusOne.cs" />
-    <Compile Include="Easy\RemoveDuplicates.cs" />
+    <Compile Include="Easy\RemoveDuplicatesFromSortedList.cs" />
+    <Compile Include="Easy\RemoveDuplicatesInSortedArray.cs" />
     <Compile Include="Easy\ReverseIntegercs.cs" />
     <Compile Include="Easy\Sqrt.cs" />
     <Compile Include="Easy\TwoSum.cs" />

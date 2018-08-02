@@ -31,6 +31,18 @@ namespace TestLeetcode
         }
 
         [TestMethod]
+        public void TestSearchinRotatedSortedArray2()
+        {
+            var r = ArrarSearch.SearchinRotatedSortedArray2(new[] { 2, 5, 6, 0, 0, 1, 2 }, 0);
+            Assert.AreEqual(r, true);
+
+
+            r = ArrarSearch.SearchinRotatedSortedArray2(new[] { 2, 5, 6, 0, 0, 1, 2 }, 3);
+            Assert.AreEqual(r, false);
+        }
+
+
+        [TestMethod]
         public void FindFirstAndLastInSortedArr()
         {
             var r = ArrarSearch.FindFirstAndLastInSortedArr(new[] { 5, 7, 7, 8, 8, 10 }, 7);
