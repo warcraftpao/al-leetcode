@@ -24,7 +24,7 @@ namespace TestLeetcode
             Assert.AreEqual(r.Next.Next.Next.Next.Next.Next.Next.Next.Next.Next.Next.Val, 11);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestRemoveDuplicates()
         {
             var arr = new[] {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
@@ -33,15 +33,26 @@ namespace TestLeetcode
             Assert.AreEqual(arr[1], 1);
             Assert.AreEqual(arr[2], 2);
             Assert.AreEqual(arr[4], 4);
-            /////////////////////////////////////////////////
-            var arr2 = new[] {1, 2, 1, 5, 1, 4};
-            var r2 = RemoveDuplicates.RemoveElementFromArray(arr2, 1);
-            Assert.AreEqual(r2, 3);
-            Assert.AreEqual(arr2[0], 4);
-            Assert.AreEqual(arr2[1], 2);
-            Assert.AreEqual(arr2[2], 5);
         }
 
+        [TestMethod]
+        public void TestRemoveDuplicates2()
+        {
+            var arr = new[] {0, 0, 1, 1, 1, 1, 2, 3, 3, 3, 4, 4, 5};
+            var r = RemoveDuplicates.RemoveDuplicatedInSortedArray2(arr);
+            Assert.AreEqual(r, 10);
+            Assert.AreEqual(arr[4], 2);
+        }
+
+        public void TestRemoveElementFromArray()
+        {
+            var arr = new[] { 1, 2, 1, 5, 1, 4 };
+            var r = RemoveDuplicates.RemoveElementFromArray(arr, 1);
+            Assert.AreEqual(r, 3);
+            Assert.AreEqual(arr[0], 4);
+            Assert.AreEqual(arr[1], 2);
+            Assert.AreEqual(arr[2], 5);
+        }
 
         [TestMethod]
         public void TestDivideTwoIntegers1()

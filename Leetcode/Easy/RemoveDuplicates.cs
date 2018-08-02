@@ -13,19 +13,42 @@ namespace Leetcode.Easy
         //我估计意思就是数组长度是8，有3个重复，就返回长度5，保证前5个元素都是不重复的，后面的不管
         public static int RemoveDuplicatedInSortedArray(int[] arr)
         {
-            var len = 0;
+            if (arr.Length < 2)
+                return arr.Length;
+
+
+            var len = 1;// 长度至少是1，慢指针停在第二个元素上，先交换再加1
             for (var i = 1; i < arr.Length; i++)
             {
                 //和上一个元素不相同，慢指针加1，值复制过来
                 if (arr[i] != arr[i - 1])
                 {
-                    len++;
                     arr[len] = arr[i];
+                    len++;
                 }
- 
             }
 
-            return len +1;//下标+1 =长度
+            return len;
+        }
+
+
+        //每个重复元素最多可以保留2个, 感觉像个通用方法
+        public static int RemoveDuplicatedInSortedArray2(int[] arr)
+        {
+            if (arr.Length < 3)
+                return arr.Length;
+
+            var len = 2; // 长度至少是2，慢指针停在第三个元素上，先交换再加1
+            for (var i = 2; i < arr.Length; i++)
+            {
+                if (arr[i] != arr[i - 2])
+                {
+                    arr[len] = arr[i];
+                    len++;
+                }
+            }
+
+            return len;
         }
 
 
@@ -47,5 +70,6 @@ namespace Leetcode.Easy
 
             return i;
         }
+
     }
 }
