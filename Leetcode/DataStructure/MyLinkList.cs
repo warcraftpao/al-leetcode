@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Leetcode.DataStructure
 {
-    public class LinkedList
+    public class MyLinkList
     {
         public int Val { get; set; }
-        public LinkedList Next;
+        public MyLinkList Next;
 
 
         /// <summary>
@@ -17,13 +17,13 @@ namespace Leetcode.DataStructure
         /// </summary>
         /// <param name="arr"></param>
         /// <returns></returns>
-        public static LinkedList BuildListNodeFromArray(int[] arr)
+        public static MyLinkList BuildListNodeFromArray(int[] arr)
         {
-            var head = new LinkedList();
+            var head = new MyLinkList();
             var current = head;
             foreach (var i in arr)
             {
-                current.Next = new LinkedList { Val = i };
+                current.Next = new MyLinkList { Val = i };
                 current = current.Next;
             }
 

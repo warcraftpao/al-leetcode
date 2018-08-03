@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Leetcode.DataStructure;
+﻿using Leetcode.DataStructure;
 
-namespace Leetcode.Middle
+namespace Leetcode.LinkList
 {
     public class RemoveNthFromEnd
     {
@@ -16,7 +10,7 @@ namespace Leetcode.Middle
         //第二个指针正好移动了L-N个，那么第一个元素正好就是倒数N个，因为他们的间隔总是Length-N
         //注意，我自己的写的head只是指针，so指针要多走1步才能到null 
         //先走n+1步的原因，两个指针间隔了n个元素，所以先走的指正指向了null的时候，第一个指针指向了倒数第n个元素的爸爸
-        public static LinkedList S1(LinkedList head, int n)
+        public static MyLinkList S1(MyLinkList head, int n)
         {
             var first = head;
             var second = head;

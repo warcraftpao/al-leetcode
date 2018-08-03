@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonTools\Tools.cs" />
-    <Compile Include="DataStructure\LinkedList.cs" />
+    <Compile Include="DataStructure\MyLinkList.cs" />
     <Compile Include="DP\AppleGrid.cs" />
     <Compile Include="DP\Coins.cs" />
     <Compile Include="DP\LIS.cs" />
@@ -56,7 +56,7 @@
     <Compile Include="Easy\MaximumSubarray.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\PlusOne.cs" />
-    <Compile Include="Easy\RemoveDuplicatesFromSortedList.cs" />
+    <Compile Include="LinkList\RemoveDuplicatesFromSortedList.cs" />
     <Compile Include="Easy\RemoveDuplicatesInSortedArray.cs" />
     <Compile Include="Easy\ReverseIntegercs.cs" />
     <Compile Include="Easy\Sqrt.cs" />
@@ -70,11 +70,11 @@
     <Compile Include="Area\MaximalRectanglecs.cs" />
     <Compile Include="Hard\NQueen.cs" />
     <Compile Include="Hard\RegularExpressionMatching.cs" />
-    <Compile Include="Hard\ReverseNodesinkGroup.cs" />
+    <Compile Include="LinkList\ReverseNodesinkGroup.cs" />
     <Compile Include="Hard\SubstringwithConcatenationofAllWords.cs" />
     <Compile Include="Hard\TextJustification.cs" />
+    <Compile Include="LinkList\AddTwoNumbers.cs" />
     <Compile Include="Matrix\Searcha2dMatrix.cs" />
-    <Compile Include="Middle\AddTwoNumbers.cs" />
     <Compile Include="Middle\Combinations.cs" />
     <Compile Include="Middle\CombinationSum.cs" />
     <Compile Include="Middle\CombinePhoneNumber.cs" />
@@ -86,20 +86,20 @@
     <Compile Include="Middle\JumpGame.cs" />
     <Compile Include="Middle\MaxSubstringWithoutRepeatChar.cs" />
     <Compile Include="Middle\Intervals.cs" />
-    <Compile Include="Middle\MergeTwoSortedList.cs" />
+    <Compile Include="LinkList\MergeTwoSortedList.cs" />
     <Compile Include="Middle\MinimumPathSum.cs" />
     <Compile Include="Hard\MinimumWindowSubstring.cs" />
     <Compile Include="Middle\Permutation.cs" />
     <Compile Include="Middle\PowXy.cs" />
-    <Compile Include="Middle\RemoveNthFromEnd.cs" />
+    <Compile Include="LinkList\RemoveNthFromEnd.cs" />
     <Compile Include="Middle\ArrarSearch.cs" />
     <Compile Include="Matrix\RotateImage.cs" />
-    <Compile Include="Middle\RotateLinkedList.cs" />
+    <Compile Include="LinkList\RotateLinkedList.cs" />
     <Compile Include="Matrix\SetMatrixZero.cs" />
     <Compile Include="Matrix\SpiralMatrix.cs" />
     <Compile Include="Middle\SortColors.cs" />
     <Compile Include="Middle\StringToInteger.cs" />
-    <Compile Include="Middle\SwapNodeInPair.cs" />
+    <Compile Include="LinkList\SwapNodeInPair.cs" />
     <Compile Include="Middle\Sudoku.cs" />
     <Compile Include="Middle\UniquePaths.cs" />
     <Compile Include="Middle\WordSearch.cs" />

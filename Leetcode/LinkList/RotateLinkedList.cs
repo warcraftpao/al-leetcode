@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Leetcode.DataStructure;
+﻿using Leetcode.DataStructure;
 
-namespace Leetcode.Middle
+namespace Leetcode.LinkList
 {
     //给一个链表，把末尾元素指向头元素，算一次操作，求k次操作后的结果
     public  class RotateLinkedList
     {
-        public static LinkedList Rotate(LinkedList head ,int k)
+        public static MyLinkList Rotate(MyLinkList head ,int k)
         {
             var len = head.Length();
             k = k% len;

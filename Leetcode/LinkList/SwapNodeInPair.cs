@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-using Leetcode.DataStructure;
+﻿using Leetcode.DataStructure;
 
-namespace Leetcode.Middle
+namespace Leetcode.LinkList
 {
     public class SwapNodeInPair
     {
         //这道有难度吗？
-        public static void Swap(LinkedList head)
+        public static void Swap(MyLinkList head)
         {
             if (head.Next == null)
             {

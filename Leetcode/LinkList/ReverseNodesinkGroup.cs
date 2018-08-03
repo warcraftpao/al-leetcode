@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Leetcode.DataStructure;
+﻿using Leetcode.DataStructure;
 
-namespace Leetcode.Hard
+namespace Leetcode.LinkList
 {
    
     public class ReverseNodesinkGroup
     {
         //每次尝试前进k个，如果能有k个元素，说明需要反转一次，
         //那么只要知道这k个元素的第一个元素之前的head和，最后一个元素指向的tail就能翻转其中那一节
-        public static LinkedList Reserve(LinkedList head, int k)
+        public static MyLinkList Reserve(MyLinkList head, int k)
         {
             if (k < 2)//k=1不用翻转
             {
@@ -49,7 +43,7 @@ namespace Leetcode.Hard
         /// </summary>
         /// <param name="head"></param>
         /// <param name="tail"></param>
-        private static void ReserveList(LinkedList head, LinkedList tail)
+        private static void ReserveList(MyLinkList head, MyLinkList tail)
         {
             //其实就是curr.next指向了 next.next
             var curr = head.Next;

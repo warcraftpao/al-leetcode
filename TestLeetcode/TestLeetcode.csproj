@@ -58,7 +58,7 @@
     <Compile Include="FamilyTest\TestCombinations.cs" />
     <Compile Include="FamilyTest\TestCombinationSum.cs" />
     <Compile Include="FamilyTest\TestIntervals.cs" />
-    <Compile Include="FamilyTest\TestLinkedList.cs" />
+    <Compile Include="FamilyTest\TestLinkList.cs" />
     <Compile Include="FamilyTest\TestMatrix.cs" />
     <Compile Include="FamilyTest\TestNQueen.cs" />
     <Compile Include="FamilyTest\TestPermutation.cs" />

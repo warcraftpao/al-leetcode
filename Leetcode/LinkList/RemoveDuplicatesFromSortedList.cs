@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Leetcode.DataStructure;
+﻿using Leetcode.DataStructure;
 
-namespace Leetcode.Easy
+namespace Leetcode.LinkList
 {
     public class RemoveDuplicatesFromSortedList
     {
-        public static LinkedList KeepOnly1(LinkedList head)
+        public static MyLinkList KeepOnly1(MyLinkList head)
         {
             if (head.Next == null || head.Next.Next == null)
                 return head;
@@ -32,7 +27,7 @@ namespace Leetcode.Easy
             return head;
         }
 
-        public static LinkedList RemoveAllIfDuplicated(LinkedList head)
+        public static MyLinkList RemoveAllIfDuplicated(MyLinkList head)
         {
             if (head.Next == null || head.Next.Next == null)
                 return head;

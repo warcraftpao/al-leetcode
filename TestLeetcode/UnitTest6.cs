@@ -5,6 +5,7 @@ using System.Linq;
 using Leetcode.DataStructure;
 using Leetcode.Easy;
 using Leetcode.Hard;
+using Leetcode.LinkList;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -14,15 +15,7 @@ namespace TestLeetcode
     [TestClass]
     public class UnitTest6
     {
-        [TestMethod]
-        public void TestReverseNodesinkGroup()
-        {
-            var head1 = LinkedList.BuildListNodeFromArray(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 });
-            var r = ReverseNodesinkGroup.Reserve(head1, 3);
-
-            Assert.AreEqual(r.Next.Next.Next.Val, 1);
-            Assert.AreEqual(r.Next.Next.Next.Next.Next.Next.Next.Next.Next.Next.Next.Val, 11);
-        }
+        
 
         //[TestMethod]
         public void TestRemoveDuplicates()

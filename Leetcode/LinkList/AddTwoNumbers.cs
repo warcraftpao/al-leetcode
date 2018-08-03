@@ -1,17 +1,6 @@
 ﻿using System;
-using System.CodeDom;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
 using Leetcode.DataStructure;
-
-namespace Leetcode.Middle
+namespace Leetcode.LinkList
 {
     public  class AddTwoNumbers
     {
@@ -26,12 +15,12 @@ namespace Leetcode.Middle
 
 
         //链表先转成数字，再相加的思路
-        public static int AddTwoNumbers1(LinkedList node1, LinkedList node2)
+        public static int AddTwoNumbers1(MyLinkList node1, MyLinkList node2)
         {
             return GetNumberFromListNode(node1) + GetNumberFromListNode(node2);
         }
 
-        public static int AddTwoNumbers2(LinkedList node1, LinkedList node2)
+        public static int AddTwoNumbers2(MyLinkList node1, MyLinkList node2)
         {
             var nodeList = GetNewNodeListFrom2NodeLists(node1, node2);
             return GetNumberFromListNode(nodeList);
@@ -40,9 +29,9 @@ namespace Leetcode.Middle
         //链表相加的思路，因为是从个位数开始对齐的
         //某位相加如果不产生进位，新链表当前位置就是这个值
         // 产生进位的话，这个值%10 余数就是当前的值，这个值/10 =进位值
-        private static LinkedList GetNewNodeListFrom2NodeLists(LinkedList node1, LinkedList node2)
+        private static DataStructure.MyLinkList GetNewNodeListFrom2NodeLists(MyLinkList node1, MyLinkList node2)
         {
-            var resultNode = new LinkedList();
+            var resultNode = new MyLinkList();
             var current = resultNode;
             var i = node1.Next;
             var j = node2.Next;
@@ -53,7 +42,7 @@ namespace Leetcode.Middle
                 var jvalue = j != null ? j.Val : 0;
                 var sum = carry + ivalue + jvalue;
                 carry = sum/10;
-                current.Next = new LinkedList { Val = sum % 10 };
+                current.Next = new MyLinkList { Val = sum % 10 };
                 current = current.Next;
                 
 
@@ -65,13 +54,13 @@ namespace Leetcode.Middle
             }
 
             if(carry > 0)
-                current.Next =new LinkedList { Val =  carry};
+                current.Next =new MyLinkList { Val =  carry};
 
 
             return resultNode;
         }
 
-        private static int GetNumberFromListNode(LinkedList node)
+        private static int GetNumberFromListNode(MyLinkList node)
         {
             var i =0;
             var value = 0;
