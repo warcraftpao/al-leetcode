@@ -64,8 +64,10 @@
     <Compile Include="Easy\ValidParentheses.cs" />
     <Compile Include="Hard\3Sumcs.cs" />
     <Compile Include="Hard\FindMedianSortedArrays.cs" />
+    <Compile Include="Area\LargestRectangleInHistogram.cs" />
     <Compile Include="Hard\LongestPalindromeSubstring.cs" />
     <Compile Include="Hard\LongestValidParentheses.cs" />
+    <Compile Include="Area\MaximalRectanglecs.cs" />
     <Compile Include="Hard\NQueen.cs" />
     <Compile Include="Hard\RegularExpressionMatching.cs" />
     <Compile Include="Hard\ReverseNodesinkGroup.cs" />
@@ -76,7 +78,7 @@
     <Compile Include="Middle\Combinations.cs" />
     <Compile Include="Middle\CombinationSum.cs" />
     <Compile Include="Middle\CombinePhoneNumber.cs" />
-    <Compile Include="Middle\ContainerWithMostWater.cs" />
+    <Compile Include="Area\ContainerWithMostWater.cs" />
     <Compile Include="Middle\DivideTwoIntegers.cs" />
     <Compile Include="Middle\GenerateParentheses.cs" />
     <Compile Include="Middle\GroupAnagrams.cs" />

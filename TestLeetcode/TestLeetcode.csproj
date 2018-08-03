@@ -54,7 +54,7 @@
   <ItemGroup>
     <Compile Include="Backtracing\UnitTest1.cs" />
     <Compile Include="DP\UnitTest1.cs" />
-    <Compile Include="FamilyTest\JumpTest.cs" />
+    <Compile Include="FamilyTest\TestJump.cs" />
     <Compile Include="FamilyTest\TestCombinations.cs" />
     <Compile Include="FamilyTest\TestCombinationSum.cs" />
     <Compile Include="FamilyTest\TestIntervals.cs" />
@@ -62,6 +62,7 @@
     <Compile Include="FamilyTest\TestMatrix.cs" />
     <Compile Include="FamilyTest\TestNQueen.cs" />
     <Compile Include="FamilyTest\TestPermutation.cs" />
+    <Compile Include="FamilyTest\TestArea.cs" />
     <Compile Include="NotUnderstandQuestion\UnitTest1.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

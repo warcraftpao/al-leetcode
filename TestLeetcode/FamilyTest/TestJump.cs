@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TestLeetcode.FamilyTest
 {
     [TestClass]
-    public class JumpTest
+    public class TestJump
     {
         [TestMethod]
         public void TestJumpGame1()

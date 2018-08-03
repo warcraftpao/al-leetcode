@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.Area;
 using Leetcode.Easy;
 using Leetcode.Hard;
 using Leetcode.Middle;
@@ -97,15 +98,6 @@ namespace TestLeetcode
 
         }
 
-        [TestMethod]
-        public void TestContainerWithMostWater()
-        {
-
-            var arr = new  [] {5, 7, 8, 1, 15, 3, 4};
-            var r = ContainerWithMostWater.GetMax(arr);
-            Assert.AreEqual(r, 60);
-             
-
-        }
+       
     }
 }
