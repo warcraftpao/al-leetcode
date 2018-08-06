@@ -114,5 +114,14 @@ namespace TestLeetcode.FamilyTest
             Assert.AreEqual(r.Next.Next.Next.Val, 1);
             Assert.AreEqual(r.Next.Next.Next.Next.Next.Next.Next.Next.Next.Next.Next.Val, 11);
         }
+
+        [TestMethod]
+        public void TestPartitionList()
+        {
+            var head = MyLinkList.BuildListNodeFromArray(new[] { 1, 4, 3, 2, 5 ,2});
+            head = PartitionList.Do(head, 3);
+            Assert.AreEqual(head.Next.Next.Val, 2);
+            Assert.AreEqual(head.Next.Next.Next.Next.Val, 4);
+        }
     }
 }
