@@ -107,7 +107,7 @@ namespace TestLeetcode
 
         }
 
-        //[TestMethod] todo
+        [TestMethod] 
         public void TestSudokuSolver()
         {
             var arr = new char[9, 9]
@@ -123,9 +123,8 @@ namespace TestLeetcode
                 {'.', '.', '.', '.', '8', '.', '.', '7', '9'},
 
             };
-            Sudoku.Solver(arr);
-            Assert.AreEqual(arr, true);
-            
+            var r = Sudoku.Solver(arr);
+            Assert.AreEqual(r, true);
         }
 
     }

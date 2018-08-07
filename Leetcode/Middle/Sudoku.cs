@@ -10,15 +10,12 @@ namespace Leetcode.Middle
     {
         //1个方块，有的地方填数字，其他是点
         //验证数独
-        //思路1 每行每列每个方块申明一个list，数字直接往里面加,
-        //思路2 每行每列每个方块申明一个数组，数组下标标识每个行列块对应的0-9数字，值代表是否出现过
-        //感觉思路2好，因为思路1还需要初始化27次list，而2维数组只要申明3次就行了
+        //每行每列每个方块申明一个数组，数组下标标识每个行列块对应的0-9数字，值代表是否出现过
         public static bool Validate(char[,] input)
         {
-            var len = input.Length;
-            var rows = new bool[9, 9];
-            var cols = new bool[9, 9];
-            var cubes = new bool[9, 9];
+            var rows = new bool[9, 9]; //第几行某个数字是否出现过
+            var cols = new bool[9, 9];//第几列某个数字是否出现过
+            var cubes = new bool[9, 9];//第几个方块某个数字是否出现过
             for (var i = 0; i < rows.GetLength(0); i++)
             {
                 for (var j = 0; j < rows.GetLength(0); j++)
@@ -49,58 +46,64 @@ namespace Leetcode.Middle
             return true;
         }
 
-        //solver在循环的时候不需要判断全图，当前填入一个新数字，只影响所在的行列和方块
-        private static bool ValidateForSolver(char[,] input, int i, int j)
+        //判定valid也有些地方不对，既然不带入比较数字，就必须特定指出当前格子不判断，否则自己和自己比较，一直是相等造成返回无解
+        private static bool ValidateForSolver(char[,] input, int row, int col)
         {
-            var len = input.GetLength(1);
-            for (var m = 0; m < len; m++)
+            for (int i = 0; i < 9; i++)
             {
-                //要拿出当前cube的所有点，cube内任意一点 i/3*3 决定左上点坐标，横坐标每3次循环+1，竖坐标123轮换
-                if (input[i, j] == input[i, m] 
-                    || input[i, j] == input[m, j]
-                    || input[i, j] == input[i/3*3 + m/3, j/3*3 + m%3]) //写成input[j/3*3 + m/3, i/3*3 + m%3] 也一样，就是先竖后横
+                if (i != col && input[row,i] == input[row,col])
                     return false;
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                if (i != row && input[i,col] == input[row,col])
+                    return false;
+            }
+            int beginRow = 3 * (row / 3);
+            int beginCol = 3 * (col / 3);
+            for (int i = beginRow; i < beginRow + 3; i++)
+            {
+                for (int j = beginCol; j < beginCol + 3; j++)
+                {
+                    if (i != row && j != col && input[i,j] == input[row,col])
+                        return false;
+                }
             }
             return true;
         }
 
-        //dfs简单粗暴的思路，不考虑状态重复利用
-        //直到行列都到最大值的时候，按照0到9填值，再验证
-        //注意，多重循环和dfs是不同的
-        public static void Solver(char[,] input)
+      
+        public static bool Solver(char[,] input)
         {
-            ValidateBoard(input);
+            var r = ValidateBoard(input);
+            return r;
         }
 
+        //这个问题拖了很久，犯了一些错误，就是要么先给没数字的位置赋值在判定，要么判定的时候要带入数字
+        //还有某个位置所有数字都测试完成，说明是不合法的。需要先return错误
         private static bool ValidateBoard(char[,] input)
         {
-
-            var len = input.GetLength(1);
-            
-            for (var m = 0; m < len ; m++)
+            for (int i = 0; i < 9; i++)
             {
-                for (var n = 0; n < len ; n++)
+                for (int j = 0; j < 9; j++)
                 {
-                    if (input[m, n] == '.')
+                    if (input[i,j] == '.')
                     {
-                        for (var k = 1; k <= len; k++)
+                        for (var num = '1'; num <= '9'; num++)// 所有的数字都测试过，没有返回true的，一定挂了
                         {
-                            input[m, n] = (char)(k + '0');
-                            if (ValidateBoard(input))
+                            input[i, j] = num;//先赋值
+                            if (ValidateForSolver(input, i, j)) //验证当前点新加的数字是否合法
                             {
-                                if (ValidateBoard(input))
+                                if (ValidateBoard(input))//继续验证下一个格子
                                     return true;
                             }
-                            else
-                                input[m, n] = '.';
-                             
+                            input[i, j] = '.';//回退
                         }
                         return false;
                     }
-                   
                 }
             }
-            //所有的点都测试过了所有数字组合，到这里算有解
+            //跑到这里算成功的
             return true;
         }
     }
