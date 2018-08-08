@@ -54,6 +54,7 @@
     <Compile Include="Easy\LengthOfLastWord.cs" />
     <Compile Include="Easy\LongestCommonPrefix.cs" />
     <Compile Include="Easy\MaximumSubarray.cs" />
+    <Compile Include="Easy\MergeSortedArray.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\PlusOne.cs" />
     <Compile Include="Hard\ValidNumber.cs" />

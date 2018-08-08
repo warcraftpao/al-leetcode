@@ -83,5 +83,15 @@ namespace TestLeetcode
             r = Sqrt.SimpleSqrt_w2(731026);
             Assert.AreEqual(r, 855);
         }
+
+        [TestMethod]
+        public void TestMergeSortedArray()
+        {
+            var a1 = new[] {1, 2, 3, 0, 0, 0};
+            var a2 = new[] {2, 5, 6};
+            MergeSortedArray.Merge(a1, 3, a2, 3);
+            Assert.AreEqual(a1[4],5);
+            Assert.AreEqual(a1[0], 1);
+        }
     }
 }
