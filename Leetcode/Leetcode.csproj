@@ -107,6 +107,7 @@
     <Compile Include="Middle\UniquePaths.cs" />
     <Compile Include="Middle\WordSearch.cs" />
     <Compile Include="Middle\ZigZag.cs" />
+    <Compile Include="NotUnderstandQuestion\GrayCode.cs" />
     <Compile Include="NotUnderstandQuestion\SimplifyPath.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
