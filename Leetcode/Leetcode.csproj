@@ -82,6 +82,7 @@
     <Compile Include="Middle\CombinationSum.cs" />
     <Compile Include="Middle\CombinePhoneNumber.cs" />
     <Compile Include="Area\ContainerWithMostWater.cs" />
+    <Compile Include="Middle\DecodingWays.cs" />
     <Compile Include="Middle\DivideTwoIntegers.cs" />
     <Compile Include="Middle\GenerateParentheses.cs" />
     <Compile Include="Middle\GroupAnagrams.cs" />

@@ -9,7 +9,7 @@ namespace Leetcode.Middle
     //Given a 2D board and a word, find if the word exists in the grid.
     //The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring.
     //The same letter cell may not be used more than once.
-    //1 单个字母不可重复使用，2字母必须响铃，必须向同行或者同列扩展（一个点的上下左右都可以延伸）
+    //1 单个字母不可重复使用，2字母必须相邻，必须向同行或者同列扩展（一个点的上下左右都可以延伸）
     public class WordSearch
     {
         public static bool Search(char[,] matrix, string word)

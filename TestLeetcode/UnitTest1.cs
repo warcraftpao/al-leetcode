@@ -93,5 +93,25 @@ namespace TestLeetcode
             Assert.AreEqual(a1[4],5);
             Assert.AreEqual(a1[0], 1);
         }
+
+        //不测试开头是0 ，或者中间有连续2个0，9090等不合法字符串情况
+        [TestMethod]
+        public void TestDecodingWays()
+        {
+            var r = DecodingWays.GetWayNum("111111111");
+            Assert.AreEqual(r,55);
+
+            r = DecodingWays.GetWayNum("12");
+            Assert.AreEqual(r, 2);
+
+            r = DecodingWays.GetWayNum("10");
+            Assert.AreEqual(r, 1);
+
+            r = DecodingWays.GetWayNum("90");
+            Assert.AreEqual(r, 0);
+
+            r = DecodingWays.GetWayNum("12390");
+            Assert.AreEqual(r, 0);
+        }
     }
 }
