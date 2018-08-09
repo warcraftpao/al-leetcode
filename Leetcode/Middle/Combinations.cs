@@ -112,12 +112,49 @@ namespace Leetcode.Middle
 
             for (var i = index; i < arr.Length; i++)
             {
+                //if (i > 0 && arr[i] == arr[i - 1]) break;
+                //不能写上面这句，单个结果里可以重复，只是结果集不允许重复
+
                 curr.Add(arr[i]);
                 Do_SubsetsWithDuplicate(results, arr, curr, i + 1);
                 curr.RemoveAt(curr.Count - 1);
-                while (i + 1 < arr.Length && arr[i] == arr[i + 1]) ++i;
+                while (i + 1 < arr.Length && arr[i] == arr[i + 1])
+                    i++;
                 //这里的思路有重复的数字可以进入递归，但是主循环里剔除重复数字
             }
+        }
+
+        //用在原有结果集上插入新元素的方法
+        //增加第n个元素， n-1的结果集 和 n-1结果集每个后面加上加新元素 合并即可
+        public static List<List<int>> SubsetsWithDuplicate_S2(int[] arr)
+        {
+            var results = new List<List<int>>();
+            //增加第一个集合的情况
+            results.Add(new List<int>());
+
+            //上次添加了几个元素
+            var lastAddNumber = 1;
+            for (var i = 0; i < arr.Length; i++)
+            {
+                var count = results.Count;
+                //和上一个元素相同，需要全部复制一次，否则上次循环添加了几个元素还是加几个
+                if (i > 0 && arr[i] != arr[i - 1])
+                    lastAddNumber = count;
+               
+                
+                for (var j = count - lastAddNumber; j < count; j++)
+                {
+                    var tmp = new List<int>();
+                    tmp.Add(arr[i]);
+                    foreach (var k in results[j])
+                    {
+                        tmp.Add(k);
+                    }
+                    results.Add(tmp);
+                }
+            }
+
+            return results;
         }
     }
 }

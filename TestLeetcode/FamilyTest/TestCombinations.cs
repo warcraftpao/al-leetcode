@@ -29,8 +29,17 @@ namespace TestLeetcode.FamilyTest
         {
             var r = Combinations.SubsetsWithDuplicate(new[] { 1, 2, 2 });
             Assert.AreEqual(r.Count, 6);
+        }
 
-            
+        [TestMethod]
+        public void TestSubsetsWithDuplicate_S2()
+        {
+            //这个方法也当然可以测试arr本身不重复的情况
+            var r = Combinations.SubsetsWithDuplicate_S2(new[] { 1, 2, 3 });
+            Assert.AreEqual(r.Count, 8);
+
+            r = Combinations.SubsetsWithDuplicate_S2(new[] { 1, 2, 2, 2 ,3 });
+            Assert.AreEqual(r.Count, 16);
         }
     }
 }
