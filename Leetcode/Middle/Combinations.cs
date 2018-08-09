@@ -92,5 +92,32 @@ namespace Leetcode.Middle
             }
             return sub;
         }
+
+
+        public static List<List<int>> SubsetsWithDuplicate(int[] arr)
+        {
+            Array.Sort(arr);
+            var results = new List<List<int>>();
+            var curr = new List<int>();
+            Do_SubsetsWithDuplicate(results, arr, curr, 0);
+            return results;
+        }
+
+        private static void Do_SubsetsWithDuplicate(List<List<int>> results, int[] arr, List<int> curr, int index)
+        {
+            var tmp = new List<int>();
+            for (var i = 0; i < curr.Count; i++)
+                tmp.Add(curr[i]);
+            results.Add(tmp);
+
+            for (var i = index; i < arr.Length; i++)
+            {
+                curr.Add(arr[i]);
+                Do_SubsetsWithDuplicate(results, arr, curr, i + 1);
+                curr.RemoveAt(curr.Count - 1);
+                while (i + 1 < arr.Length && arr[i] == arr[i + 1]) ++i;
+                //这里的思路有重复的数字可以进入递归，但是主循环里剔除重复数字
+            }
+        }
     }
 }
