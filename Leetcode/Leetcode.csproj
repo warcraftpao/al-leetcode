@@ -73,6 +73,7 @@
     <Compile Include="Area\MaximalRectanglecs.cs" />
     <Compile Include="Hard\NQueen.cs" />
     <Compile Include="Hard\RegularExpressionMatching.cs" />
+    <Compile Include="LinkList\ReverseLinkedList.cs" />
     <Compile Include="LinkList\ReverseNodesinkGroup.cs" />
     <Compile Include="Hard\SubstringwithConcatenationofAllWords.cs" />
     <Compile Include="Hard\TextJustification.cs" />
