@@ -86,6 +86,14 @@ namespace TestLeetcode
             Assert.IsTrue(r.Length == 1);
         }
 
-       
+        [TestMethod]
+        public void TestRestoreIpAddresses()
+        {
+            var r = RestoreIpAddresses.Restore("25525511135");
+            Assert.AreEqual(r[0], "255.255.11.135");
+            Assert.AreEqual(r[1], "255.255.111.35");
+        }
+
+         
     }
 }
