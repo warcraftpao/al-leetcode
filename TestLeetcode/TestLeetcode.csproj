@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Backtracing\UnitTest1.cs" />
+    <Compile Include="BinaryTree\TestBinaryTreeTravle.cs" />
     <Compile Include="DP\UnitTest1.cs" />
     <Compile Include="FamilyTest\TestJump.cs" />
     <Compile Include="FamilyTest\TestCombinations.cs" />

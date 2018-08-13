@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryTree\BinaryTreeTravle.cs" />
     <Compile Include="CommonTools\Tools.cs" />
     <Compile Include="DataStructure\MyLinkList.cs" />
+    <Compile Include="DataStructure\TreeNode.cs" />
     <Compile Include="DP\AppleGrid.cs" />
     <Compile Include="DP\Coins.cs" />
     <Compile Include="DP\LIS.cs" />
