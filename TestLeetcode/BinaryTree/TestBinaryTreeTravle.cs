@@ -8,6 +8,15 @@ namespace TestLeetcode.BinaryTree
     [TestClass]
     public class TestBinaryTreeTravle
     {
+        [TestMethod]
+        public void TestUniqueBinarySearchTrees()
+        {
+            var r = UniqueBinarySearchTrees.GetNum(5);
+            Assert.AreEqual(r,42);
+
+            r = UniqueBinarySearchTrees.GetNum(10);
+            Assert.AreEqual(r, 16796);
+        }
 
 
         [TestMethod]

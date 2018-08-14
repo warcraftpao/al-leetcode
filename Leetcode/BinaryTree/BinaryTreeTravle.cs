@@ -12,6 +12,7 @@ namespace Leetcode.BinaryTree
     public class BinaryTreeTravle
     {
         //https://www.cnblogs.com/grandyang/p/4297300.html
+        // https://leetcode.com/problems/binary-tree-inorder-traversal/solution/#  还是leetcode本身清晰 threaded binary tree
         #region inorder
         public static List<int> InorderTraversal_Recursive(TreeNode root)
         {
