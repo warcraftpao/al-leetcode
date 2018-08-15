@@ -9,7 +9,7 @@ namespace TestLeetcode.BinaryTree
     public class TestBinaryTreeTravle
     {
         [TestMethod]
-        public void TestUniqueBinarySearchTrees()
+        public void TestUniqueBinarySearchTrees_Num()
         {
             var r = UniqueBinarySearchTrees.GetNum(5);
             Assert.AreEqual(r,42);
@@ -17,6 +17,15 @@ namespace TestLeetcode.BinaryTree
             r = UniqueBinarySearchTrees.GetNum(10);
             Assert.AreEqual(r, 16796);
         }
+
+        [TestMethod]
+        public void TestUniqueBinarySearchTrees_Tree()
+        {
+            var r = UniqueBinarySearchTrees.GetTrees(5);
+            Assert.AreEqual(r.Count, 42);
+
+        }
+
 
 
         [TestMethod]
