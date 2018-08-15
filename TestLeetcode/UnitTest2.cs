@@ -50,5 +50,16 @@ namespace TestLeetcode
             r = LongestPalindromeSubstring.Solution1("cabakabadddcf");
             Assert.AreEqual(r, "abakaba");
         }
+
+        [TestMethod]
+        public void TestInterleavingString()
+        {
+            var r = InterleavingString.IsInterleave("aabcc", "dbbca", "aadbbcbcac");
+            Assert.AreEqual(r, true);
+
+
+            r = InterleavingString.IsInterleave("aabcc", "dbbca", "aadbbbaccc");
+            Assert.AreEqual(r, false);
+        }
     }
 }
