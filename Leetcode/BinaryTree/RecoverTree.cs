@@ -9,7 +9,7 @@ namespace Leetcode.BinaryTree
 {
     public class RecoverTree
     {
-        static TreeNode  pre ;
+        static TreeNode pre ;
         static TreeNode first ;
         static TreeNode second ;
 

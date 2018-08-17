@@ -31,20 +31,20 @@ namespace TestLeetcode.BinaryTree
         [TestMethod]
         public void TestInorderTraversal()
         {
-            var root = TreeNode.BuildFromArray(new int[] {3, 5, 8, 4, 1, 2, 9});
+            var root = TreeNode.BuildBSTFromArray(new int[] {3, 5, 8, 4, 1, 2, 9});
             var r = BinaryTreeTravle.InorderTraversal_Recursive(root);
             Assert.AreEqual(r[0] ,1);
             Assert.AreEqual(r[3], 4);
             Assert.AreEqual(r[6], 9);
 
 
-            root = TreeNode.BuildFromArray(new int[] { 3, 5, 8, 4, 1, 2, 7 });
+            root = TreeNode.BuildBSTFromArray(new int[] { 3, 5, 8, 4, 1, 2, 7 });
             r = BinaryTreeTravle.InorderTraversal_Stack(root);
             Assert.AreEqual(r[0], 1);
             Assert.AreEqual(r[3], 4);
             Assert.AreEqual(r[6], 8);
 
-            root = TreeNode.BuildFromArray(new int[] { 6, 3, 8, 4, 1, 2, 7 });
+            root = TreeNode.BuildBSTFromArray(new int[] { 6, 3, 8, 4, 1, 2, 7 });
             r = BinaryTreeTravle.InorderTraversal_Morris(root);
             Assert.AreEqual(r[0], 1);
             Assert.AreEqual(r[3], 4);

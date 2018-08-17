@@ -19,7 +19,7 @@ namespace Leetcode.DataStructure
 
         
         //这是建立符合规范的二叉树的代码
-        public static TreeNode BuildFromArray(int[] arr)
+        public static TreeNode BuildBSTFromArray(int[] arr)
         {
             if (arr.Length == 0)
                 return null;
@@ -28,14 +28,14 @@ namespace Leetcode.DataStructure
 
             for (var i = 1; i < arr.Length; i++)
             {
-                Insert(root, arr[i]);
+                Insert_BST(root, arr[i]);
             }
             return root;
         }
 
         //给出一个根节点，给二叉树插入新节点
         //这是建立符合规范的二叉树的代码
-        public static void Insert(TreeNode root, int val)
+        public static void Insert_BST(TreeNode root, int val)
         {
             var  curr = root;
             while (true)
