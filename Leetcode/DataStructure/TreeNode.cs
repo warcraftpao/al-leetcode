@@ -18,6 +18,7 @@ namespace Leetcode.DataStructure
         }
 
         
+        //这是建立符合规范的二叉树的代码
         public static TreeNode BuildFromArray(int[] arr)
         {
             if (arr.Length == 0)
@@ -33,6 +34,7 @@ namespace Leetcode.DataStructure
         }
 
         //给出一个根节点，给二叉树插入新节点
+        //这是建立符合规范的二叉树的代码
         public static void Insert(TreeNode root, int val)
         {
             var  curr = root;

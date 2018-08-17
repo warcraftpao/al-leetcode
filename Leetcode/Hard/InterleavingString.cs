@@ -12,7 +12,7 @@ namespace Leetcode.Hard
     {
         public static bool IsInterleave(string s1, string s2, string s3)
         {
-            //要考虑s1或者s2取了0个字符的情况，所以长度要+1
+            //要考虑s1或者s2取了0个字符的情况，所以长度要+1，dp下标是0代表某个字符串一个字符也没取，下标值要比字符串下标大1
             var dp = new bool[s1.Length + 1, s2.Length + 1];
             dp[0,0] = true;//还没取字符算true
             //只考察s1的情况,s1出第i个字符（下标是i-1）
@@ -29,7 +29,7 @@ namespace Leetcode.Hard
             {
                 for (var j = 1; j <= s2.Length; j++)
                 {
-                    //s1 取了i 个字符，s2取了j 个字符，s3对应的是取得了 i+j 个字符，等于i+j-1位
+                    //s1 取了i 个字符，s2取了j 个字符，s3对应的是取得了 i+j 个字符，等于s3的 i+j-1 位
                     //那么这个情况要符合，新加进来的无非就是s1的第i个字符或者s2的第j个字符
                     //判断 s1新加字符并且等于s3的字符 && dp[i-1][j]
                     //或者 s2新加字符并且等于s3的字符 && dp[i][j-1]

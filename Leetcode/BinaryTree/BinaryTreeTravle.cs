@@ -61,6 +61,36 @@ namespace Leetcode.BinaryTree
             return list;
         }
 
+        public static List<int> InorderTraversal_Morris(TreeNode root)
+        {
+            var list = new List<int>();
+            var curr = root;
+            while (curr != null)
+            {
+                //没左孩子
+                if (curr.Left == null)
+                {
+                    list.Add(curr.Val);
+                    curr = curr.Right;
+                }
+                //有左孩子
+                else
+                {
+                    var mostRight = curr.Left;
+                    while (mostRight.Right != null)
+                    {
+                        mostRight = mostRight.Right;
+                    }
+                    var tmp = curr;
+                    mostRight.Right = curr;//curr放到mostright 后面
+                    curr = curr.Left;//curr 挪到左孩子  这几句绕了半天才对
+                    tmp.Left = null;//本来的左孩子88
+                }
+            }
+
+            return list;
+        }
+
         #endregion
     }
 }

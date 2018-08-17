@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryTree\BinaryTreeTravle.cs" />
+    <Compile Include="BinaryTree\RecoverTree.cs" />
+    <Compile Include="BinaryTree\SameTree.cs" />
     <Compile Include="BinaryTree\UniqueBinarySearchTrees.cs" />
+    <Compile Include="BinaryTree\ValidateBinarySearchTree.cs" />
     <Compile Include="CommonTools\Tools.cs" />
     <Compile Include="DataStructure\MyLinkList.cs" />
     <Compile Include="DataStructure\TreeNode.cs" />
