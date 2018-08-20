@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Activation;
 using System.Text;
 using System.Threading.Tasks;
 using Leetcode.DataStructure;
@@ -91,6 +92,64 @@ namespace Leetcode.BinaryTree
             return list;
         }
 
+        #endregion
+
+        #region level order
+
+        public static List<List<int>> LevelOrderTraversal_loop(TreeNode root)
+        {
+            var list = new List<List<int>>();
+            var queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+            while (queue.Count > 0)
+            {
+                //当前queue里有几个元素，说明本层有几个node
+                var size = queue.Count;
+                //先进先出，所以一边出一边加没关系，n层出完，里面都是n+1的节点
+                var  tmp = new List<int>();
+                for (var i = 1; i <= size; i++)
+                {
+                    var node = queue.Dequeue();
+                    if (node != null)
+                    {
+                        tmp.Add(node.Val);
+                        if(node.Left != null) queue.Enqueue(node.Left);
+                        if(node.Right != null) queue.Enqueue(node.Right);
+                    }
+                }
+                list.Add(tmp);
+            }
+
+            return list;
+        }
+
+        //思路，深度几层，返回结果外面那层list就应该有几个元素
+        public static List<List<int>> LevelOrderTraversal_recursive(TreeNode root)
+        {
+            var list = new List<List<int>>();
+            LevelOrderTraversal_recursive_helper(list, 1, root);
+            return list;
+        }
+
+        private static void LevelOrderTraversal_recursive_helper(List<List<int>> result, int level, TreeNode node)
+        {
+            if (node == null)
+                return;//空啥都不做 88
+
+             //当前node不为空，加入list结果集
+            if (result.Count < level)
+            {
+                var currLevelList = new List<int> {node.Val};
+                result.Add(currLevelList);
+            }
+            else
+            {
+                result[level -1].Add(node.Val);
+            }
+
+            if (node.Left != null) LevelOrderTraversal_recursive_helper(result, level + 1, node.Left);
+            if (node.Right != null) LevelOrderTraversal_recursive_helper(result, level + 1, node.Right);
+        }
         #endregion
     }
 }
