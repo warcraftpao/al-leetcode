@@ -131,5 +131,22 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(r[2][0], 15);
             Assert.AreEqual(r[1][1], 20);
         }
+
+        [TestMethod]
+        public void TestZigzagLevelOrderTraversal()
+        {
+            var root = new TreeNode(3);
+            root.Left = new TreeNode(9);
+            root.Right = new TreeNode(20);
+            root.Right.Left = new TreeNode(15);
+            root.Right.Right = new TreeNode(7);
+
+            var r = BinaryTreeTravle.AddZigzagLevelOrderTraversal(root);
+            Assert.AreEqual(r.Count, 3);
+            Assert.AreEqual(r[1][0], 20);
+            Assert.AreEqual(r[2][0], 15);
+ 
+        }
     }
+
 }

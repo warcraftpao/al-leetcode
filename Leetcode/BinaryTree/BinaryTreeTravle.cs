@@ -151,5 +151,66 @@ namespace Leetcode.BinaryTree
             if (node.Right != null) LevelOrderTraversal_recursive_helper(result, level + 1, node.Right);
         }
         #endregion
+
+        #region
+
+        public static List<List<int>> AddZigzagLevelOrderTraversal(TreeNode root)
+        {
+            var list = new List<List<int>>();
+            var queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+            var level = 1; //奇数从左向右，偶数从右向左
+            while (queue.Count > 0)
+            {
+                //当前queue里有几个元素，说明本层有几个node
+                var size = queue.Count;
+                //先进先出，所以一边出一边加没关系，n层出完，里面都是n+1的节点
+                var tmp = new List<int>();
+                for (var i = 1; i <= size; i++)
+                {
+                    var node = queue.Dequeue();
+                    if (node != null)
+                    {
+                        tmp.Add(node.Val);
+                        if (level%2 == 0)// 本行偶数，入队列的都是应该是奇数行的
+                        {
+                            if (node.Left != null) queue.Enqueue(node.Left);
+                            if (node.Right != null) queue.Enqueue(node.Right);
+                        }
+                        else
+                        {
+                            if (node.Right != null) queue.Enqueue(node.Right);
+                            if (node.Left != null) queue.Enqueue(node.Left);
+                        }
+                        
+                    }
+                }
+                list.Add(tmp);
+                level++;
+            }
+
+            return list;
+        }
+
+        //private static void ZigzagLevelOrderTraversal_recursive_helper(List<List<int>> result, int level, TreeNode node)
+        //{
+        //    if (node == null)
+        //        return;//空啥都不做 88
+
+        //    //当前node不为空，加入list结果集
+        //    if (result.Count < level)
+        //    {
+        //        var currLevelList = new List<int> { node.Val };
+        //        result.Add(currLevelList);
+        //    }
+        //    else
+        //    {
+        //        result[level - 1].Add(node.Val);
+        //    }
+
+        //    if (node.Left != null) ZigzagLevelOrderTraversal_recursive_helper(result, level + 1, node.Left);
+        //    if (node.Right != null) ZigzagLevelOrderTraversal_recursive_helper(result, level + 1, node.Right);
+        //}
+        #endregion
     }
 }
