@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryTree\BinaryTreeTravle.cs" />
+    <Compile Include="BinaryTree\MaximumDepthofBinaryTree.cs" />
     <Compile Include="BinaryTree\RecoverTree.cs" />
     <Compile Include="BinaryTree\SameTree.cs" />
     <Compile Include="BinaryTree\SymmeticTree.cs" />

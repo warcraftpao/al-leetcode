@@ -191,26 +191,7 @@ namespace Leetcode.BinaryTree
 
             return list;
         }
-
-        //private static void ZigzagLevelOrderTraversal_recursive_helper(List<List<int>> result, int level, TreeNode node)
-        //{
-        //    if (node == null)
-        //        return;//空啥都不做 88
-
-        //    //当前node不为空，加入list结果集
-        //    if (result.Count < level)
-        //    {
-        //        var currLevelList = new List<int> { node.Val };
-        //        result.Add(currLevelList);
-        //    }
-        //    else
-        //    {
-        //        result[level - 1].Add(node.Val);
-        //    }
-
-        //    if (node.Left != null) ZigzagLevelOrderTraversal_recursive_helper(result, level + 1, node.Left);
-        //    if (node.Right != null) ZigzagLevelOrderTraversal_recursive_helper(result, level + 1, node.Right);
-        //}
+         
         #endregion
     }
 }

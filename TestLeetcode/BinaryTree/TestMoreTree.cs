@@ -57,5 +57,13 @@ namespace TestLeetcode.BinaryTree
             root.Right.Right = new TreeNode(3);
             return root;
         }
+
+        [TestMethod]
+        public void TestGetMaxDepthofBinaryTree()
+        {
+            var root = TreeNode.BuildBSTFromArray(new int[] {3, 1, 2, 4, 5, 6, 7, 8, 20, 11, 12, 13, 14, 15});
+            var r = MaximumDepthofBinaryTree.GetDepth(root);
+            Assert.AreEqual(r, 12);
+        }
     }
 }
