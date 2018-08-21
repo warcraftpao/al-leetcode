@@ -191,7 +191,15 @@ namespace Leetcode.BinaryTree
 
             return list;
         }
-         
+
+        #endregion
+
+        #region level order traversal bottom to top
+
+        //这题好像没啥意思，都是用层序遍历1的方法把结果集倒叙排一下
+        //还有一个用stack的方法，就是在LevelOrderTraversal_loop里不用 list.Add(tmp);
+        //把tmp压入stack，和其他方法没本质区别
+
         #endregion
     }
 }
