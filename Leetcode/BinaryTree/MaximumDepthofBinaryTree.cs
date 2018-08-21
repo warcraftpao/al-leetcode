@@ -14,7 +14,7 @@ namespace Leetcode.BinaryTree
             if (root == null)
                 return 0;
 
-            return Math.Max(1 + GetDepth(root.Left), 1 + GetDepth(root.Right));
+            return Math.Max(GetDepth(root.Left), GetDepth(root.Right)) + 1;
         }
 
         //way2 层序遍历的时候加个计数器

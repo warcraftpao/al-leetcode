@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryTree\BalancedTree.cs" />
     <Compile Include="BinaryTree\BinaryTreeTravle.cs" />
     <Compile Include="BinaryTree\ConstructTree.cs" />
     <Compile Include="BinaryTree\MaximumDepthofBinaryTree.cs" />
