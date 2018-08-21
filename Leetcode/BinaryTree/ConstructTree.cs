@@ -75,8 +75,8 @@ namespace Leetcode.BinaryTree
                 }
             }
             //rootindex - inbegin左子树长度
-            root.Left = Helper_pre_in(postorder, inorder,  postBegin  , postBegin + rootIndex - inBegin,     inBegin, rootIndex - 1);
-            root.Right = Helper_pre_in(postorder, inorder, postBegin + rootIndex - inBegin + 1, postEnd -1,   rootIndex + 1, inEnd);
+            root.Left = Helper_post_in(postorder, inorder,  postBegin  , postBegin + rootIndex - inBegin -1,     inBegin, rootIndex - 1);
+            root.Right = Helper_post_in(postorder, inorder, postBegin + rootIndex - inBegin , postEnd -1,   rootIndex + 1, inEnd);
             return root;
         }
     }
