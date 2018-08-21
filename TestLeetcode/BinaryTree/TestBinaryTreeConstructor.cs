@@ -1,5 +1,6 @@
 ﻿using System;
 using Leetcode.BinaryTree;
+using Leetcode.DataStructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestLeetcode.BinaryTree
@@ -29,6 +30,27 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(root.Right.Val, 20);
             Assert.AreEqual(root.Right.Left.Val, 15);
             Assert.AreEqual(root.Right.Right.Val, 7);
+        }
+
+        [TestMethod]
+        public void TestConvertSortedArrayToBST()
+        {
+            var root = ConstructTree.ConvertSortedArrayToBST(new[] {-10, -3, 0, 5, 9});
+            //因为可以有多个结果可能，所以只是调用了isvalid方法验证是否是bst 和root不为null
+            var r = ValidateBinarySearchTree.IsValid(root);
+            Assert.AreEqual(r, true);
+            Assert.IsNotNull(root);
+        }
+
+
+        [TestMethod]
+        public void TestConvertSortedListToBST()
+        {
+            var root = ConstructTree.ConvertSortedListToBST(MyLinkList.BuildListNodeFromArray(new []{ -10, -3, 0, 5, 9 }));
+            //因为可以有多个结果可能，所以只是调用了isvalid方法验证是否是bst 和root不为null
+            var r = ValidateBinarySearchTree.IsValid(root);
+            Assert.AreEqual(r, true);
+            Assert.IsNotNull(root);
         }
     }
 }
