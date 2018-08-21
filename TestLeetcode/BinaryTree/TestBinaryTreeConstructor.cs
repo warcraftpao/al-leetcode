@@ -18,5 +18,16 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(root.Right.Left.Val, 15);
             Assert.AreEqual(root.Right.Right.Val, 7);
         }
+
+        public void TestConstructBinaryTreeFromInorderAndPostorderTraversal()
+        {
+            var root = ConstructTree.ConstructBinaryTreeFromInorderAndPostorderTraversal(new[] { 9, 15, 7, 20, 3 },
+                new[] { 9, 3, 15, 20, 7 });
+
+            Assert.AreEqual(root.Val, 3);
+            Assert.AreEqual(root.Right.Val, 20);
+            Assert.AreEqual(root.Right.Left.Val, 15);
+            Assert.AreEqual(root.Right.Right.Val, 7);
+        }
     }
 }

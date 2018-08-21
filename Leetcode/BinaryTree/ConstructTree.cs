@@ -20,11 +20,11 @@ namespace Leetcode.BinaryTree
             //每次inorder 按照root切分成左右两块进入下层，preorder需要算出来左右子树长度切分进入下层循环
        public static TreeNode ConstructBinaryTreeFromPreorderAndInorderTraversal(int[] preorder, int[] inorder)
        {
-           var root = Helper(preorder, inorder, 0, preorder.Length - 1, 0, inorder.Length - 1);
+           var root = Helper_pre_in(preorder, inorder, 0, preorder.Length - 1, 0, inorder.Length - 1);
            return root;
        }
 
-       private static TreeNode Helper(int[] preorder, int[] inorder,int preBegin, int preEnd, int inBegin, int inEnd)
+       private static TreeNode Helper_pre_in(int[] preorder, int[] inorder,int preBegin, int preEnd, int inBegin, int inEnd)
        {
             //当就剩下一个元素的时候，rootindex 就等于 begin，再次切分begin就会大于end
            if (preBegin > preEnd || inBegin > inEnd)
@@ -40,13 +40,44 @@ namespace Leetcode.BinaryTree
                     rootIndex = i;
                     break;
                 }
-                   
            }
            //rootindex= 多少，说明左子树有几个元素
            //rootindex - inbegin说明左子树有几个元素 inorder要跳过root的位置
-           root.Left = Helper(preorder, inorder, preBegin + 1, preBegin + rootIndex - inBegin, inBegin,  rootIndex - 1);
-           root.Right = Helper(preorder, inorder, preBegin + rootIndex - inBegin + 1, preEnd,  rootIndex + 1, inEnd);
+           root.Left = Helper_pre_in(preorder, inorder, preBegin + 1, preBegin + rootIndex - inBegin, inBegin,  rootIndex - 1);
+           root.Right = Helper_pre_in(preorder, inorder, preBegin + rootIndex - inBegin + 1, preEnd,  rootIndex + 1, inEnd);
            return root;
        }
+
+
+        //postorder 后序，右根左
+        //思路跟之前一样，区别在于后序列的情况下，root总是在数组的最后一个
+        //从后序中找到root，还是去先序找到root的index能确定左右子树长度，其左右子树的根还是在最后，具体模式和 inorder+preorder相同
+       public static TreeNode ConstructBinaryTreeFromInorderAndPostorderTraversal(int[] postorder, int[] inorder)
+       {
+            var root = Helper_post_in(postorder, inorder, 0, postorder.Length - 1, 0, inorder.Length - 1);
+            return root;
+        }
+
+        private static TreeNode Helper_post_in(int[] postorder, int[] inorder, int postBegin, int postEnd, int inBegin, int inEnd)
+        {
+            if (postBegin > postEnd || inBegin > inEnd)
+                return null;
+            //root是后序的最后一个元素
+            var root = new TreeNode(postorder[postEnd]);
+            var rootIndex = 0;
+            //在inorder里找到root的index
+            for (var i = 0; i < inorder.Length; i++)
+            {
+                if (postorder[postEnd] == inorder[i])
+                {
+                    rootIndex = i;
+                    break;
+                }
+            }
+            //rootindex - inbegin左子树长度
+            root.Left = Helper_pre_in(postorder, inorder,  postBegin  , postBegin + rootIndex - inBegin,     inBegin, rootIndex - 1);
+            root.Right = Helper_pre_in(postorder, inorder, postBegin + rootIndex - inBegin + 1, postEnd -1,   rootIndex + 1, inEnd);
+            return root;
+        }
     }
 }
