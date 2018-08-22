@@ -66,6 +66,19 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(r, 12);
         }
 
+
+        [TestMethod]
+        public void TestGetMinDepthofBinaryTree()
+        {
+            var root = TreeNode.BuildBSTFromArray(new int[] { 3, 1, 2, 4, 5, 6, 7, 8, 20, 11, 12, 13, 14, 15 });
+            var r = MinimumDepth.GetDepth(root);
+            Assert.AreEqual(r, 3);
+
+            root = TreeNode.BuildBSTFromArray(new int[] { 1, 2 });
+            r = MinimumDepth.GetDepth(root);
+            Assert.AreEqual(r, 2);
+        }
+
         [TestMethod]
         public void TesBalancedTree()
         {

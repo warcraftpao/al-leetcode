@@ -31,7 +31,7 @@ namespace Leetcode.BinaryTree
             var rightHeihgt = GetDepth_diff(root.Right);
 
             //这句要注意，想了一会，如果只有绝对值判定那行
-            //假设有一个节点的左子树不平衡了，程序还是会去判右子树,它的爸爸还是会再去多余的判定左（右）子树
+            //假设有一个节点的左子树不平衡了，程序还是会去判右子树,它的爸爸（类推所有祖先）还是会再去多余的判定左（右）子树
             //多了这行后，看到-1就逐层向上传递-1，省略了不必要的判断
             if (leftHeight == -1 || rightHeihgt == -1)
                 return -1;

@@ -46,6 +46,7 @@
     <Compile Include="BinaryTree\BinaryTreeTravle.cs" />
     <Compile Include="BinaryTree\ConstructTree.cs" />
     <Compile Include="BinaryTree\MaximumDepthofBinaryTree.cs" />
+    <Compile Include="BinaryTree\MinimumDepth.cs" />
     <Compile Include="BinaryTree\RecoverTree.cs" />
     <Compile Include="BinaryTree\SameTree.cs" />
     <Compile Include="BinaryTree\SymmeticTree.cs" />
