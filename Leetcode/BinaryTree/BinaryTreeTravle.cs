@@ -152,7 +152,7 @@ namespace Leetcode.BinaryTree
         }
         #endregion
 
-        #region
+        #region zigzag levelorder
 
         public static List<List<int>> AddZigzagLevelOrderTraversal(TreeNode root)
         {
@@ -201,5 +201,35 @@ namespace Leetcode.BinaryTree
         //把tmp压入stack，和其他方法没本质区别
 
         #endregion
+
+        #region  Flatten Binary Tree to Linked List
+
+
+        //结果还是树的存储结构，不过按照preorder那样排列
+        //不会写， 笨办法因该是preorder先转成数组，然后重新构建树，这个网上抄的
+        public static void FlattenBinaryTreeToLinkedList(TreeNode root)
+        {
+            if (root == null) return;
+            if (root.Left != null)
+            {
+                TreeNode cur = root.Left;
+                //找到左子树里mostright节点，这是左子树里preorder最后一个节点
+                while (cur.Right != null)
+                {
+                    cur = cur.Right;
+                }
+                //把root的右子树连到curr后
+                cur.Right = root.Right;
+                //左娃挪到右娃上，左娃null
+                root.Right = root.Left;
+                root.Left = null;
+            }
+            //右娃完成了搬迁，左娃变成右娃，进入下层递归
+            FlattenBinaryTreeToLinkedList(root.Right);
+        }
+
+        
+        #endregion
+
     }
 }

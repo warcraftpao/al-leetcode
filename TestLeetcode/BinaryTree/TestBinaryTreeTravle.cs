@@ -147,6 +147,25 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(r[2][0], 15);
  
         }
+
+        [TestMethod]
+        public void TestFlattenBinaryTreeToLinkedList()
+        {
+            var root = new TreeNode(1);
+            root.Left = new TreeNode(2);
+            root.Right = new TreeNode(5);
+
+            root.Left.Left = new TreeNode(3);
+            root.Left.Right = new TreeNode(4);
+            root.Right.Right = new TreeNode(6);
+
+            BinaryTreeTravle.FlattenBinaryTreeToLinkedList(root);
+
+            Assert.AreEqual(root.Val,1);
+            Assert.AreEqual(root.Right.Val, 2);
+            Assert.AreEqual(root.Right.Right.Right.Val, 4);
+            Assert.AreEqual(root.Right.Right.Right.Right.Right.Val, 6);
+        }
     }
 
 }
