@@ -61,5 +61,16 @@ namespace TestLeetcode
             r = InterleavingString.IsInterleave("aabcc", "dbbca", "aadbbbaccc");
             Assert.AreEqual(r, false);
         }
+
+        [TestMethod]
+        public void TestDistinctSubsequences()
+        {
+            var r = DistinctSubsequences.NumDistinct("rabbbit", "rabbit");
+            Assert.AreEqual(r, 3);
+
+            //我在纸上画了一下 是58
+            r = DistinctSubsequences.NumDistinct("aaabbbcccabbc", "abbc");
+            Assert.AreEqual(r, 58);
+        }
     }
 }
