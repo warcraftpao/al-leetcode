@@ -55,6 +55,7 @@
     <Compile Include="BinaryTree\ValidateBinarySearchTree.cs" />
     <Compile Include="CommonTools\Tools.cs" />
     <Compile Include="DataStructure\MyLinkList.cs" />
+    <Compile Include="DataStructure\TreeLinkNode.cs" />
     <Compile Include="DataStructure\TreeNode.cs" />
     <Compile Include="DP\AppleGrid.cs" />
     <Compile Include="DP\Coins.cs" />
@@ -128,6 +129,7 @@
     <Compile Include="NotUnderstandQuestion\SimplifyPath.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeLinkNodeRelated\PopulatingNextToRight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
