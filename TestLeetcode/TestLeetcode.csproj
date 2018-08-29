@@ -70,6 +70,7 @@
     <Compile Include="FamilyTest\TestNQueen.cs" />
     <Compile Include="FamilyTest\TestPermutation.cs" />
     <Compile Include="FamilyTest\TestArea.cs" />
+    <Compile Include="FamilyTest\TestStock.cs" />
     <Compile Include="NotUnderstandQuestion\UnitTest1.cs" />
     <Compile Include="TestValidNumber.cs" />
     <Compile Include="TreeLinkNodeRelated\UnitTest1.cs" />

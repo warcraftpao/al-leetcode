@@ -71,6 +71,7 @@
     <Compile Include="Easy\MergeSortedArray.cs" />
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\PlusOne.cs" />
+    <Compile Include="Easy\Stock.cs" />
     <Compile Include="Hard\DistinctSubsequences.cs" />
     <Compile Include="Hard\InterleavingString.cs" />
     <Compile Include="Hard\ValidNumber.cs" />

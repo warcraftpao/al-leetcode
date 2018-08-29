@@ -26,9 +26,9 @@ namespace TestLeetcode.DP
             Assert.AreEqual(r[2], 6);
 
             //C(32,16) 
-            r = PascalTriangle.GetRow(601080390);
-            Assert.AreEqual(r[16], 1);
-           
+             r = PascalTriangle.GetRow(33);
+             Assert.AreEqual(r[16], 601080390);
+
 
         }
     }
