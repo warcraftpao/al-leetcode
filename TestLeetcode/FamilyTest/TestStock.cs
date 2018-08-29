@@ -34,5 +34,21 @@ namespace TestLeetcode.FamilyTest
             r = Stock.MaxProfit_multitransaction(arr);
             Assert.AreEqual(r, 0);
         }
+
+        [TestMethod]
+        public void TestMaxProfit_2transactions()
+        {
+            var arr = new[] { 3, 3, 5, 0, 0, 3, 1, 4 };
+            var r = Stock.MaxProfit_2transactions(arr);
+            Assert.AreEqual(r, 6);
+
+            arr = new[] { 1, 2, 3, 4, 5 };
+            r = Stock.MaxProfit_2transactions(arr);
+            Assert.AreEqual(r, 4);
+
+            arr = new[] { 7, 6, 4, 3, 1 };
+            r = Stock.MaxProfit_2transactions(arr);
+            Assert.AreEqual(r, 0);
+        }
     }
 }

@@ -56,6 +56,43 @@ namespace Leetcode.Easy
             return profit;
         }
 
+        //只允许最多2次操作 
+        //只让搞2次操作，必然有个分割点i 在0到i操作一次，i+1 到len-1这个两个区间内各操作一次。 
+        //那么用2个数组 proA来描述从0到i点为止操作一次的最大利润，proB描述从i到len-1操作一次的最大利润，最后这两个数组同index值相加取最大值（实际上都可以取到极限值）
+        //0-i的好处理，i到len-1的需要倒过来思考，因为不知道i截取到哪里，所以还是正向计算的话，需要动态计算从任意点做起点，之后到每个点做一次操作的最大利润
+        public static int MaxProfit_2transactions(int[] arr)
+        {
+            var len = arr.Length;
+            var proA = new int[len];
+            var proB = new int[len];
+
+           
+            var min = arr[0];
+            for (var i = 1; i < arr.Length; i++)
+            {
+                //先算出来当前点减掉min的利润，（可以是负数的）,但是会被proA[0]比较的时候淘汰掉,min肯定出现在arr[i]之前
+                proA[i] = arr[i] - min;
+                proA[i] = Math.Max(proA[i], proA[i -1]);
+                if (arr[i] < min) min = arr[i];//后面点的才能用到更新后的min值
+            }
+
+            //proB得从后开始计算，理解为数组里右边数字减掉其左边数字之差的最大值
+            var max = arr[len - 1];
+            for (var i = len - 2; i >= 0; i--)
+            {
+                proB[i] = max - arr[i]; //max肯定在i之后
+                proB[i] = Math.Max(proB[i], proB[i + 1]);
+                if (arr[i] > max) max = arr[i];
+            }
+
+            var maxProfit = 0;
+            for (var i = 0; i < len; i++)
+            {
+                maxProfit = Math.Max(proA[i] + proB[i], maxProfit);
+            }
+
+            return maxProfit;
+        }
 
     }
 }
