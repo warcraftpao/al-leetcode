@@ -46,6 +46,7 @@
     <Compile Include="BinaryTree\BinaryTreeTravle.cs" />
     <Compile Include="BinaryTree\ConstructTree.cs" />
     <Compile Include="BinaryTree\MaximumDepthofBinaryTree.cs" />
+    <Compile Include="BinaryTree\MaximumPathSum.cs" />
     <Compile Include="BinaryTree\MinimumDepth.cs" />
     <Compile Include="BinaryTree\PathSum.cs" />
     <Compile Include="BinaryTree\RecoverTree.cs" />

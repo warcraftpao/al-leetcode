@@ -53,5 +53,41 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(r.Count, 2);
             Assert.AreEqual(r.All( i=> i.Sum() == 22), true);
         }
+
+        [TestMethod]
+        public void TestMaximumPathSum()
+        {
+            var root = new TreeNode(1);
+            root.Left =new TreeNode(2);
+            root.Right =new TreeNode(3);
+            var r = MaximumPathSum.GetSum(root);
+            Assert.AreEqual(r, 6);
+
+            var root1 = new TreeNode(-10);
+            root1.Left =new TreeNode(9);
+            root1.Right=new TreeNode(20);
+
+            root1.Right.Left = new TreeNode(15);
+            root1.Right.Right = new TreeNode(7);
+            root1.Right.Right.Right = new TreeNode(3);
+
+            r = MaximumPathSum.GetSum(root1);
+            Assert.AreEqual(r, 45);
+
+            ////////////////////////////////////
+            //this test case is for senario, all node's value is negative, so max initial value should use int.min ,not 0
+            var root2= new TreeNode(-20);
+            root2.Left = new TreeNode(-10);
+            root2.Right = new TreeNode(-15);
+
+            root2.Left.Left = new TreeNode(-30);
+
+            root2.Right.Left = new TreeNode(-5);
+            root2.Right.Right = new TreeNode(-25);
+            root2.Right.Right.Right = new TreeNode(-50);
+
+            r = MaximumPathSum.GetSum(root2);
+            Assert.AreEqual(r, -5);
+        }
     }
 }
