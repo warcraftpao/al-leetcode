@@ -71,7 +71,9 @@
     <Compile Include="FamilyTest\TestPermutation.cs" />
     <Compile Include="FamilyTest\TestArea.cs" />
     <Compile Include="FamilyTest\TestStock.cs" />
+    <Compile Include="FamilyTest\TestWordLadder.cs" />
     <Compile Include="NotUnderstandQuestion\UnitTest1.cs" />
+    <Compile Include="TestTools.cs" />
     <Compile Include="TestValidNumber.cs" />
     <Compile Include="TreeLinkNodeRelated\UnitTest1.cs" />
     <Compile Include="UnitTest1.cs" />

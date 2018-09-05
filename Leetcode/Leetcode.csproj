@@ -73,6 +73,7 @@
     <Compile Include="Easy\PalindromeNumber.cs" />
     <Compile Include="Easy\PlusOne.cs" />
     <Compile Include="Easy\Stock.cs" />
+    <Compile Include="Easy\ValidPalindrome.cs" />
     <Compile Include="Hard\DistinctSubsequences.cs" />
     <Compile Include="Hard\InterleavingString.cs" />
     <Compile Include="Hard\ValidNumber.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="LinkList\SwapNodeInPair.cs" />
     <Compile Include="Middle\Sudoku.cs" />
     <Compile Include="Middle\UniquePaths.cs" />
+    <Compile Include="Middle\WordLadder.cs" />
     <Compile Include="Middle\WordSearch.cs" />
     <Compile Include="Middle\ZigZag.cs" />
     <Compile Include="NotUnderstandQuestion\GrayCode.cs" />

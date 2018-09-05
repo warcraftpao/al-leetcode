@@ -98,5 +98,25 @@ namespace Leetcode.CommonTools
 
             return triangle;
         }
+
+        public static string PrintChar()
+        {
+            var sb = new StringBuilder();
+            for (char i = 'a'; i <= 'z'; i++)
+            {
+                sb.Append(i  + "=" +(int)i  +"   " );
+            }
+            for (char i = 'A'; i <= 'Z'; i++)
+            {
+                sb.Append(i + "=" + (int)i + "   ");
+            }
+
+            for (char i = '0'; i <= '9'; i++)
+            {
+                sb.Append(i + "=" + (int)i + "   ");
+            }
+
+            return sb.ToString();
+        }
     }
 }

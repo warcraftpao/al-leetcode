@@ -17,7 +17,7 @@ namespace TestLeetcode
     {
         
 
-        //[TestMethod]
+        [TestMethod]
         public void TestRemoveDuplicates()
         {
             var arr = new[] {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
@@ -94,6 +94,15 @@ namespace TestLeetcode
             Assert.AreEqual(r[1], "255.255.111.35");
         }
 
-         
+        [TestMethod]
+        public void TestValidPalindrome()
+        {
+            var r = ValidPalindrome.IsValid("A man, a plan, a canal: Panama");
+            Assert.AreEqual(r , true);
+
+            r = ValidPalindrome.IsValid("A man, a plan, a vcanal: Panama");
+            Assert.AreEqual(r, false);
+        }
+
     }
 }
