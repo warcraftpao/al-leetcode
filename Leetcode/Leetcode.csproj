@@ -51,6 +51,7 @@
     <Compile Include="BinaryTree\PathSum.cs" />
     <Compile Include="BinaryTree\RecoverTree.cs" />
     <Compile Include="BinaryTree\SameTree.cs" />
+    <Compile Include="BinaryTree\SumRootToLeafNumbers.cs" />
     <Compile Include="BinaryTree\SymmeticTree.cs" />
     <Compile Include="BinaryTree\UniqueBinarySearchTrees.cs" />
     <Compile Include="BinaryTree\ValidateBinarySearchTree.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Middle\StringToInteger.cs" />
     <Compile Include="LinkList\SwapNodeInPair.cs" />
     <Compile Include="Middle\Sudoku.cs" />
+    <Compile Include="Middle\SurroundedRegions.cs" />
     <Compile Include="Middle\UniquePaths.cs" />
     <Compile Include="Middle\WordLadder.cs" />
     <Compile Include="Middle\WordSearch.cs" />

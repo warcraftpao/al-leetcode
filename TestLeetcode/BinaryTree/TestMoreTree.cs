@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Leetcode.BinaryTree;
 using Leetcode.DataStructure;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -104,5 +106,42 @@ namespace TestLeetcode.BinaryTree
             r = BalancedTree.IsBalanced(root);
             Assert.AreEqual(r, false);
         }
+
+
+        #region test root to leaf sum
+
+        [TestMethod]
+        public void TestListToInt()
+        {
+            var r = SumRootToLeafNumbers.ListToInt(new List<int> {1, 2, 3});
+            Assert.AreEqual(r, 123);
+
+            r = SumRootToLeafNumbers.ListToInt(new List<int> { 9,8,9,6 });
+            Assert.AreEqual(r, 9896);
+        }
+
+
+        [TestMethod]
+        public void TestSumRootToLeafNumbers()
+        {
+
+            var root1 = new TreeNode(1);
+            root1.Left = new TreeNode(2);
+            root1.Right = new TreeNode(3);
+            var r = SumRootToLeafNumbers.GetSum(root1);
+            Assert.AreEqual(r, 25);
+
+
+            var root2 = new TreeNode(4);
+            root2.Left = new TreeNode(9);
+            root2.Right = new TreeNode(0);
+
+            root2.Left.Left = new TreeNode(5);
+            root2.Left.Right = new TreeNode(1);
+
+            r = SumRootToLeafNumbers.GetSum(root2);
+            Assert.AreEqual(r, 1026);
+        }
+        #endregion
     }
 }
