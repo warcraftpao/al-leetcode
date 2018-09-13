@@ -75,7 +75,7 @@ namespace Leetcode.Middle
         }
 
         //这里用queue和stack没区别的
-        //想了下不对，dfs就是用stack，先进后出，所以按照下面的代码，会先往up一路向前深度搜索
+        //想了下不对，dfs就是用stack，先进后出，所以按照下面的代码，会先往right一路向前深度搜索
         //bfs就把stack改成queue，先进先出，上下左右向环形一样一圈圈扩展
         private static void Solve_dfs_helper(char[,] board, int x, int y, int row, int col)
         {

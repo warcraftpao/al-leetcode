@@ -115,6 +115,7 @@
     <Compile Include="LinkList\MergeTwoSortedList.cs" />
     <Compile Include="Middle\MinimumPathSum.cs" />
     <Compile Include="Hard\MinimumWindowSubstring.cs" />
+    <Compile Include="Middle\PalindromePartitioning.cs" />
     <Compile Include="Middle\Permutation.cs" />
     <Compile Include="Middle\PowXy.cs" />
     <Compile Include="LinkList\RemoveNthFromEnd.cs" />

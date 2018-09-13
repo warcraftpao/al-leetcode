@@ -61,5 +61,16 @@ namespace TestLeetcode
 
             return board;
         }
+
+        [TestMethod]
+        public void TestPalindromPartitioning()
+        {
+
+            var r =PalindromePartitioning.Partition("aab");
+            Assert.AreEqual(r.Count , 2);
+
+            r = PalindromePartitioning.Partition("abcdcbabcd");
+            Assert.AreEqual(r.Count, 8);
+        }
     }
 }
