@@ -18,8 +18,6 @@ namespace Leetcode.Middle
 
         private static void Helper(List<List<string>> result ,string s ,  List<string>  curr)
         {
-          
-
             var len = s.Length;
             if (0 == len)
             {
@@ -53,7 +51,50 @@ namespace Leetcode.Middle
                 right--;
             }
             return true;
-
         }
+
+
+        //求分割成回文列表，最小切割数
+        //抄的算法，自己写写思路
+        public static int Partition_mincuts(string s)
+        {
+            var length = s.Length;
+             //0和1肯定不能切
+            if (length == 0 || length == 1)
+                return 0;
+
+            //isPalindrome[i,j]代表从第i个字符到j个字符形成了回文
+            var isPalindrome = new bool[length, length];
+            //cuts[i]代表了 从第i个字符到length-1字符串切成回文子字符串要的最小次数
+            var cuts = new int[length];
+
+            //从后往前扫描
+            for (var i = length - 1; i >= 0; i--)
+            {
+                //因为单个字符自己是回文，所以当前字母到结尾有几个字符就最多是几种切法（每个字母切一下）
+                cuts[i] = length - i - 1;
+                //j逐渐变大
+                for (var j = i; j < length; j++)
+                {
+                    //回文数组默认都是false，所以两重循环的判定，可以保证任意s[i]~s[j] （i<=j)是否是回文的情况都判定过了
+                    //如果s[i] == s[j]，再满足任意一种情况i到j是回文，i和j间距小于2（只有2个字符或者3个字符） 或者 i前进1，j后退1的字符串本身也是回文
+                    if (s[i] == s[j] && (j - i < 2 || isPalindrome[i + 1,j - 1]))
+                    {
+                        isPalindrome[i,j] = true;
+                        //j是最后一个字符，那么肯定i到结尾不需要切（i到结尾整个是一个回文）
+                        if (j == length - 1)
+                            cuts[i] = 0;
+                        //i-j是回文，那么i到j就不提供更多的切法（从j位置切断），看看第j+1个字符到结尾有几种切法？
+                        //因为一开始cuts数组都是写入的最大可能切法数，所以到j位置切一刀（提供+1切法）+cuts[j+1]和当前cuts[i]取较小的更新cuts[i]
+                        //随着j在增大，如果i-j继续能形成回文，cuts[j]本身在变小，cuts[i]会可能减小
+                        else if (cuts[j + 1] + 1 < cuts[i])
+                            cuts[i] = cuts[j + 1] + 1;
+                    }
+                }
+            }
+
+            return cuts[0];
+        }
+
     }
 }

@@ -72,5 +72,18 @@ namespace TestLeetcode
             r = PalindromePartitioning.Partition("abcdcbabcd");
             Assert.AreEqual(r.Count, 8);
         }
+
+
+
+        [TestMethod]
+        public void TestPalindromPartitioning_mincuts()
+        {
+
+            var r = PalindromePartitioning.Partition_mincuts("ab");
+            Assert.AreEqual(r, 1);
+
+            r = PalindromePartitioning.Partition_mincuts("abcdcbabcd");
+            Assert.AreEqual(r, 3);
+        }
     }
 }
