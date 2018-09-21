@@ -84,6 +84,13 @@ namespace TestLeetcode
 
             r = PalindromePartitioning.Partition_mincuts("abcdcbabcd");
             Assert.AreEqual(r, 3);
+
+
+            r = PalindromePartitioning.Partition_mincuts_fromheadtoend("kabcdcbabcd");
+            Assert.AreEqual(r, 4);
+
+            r = PalindromePartitioning.Partition_mincuts_fromheadtoend("kabccbakdbcbd");
+            Assert.AreEqual(r, 1);
         }
     }
 }

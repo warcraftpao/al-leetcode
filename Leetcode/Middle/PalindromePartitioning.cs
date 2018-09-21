@@ -96,5 +96,42 @@ namespace Leetcode.Middle
             return cuts[0];
         }
 
+
+
+        //求分割成回文列表，最小切割数
+        //抄的算法，自己写写思路
+        //换成从头循环的玩玩看
+        public static int Partition_mincuts_fromheadtoend(string s)
+        {
+            var length = s.Length;
+            if (length == 0 || length == 1)
+                return 0;
+
+            //isPalindrome[i,j]代表从第i个字符到j个字符形成了回文
+            var isPalindrome = new bool[length, length];
+            //cuts[i]代表了 从第0个字符到i-1字符串切成回文子字符串要的最小次数
+            var cuts = new int[length];
+            //反向的思路，i主键变大，j随着i逐渐变小
+            //所以每次小循环依的isPalindrome数组的j在增加（小循环j在减小），大循环依赖的isPalindrome的i在缩小（大循环本身i在增加），
+            //换言之，每次i在扩张的时候，所以来的isPalindrome数组在之前的循环里肯定判定过了 
+            //然后随着j在缩小，如果j-i继续能形成回文，cuts[j]本身在变小，cuts[i]会可能减小
+            for (var i = 0; i < length; i++)
+            {
+                cuts[i] = i;
+                for (var j = i; j >=0; j--)
+                {
+                    if (s[i] == s[j] && (i - j < 2 || isPalindrome[j + 1, i - 1]))
+                    {
+                        isPalindrome[j, i] = true;
+                        if (j == 0)
+                            cuts[i] = 0;
+                        else if (cuts[j - 1] + 1 < cuts[i])
+                            cuts[i] = cuts[j - 1] + 1;
+                    }
+                }
+            }
+
+            return cuts[length -1];
+        }
     }
 }
