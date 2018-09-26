@@ -17,6 +17,19 @@ namespace TestLeetcode.FamilyTest
             r = WordLadder.LadderLength("hit", "cog", new List<string> { "hot", "dot", "dog", "lot", "log" });
             Assert.AreEqual(r, 0);
         }
+
+
+        [TestMethod]
+        public void TestLadder2()
+        {
+            var r = WordLadder.LadderAllMinPath("hit", "cog", new List<string> { "hot", "dot", "dog", "lot", "log", "cog" });
+            Assert.AreEqual(r.Count, 2);
+
+            r = WordLadder.LadderAllMinPath("hit", "cog", new List<string> { "hot", "dot", "dog", "lot", "log"});
+            Assert.AreEqual(r.Count, 0);
+        }
     }
+
+
 }
 

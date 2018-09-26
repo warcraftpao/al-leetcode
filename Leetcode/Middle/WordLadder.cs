@@ -64,5 +64,121 @@ namespace Leetcode.Middle
 
             return 0;
         }
+
+        //因为要求出所有最短路径，所以在循环的时候我们还不知道哪些路径最短，使用bfs求出所有路径的方式是不合理的，空间消耗太大
+        //所以先求出所有单词的前缀，即为谁能变换一个单词指向我，再用这样的字典来构建路径 
+        public static List<List<string>> LadderAllMinPath(string beginWord, string endWord, List<string> wordList)
+        {
+            var result = new List<List<string>>();
+            var preWords =  GetPreWords(beginWord, endWord, wordList);
+            if (!preWords.ContainsKey(endWord))
+                return result;
+
+            var curr = new List<string> {endWord};
+            BuildPathByPreWords(beginWord, endWord, preWords, result, curr);
+            return result;
+        }
+
+        private static Dictionary<string, List<string>> GetPreWords(string beginWord, string endWord,
+            List<string> wordList)
+        {
+            var linkedToWordList = new Dictionary<string,List<string>>();
+
+            var len = beginWord.Length;
+            var levelMark = "****";
+            var queue = new Queue<string>();
+            //下一层出现的单词不能直接删除，可能其他路径也指向这个单词，当前层的路径全部算过再删除
+            var nextLevel = new List<string>();
+            //是否找到了end，但是及时找到了，本层的循环必须都做完（没有遇到levelmark之前）
+            var foundEnd = false;
+            queue.Enqueue(beginWord);
+            queue.Enqueue(levelMark);
+            while (queue.Any())
+            {
+                var currStr = queue.Dequeue();
+                if (currStr != levelMark)
+                {
+                    var currStrCharArr = currStr.ToCharArray();
+                    for (var i = 0; i < len; i++)
+                    {
+                        var curr = currStrCharArr[i];
+                        for (var c = 'a'; c <= 'z'; c++)
+                        {
+                            if (curr == c) continue;
+                            currStrCharArr[i] = c;
+                            var changedStr = new string(currStrCharArr);
+                            if (wordList.Contains(changedStr))
+                            {
+                                //变化后的单词在列表里，需要添加这个单词的前驱，注意前驱可能有多个
+                                //因为当前层的单词不会重复，所以某个单词的前驱也不会重复
+                                if (linkedToWordList.ContainsKey(changedStr))
+                                {
+                                    linkedToWordList[changedStr].Add(currStr);
+                                }
+                                else
+                                {
+                                    linkedToWordList.Add(changedStr, new List<string> { currStr });
+                                }
+
+
+                                if (changedStr == endWord) //找到endword
+                                {
+                                    //找到了end，当前单词不用再循环，但是本层要循环，这是跳出当前字母变换的循环
+                                    foundEnd = true;
+                                    break;
+                                }
+                                if (!nextLevel.Contains(changedStr))
+                                {
+                                    queue.Enqueue(changedStr);
+                                    nextLevel.Add(changedStr);
+                                }
+                            }
+                        }
+                        //找到了end，当前单词不用再循环，但是本层要循环，这里是跳出下一个字母的循环
+                        if (foundEnd) break;
+                        //进入下一个字母循环前还原本来的值
+                        currStrCharArr[i] = curr;
+                    }
+                }
+                //下一层开始
+                else if (queue.Any())
+                {
+                    //由于没有return语句, 某次变换找到了end，还是会有之前循环产生的下一层的值
+                    if (foundEnd) break;
+                    //层标记，下层循环的单词从wordlist里删除，否则死循环
+                    foreach (var word in nextLevel)
+                    {
+                        wordList.Remove(word);
+                    }
+                    nextLevel.Clear();
+                    queue.Enqueue(levelMark);
+                }
+            }
+
+            return linkedToWordList;
+        }
+
+        //用前驱字典构建最短路径，dfs，从end开始构建，注意需要反转
+        private static void BuildPathByPreWords(string beginWord, string endWord,
+            Dictionary<string, List<string>> preWords, List<List<string>> result, List<string> curr)
+        {
+            // begin=前驱了找到结果了
+            if (beginWord == endWord)
+            {
+                //不用在这里反转
+                result.Add(new List<string>(curr));
+                return;
+            }
+
+
+            var pre = preWords[endWord];
+            for (var i = 0; i < pre.Count; i++)
+            {
+                //从后向前构建，所以beginword不变，endword在变化
+                curr.Add(pre[i]);
+                BuildPathByPreWords(beginWord, pre[i], preWords, result, curr);
+                curr.RemoveAt(curr.Count - 1);
+            }
+        }
     }
 }
