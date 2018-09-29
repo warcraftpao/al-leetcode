@@ -78,6 +78,7 @@
     <Compile Include="Hard\DistinctSubsequences.cs" />
     <Compile Include="Hard\InterleavingString.cs" />
     <Compile Include="Hard\LongestConsecutiveSequence.cs" />
+    <Compile Include="Hard\ScrambleString.cs" />
     <Compile Include="Hard\ValidNumber.cs" />
     <Compile Include="LinkList\PartitionList.cs" />
     <Compile Include="LinkList\RemoveDuplicatesFromSortedList.cs" />

@@ -76,6 +76,11 @@ namespace Leetcode.Middle
 
             var curr = new List<string> {endWord};
             BuildPathByPreWords(beginWord, endWord, preWords, result, curr);
+            //在递归里反转觉得不清晰，在结果集反转次数更少
+            foreach (var path in result)
+            {
+                path.Reverse();
+            }
             return result;
         }
 

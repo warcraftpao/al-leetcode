@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -91,6 +92,19 @@ namespace TestLeetcode
 
             r = PalindromePartitioning.Partition_mincuts_fromheadtoend("kabccbakdbcbd");
             Assert.AreEqual(r, 1);
+        }
+
+        [TestMethod]
+        public void TestScrambleString()
+        {
+
+            var r = ScrambleString.IsScramble("great", "rgeat");
+            Assert.AreEqual(r, true);
+
+            r = ScrambleString.IsScramble("abcde", "caebd");
+            Assert.AreEqual(r,false);
+
+             
         }
     }
 }
