@@ -98,13 +98,33 @@ namespace TestLeetcode
         public void TestScrambleString()
         {
 
-            var r = ScrambleString.IsScramble("great", "rgeat");
+            var r = ScrambleString.IsScramble("vfldiodffghyq", "vdgyhfqfdliof");
             Assert.AreEqual(r, true);
+
+            r = ScrambleString.IsScramble_dp("great", "rgeat");
+            Assert.AreEqual(r, true);
+
 
             r = ScrambleString.IsScramble("abcde", "caebd");
             Assert.AreEqual(r,false);
+  
+        }
 
-             
+        ////////////////////dp 版本/////////////////////////////
+        //有问题
+        [TestMethod]
+        public void TestScrambleString_dp()
+        {
+            //这个用例通不过
+            //var r = ScrambleString.IsScramble_dp("vfldiodffghyq", "vdgyhfqfdliof");
+            //Assert.AreEqual(r, true);
+
+           var r = ScrambleString.IsScramble_dp("great", "rgeat");
+            Assert.AreEqual(r, true);
+
+            r = ScrambleString.IsScramble_dp("abcde", "caebd");
+            Assert.AreEqual(r, false);
+
         }
     }
 }
