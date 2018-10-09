@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.DataStructure;
 using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -126,5 +127,38 @@ namespace TestLeetcode
             Assert.AreEqual(r, false);
 
         }
+
+        [TestMethod]
+        public void TestCloneGraph()
+        {
+            var clone = CloneGraph.Clone(BuildAGraph());
+            Assert.AreEqual(clone.Neighbors.Count,2);
+        }
+
+
+        public UndirectedGraphNode BuildAGraph()
+        {
+            var g0 =new UndirectedGraphNode(0);
+            var g1 = new UndirectedGraphNode(1);
+            var g2 = new UndirectedGraphNode(2);
+
+            g0.Neighbors.Add(g1);
+            g0.Neighbors.Add(g2);
+
+            g1.Neighbors.Add(g2);
+            g2.Neighbors.Add(g2);
+
+            return g0;
+        }
+
+        //[TestMethod]
+        //public void TestHashCode()
+        //{
+        //    var g0 =new UndirectedGraphNode(0);
+        //    var g1 = new UndirectedGraphNode(0);
+        //    var h1 = g0.GetHashCode();
+        //    var h2 = g1.GetHashCode();
+        //    Assert.AreEqual(h1 == h2, false);
+        //}
     }
 }
