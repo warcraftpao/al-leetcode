@@ -160,5 +160,16 @@ namespace TestLeetcode
         //    var h2 = g1.GetHashCode();
         //    Assert.AreEqual(h1 == h2, false);
         //}
+
+        [TestMethod]
+        public void TestCanCompleteCircuit()
+        {
+            var r = GasStation.CanCompleteCircuit(new[] {1, 2, 3, 4, 5}, new[] {3, 4, 5, 1, 2});
+            Assert.AreEqual(r, 3);
+
+            r = GasStation.CanCompleteCircuit(new[] { 2, 3, 4 }, new[] { 3, 4, 3});
+            Assert.AreEqual(r, -1);
+        }
+
     }
 }
