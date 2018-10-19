@@ -76,6 +76,7 @@
     <Compile Include="Easy\PlusOne.cs" />
     <Compile Include="Easy\Stock.cs" />
     <Compile Include="Easy\ValidPalindrome.cs" />
+    <Compile Include="Hard\Candy.cs" />
     <Compile Include="Hard\DistinctSubsequences.cs" />
     <Compile Include="Hard\InterleavingString.cs" />
     <Compile Include="Hard\LongestConsecutiveSequence.cs" />
