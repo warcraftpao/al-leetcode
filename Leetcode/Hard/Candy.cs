@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,55 @@ namespace Leetcode.Hard
             }
 
             return candies.Sum();
+        }
+
+        //第二种思路，波峰波谷，上升段长度，下降段长度（和leetcode上的方案4差不多）
+        //上升段不管，还是要额外处理下降段，如果知道下降段的长度，并且知道进入下降段长度时候分配的糖数量，就可以计算了
+        //如果进入下降序列，计算下降序列长度，从右往左考虑，下降序列的也是从1个糖开始递增的，
+        //下降序列长度+1，总糖数也加上这个下降序列的长度，当下降序列长度超过“进入下降段长度时候分配的糖数量”（下降段长度超过了上升段）
+        //总数还是照样累积，那么要给处于进入下降段的那个孩子（峰顶）一些补偿，长度每超过一次补偿+1
+        //这样理解，峰顶的那个孩子只考虑左面的话是正确的，随着波谷不断延伸，另外一面的山坡在慢慢隆起扩展，他的地位也在上升，每比上升段多1，就要额外补偿1
+
+        public static int Way_peak_valley(int[] ratings)
+        {
+            var total = 1; //从第二个开始算
+            var len = ratings.Length;
+            var decreacingLength = 1;//下降段长度
+            var increasingLength = 1;//上升段长度
+            var peak = 1;  //峰顶，进入下降段之前的最大糖果数
+
+            //第二个点开始循环
+            //不管出现上升还是下降，波段长度至少有2，即为顶端的那个点既属于上升段也属于下降段
+            for (var i = 1; i < len; i++)
+            {
+                //上升，这个比较简单，每次+1，波峰在增长
+                if (ratings[i] > ratings[i - 1])
+                {
+                    increasingLength++;
+                    peak = increasingLength;
+                    total = total + increasingLength;
+                    decreacingLength = 1;
+                }
+                //下降，因为decreacingLength至少有1，先加上decreacingLength，如果下降段和上升段一样长，就要给peak一些补偿
+                //最后再增加 decreacingLength，
+                else if (ratings[i] < ratings[i - 1])
+                {
+                    total = total + decreacingLength;
+                    if (decreacingLength >= peak)
+                        total++;
+                    decreacingLength++;
+                    increasingLength = 1;
+                }
+                else //持平 ，持平意味着所有都归1，这个点既可能成为下一波的peak也可能成为valley
+                {
+                    decreacingLength = 1;
+                    increasingLength = 1;
+                    peak = 1;
+                    total++;
+                }
+            }
+
+            return total;
         }
     }
 }

@@ -180,6 +180,14 @@ namespace TestLeetcode
 
             r = Candy.Way_2pass(new[] { 1,2,3,4,4,3,1,1,2,3 });
             Assert.AreEqual(r, 22);
+
+
+            r = Candy.Way_peak_valley(new[] { 12, 4, 3, 11, 34, 34, 1, 67 });
+            Assert.AreEqual(r, 16);
+
+
+            r = Candy.Way_peak_valley(new[] { 1, 2, 3, 4, 4, 3, 1, 1, 2, 3 });
+            Assert.AreEqual(r, 22);
         }
 
     }
