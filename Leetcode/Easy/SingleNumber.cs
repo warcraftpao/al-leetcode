@@ -37,4 +37,40 @@ namespace Leetcode.Easy
             return a;
         }
     }
+
+
+
+    public class SingleNumber2
+    {
+        public static int GetNumber(int[] nums)
+        {
+            var bits = new int[32];
+            //循环数组里的所有数字
+            for (var i = 1; i < nums.Length; i++)
+            {
+                //把单个数字当成2进制看待，先计算最低位，每次 >> 就是把一个高位移到最低位比较
+                //数组0是二进制最低位的计数
+                for (var j = 0; j < 32; j++)
+                {
+                    //和1按位与
+                    //位移优先级大于按位与，注意&当成取地址的时候优先级比较高，此处不是
+                    if ((nums[i] >> j & 1) == 1)
+                    {
+                        bits[j]++;
+                    }
+                }
+
+                 
+            }
+            var result = 0;
+            for (var j = 0; j < 32; j++)
+            {
+                //对3取余数，就是唯一的那个数字标识成2进制后，该位上的值（不是0就是1）
+                //j在扩大的时候，说明在提取二进制更高位的0和1，所以需要左移操作
+                result += bits[j] % 3 << j; //取余优先级大于位移
+            }
+
+            return result;
+        }
+    }
 }
