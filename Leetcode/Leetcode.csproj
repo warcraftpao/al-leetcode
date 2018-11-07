@@ -57,6 +57,7 @@
     <Compile Include="BinaryTree\ValidateBinarySearchTree.cs" />
     <Compile Include="CommonTools\Tools.cs" />
     <Compile Include="DataStructure\MyLinkList.cs" />
+    <Compile Include="DataStructure\RandomListNode.cs" />
     <Compile Include="DataStructure\TreeLinkNode.cs" />
     <Compile Include="DataStructure\TreeNode.cs" />
     <Compile Include="DataStructure\UndirectedGraphNode.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="Middle\CombinationSum.cs" />
     <Compile Include="Middle\CombinePhoneNumber.cs" />
     <Compile Include="Area\ContainerWithMostWater.cs" />
+    <Compile Include="Middle\CopyListwithRandomPointer.cs" />
     <Compile Include="Middle\DecodingWays.cs" />
     <Compile Include="Middle\DivideTwoIntegers.cs" />
     <Compile Include="Middle\GasStation.cs" />
