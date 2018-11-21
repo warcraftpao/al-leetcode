@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Leetcode.DataStructure;
 using Leetcode.Easy;
 using Leetcode.Middle;
@@ -65,6 +66,18 @@ namespace TestLeetcode
             var head = BuildList();
             var newNode = CopyListwithRandomPointer.Clone(head);
             Assert.AreEqual(newNode.Next.Next.Random.Val, 5);
+        }
+
+
+        [TestMethod]
+        public void TestWordBreak()
+        {
+            var r = WordBreak.Isvalid("leetcode", new List<string> {"leet", "code"});
+            Assert.AreEqual(r, true);
+            r = WordBreak.Isvalid("applepenapple", new List<string> { "apple", "pen" });
+            Assert.AreEqual(r, true);
+            r = WordBreak.Isvalid("catsandog", new List<string> { "cats", "dog", "sand", "and", "cat" });
+            Assert.AreEqual(r, false);
         }
     }
 }

@@ -139,6 +139,7 @@
     <Compile Include="Middle\Sudoku.cs" />
     <Compile Include="Middle\SurroundedRegions.cs" />
     <Compile Include="Middle\UniquePaths.cs" />
+    <Compile Include="Middle\WordBreak.cs" />
     <Compile Include="Middle\WordLadder.cs" />
     <Compile Include="Middle\WordSearch.cs" />
     <Compile Include="Middle\ZigZag.cs" />
