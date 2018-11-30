@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using Leetcode.DataStructure;
 using Leetcode.Easy;
 using Leetcode.Middle;
@@ -78,6 +79,14 @@ namespace TestLeetcode
             Assert.AreEqual(r, true);
             r = WordBreak.Isvalid("catsandog", new List<string> { "cats", "dog", "sand", "and", "cat" });
             Assert.AreEqual(r, false);
+        }
+
+        [TestMethod]
+        public void TestWordBreak2()
+        {
+            var result = WordBreak2.Isvalid("catsanddog", new List<string> {"cat", "cats", "and", "sand", "dog"});
+            Assert.AreEqual(result.Contains("cats and dog"),true);
+            Assert.AreEqual(result.Contains("cat sand dog"), true);
         }
     }
 }
