@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization.Formatters;
-using System.Text;
-using System.Threading.Tasks;
-using Leetcode.DataStructure;
+﻿using Leetcode.DataStructure;
 
-namespace Leetcode.Easy
+namespace Leetcode.LinkList
 {
     public  class LinkListCycle
     {
@@ -27,5 +21,11 @@ namespace Leetcode.Easy
 
             return false;
         }
+    }
+
+
+    public class LinkListCycle2
+    {
+        
     }
 }

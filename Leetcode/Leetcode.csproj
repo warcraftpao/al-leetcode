@@ -70,7 +70,7 @@
     <Compile Include="Easy\ClimbingStairs.cs" />
     <Compile Include="Easy\CountAndSay.cs" />
     <Compile Include="Easy\LengthOfLastWord.cs" />
-    <Compile Include="Easy\LinkListCycle.cs" />
+    <Compile Include="LinkList\LinkListCycle.cs" />
     <Compile Include="Easy\LongestCommonPrefix.cs" />
     <Compile Include="Easy\MaximumSubarray.cs" />
     <Compile Include="Easy\MergeSortedArray.cs" />
@@ -86,6 +86,7 @@
     <Compile Include="Hard\ScrambleString.cs" />
     <Compile Include="Hard\ValidNumber.cs" />
     <Compile Include="LinkList\PartitionList.cs" />
+    <Compile Include="LinkList\RecordList.cs" />
     <Compile Include="LinkList\RemoveDuplicatesFromSortedList.cs" />
     <Compile Include="Easy\RemoveDuplicatesInSortedArray.cs" />
     <Compile Include="Easy\ReverseIntegercs.cs" />
