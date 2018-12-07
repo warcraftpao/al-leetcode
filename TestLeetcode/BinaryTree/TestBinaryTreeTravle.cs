@@ -52,6 +52,23 @@ namespace TestLeetcode.BinaryTree
         }
 
         [TestMethod]
+        public void TestPreorderTraversal()
+        {
+            var root = TreeNode.BuildBSTFromArray(new int[] { 3, 5, 8, 4, 1, 2, 9 });
+            var r = BinaryTreeTravle.Preorder_Recursive(root);
+            Assert.AreEqual(r[0], 3);
+            Assert.AreEqual(r[3], 5);
+            Assert.AreEqual(r[6], 9);
+
+            root = TreeNode.BuildBSTFromArray(new int[] { 3, 5, 8, 4, 1, 2, 9 });
+            r = BinaryTreeTravle.Preorder_Iterations(root);
+            Assert.AreEqual(r[0], 3);
+            Assert.AreEqual(r[3], 5);
+            Assert.AreEqual(r[6], 9);
+
+        }
+
+        [TestMethod]
         public void TestValidateBinarySearchTree()
         {
             var tree = Build1();

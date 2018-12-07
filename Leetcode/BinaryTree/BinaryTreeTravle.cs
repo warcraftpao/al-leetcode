@@ -9,12 +9,15 @@ using Leetcode.DataStructure;
 
 namespace Leetcode.BinaryTree
 {
-    //左 根节点 右
+    
     public class BinaryTreeTravle
     {
+        //morris遍历
+        //https://blog.csdn.net/yangfeisc/article/details/45673947
+
         //https://www.cnblogs.com/grandyang/p/4297300.html
         // https://leetcode.com/problems/binary-tree-inorder-traversal/solution/#  还是leetcode本身清晰 threaded binary tree
-        #region inorder
+        #region inorder   -------  中序------   左 根节点 右
         public static List<int> InorderTraversal_Recursive(TreeNode root)
         {
             var list = new List<int>();
@@ -93,6 +96,58 @@ namespace Leetcode.BinaryTree
         }
 
         #endregion
+
+        #region preorder ----- 前序-----  根 左 右
+
+        public static List<int> Preorder_Iterations(TreeNode root)
+        {
+            
+            var stack = new Stack<TreeNode>();
+            var list = new List<int>();
+
+            if (root == null)
+                return list;
+
+            stack.Push(root);
+            while (stack.Count > 0)
+            {
+                var node = stack.Pop();
+                list.Add(node.Val);
+
+                //先进后出，右孩子先加入
+                if(node.Right!=null)
+                    stack.Push(node.Right);
+
+                if (node.Left != null)
+                    stack.Push(node.Left);
+            }
+
+            return list;
+
+        }
+
+        public static List<int> Preorder_Recursive(TreeNode root)
+        {
+            var list=new List<int>();
+            Preorder_Recursive_helper(list, root);
+            return list;
+        }
+
+
+        private static void Preorder_Recursive_helper(List<int> list,TreeNode root)
+        {
+            if (root == null)
+                return;
+
+            list.Add(root.Val);
+            Preorder_Recursive_helper(list, root.Left);
+            Preorder_Recursive_helper(list,root.Right);
+        }
+
+
+        
+        #endregion
+
 
         #region level order
 
