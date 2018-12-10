@@ -31,7 +31,8 @@ namespace Leetcode.BinaryTree
             if (root == null) return;
             if(root.Left != null) //不停找左孩子
                 InorderTraversal_Helper_Recursive(results, root.Left);
-            //没左孩子了，加入结果集
+
+            //因为不停的在向左孩子递归，这个时候这个节点肯定是最左边的节点的（可以没有左节点但是有右节点）
             results.Add(root.Val);
 
             //最后找右孩子
@@ -145,9 +146,59 @@ namespace Leetcode.BinaryTree
         }
 
 
-        
+
         #endregion
 
+
+        #region postoder ---- 后序   左 右  根
+
+
+        public static List<int> PostorderTraversal_recursive(TreeNode root)
+        {
+            var list = new List<int>();
+            PostorderTraversal_recursive_help(list, root);
+            return list;
+        }
+
+        private static void PostorderTraversal_recursive_help(List<int> list, TreeNode root)
+        {
+            if (root == null)
+                return;
+
+            if(root.Left != null)
+                PostorderTraversal_recursive_help(list, root.Left);
+
+            if (root.Right != null)
+                PostorderTraversal_recursive_help(list, root.Right);
+
+            //先向左，再向右进入递归，没有左右了才打印自己，肯定是左右根了
+            list.Add(root.Val);
+
+        }
+
+        //后序是‘左右根’，那么假设有一种‘根右左’的遍历方式（正好相反），加入结果集的时候从头上插入，就能满足需求
+        public static List<int> PostorderTraversal_Iterations(TreeNode root)
+        {
+            var list = new List<int>();
+            var stack = new Stack<TreeNode>();
+            if (root == null)
+                return list;
+
+            stack.Push(root);
+            while (stack.Count > 0)
+            {
+                var node = stack.Pop();
+                list.Insert(0, node.Val);
+                //stack 先进后出，所以是先左后右
+                if (node.Left != null) stack.Push(node.Left);
+                if (node.Right != null) stack.Push(node.Right);
+            }
+
+            return list;
+        }
+
+
+        #endregion
 
         #region level order
 
