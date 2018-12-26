@@ -8,12 +8,12 @@ namespace Leetcode.Easy
 {
     public  class Sqrt
     {
-        //x >= 1，舍弃小数点部分
+        //X >= 1，舍弃小数点部分
         public static int SimpleSqrt(int x)
         {
             if (x <= 1) return x;
 
-            int left = 0, right = x/2 + 1 ; // x/2 +1意思就是 x的平方根不会大于这个值，可以在0 到这个值之间二分查找
+            int left = 0, right = x/2 + 1 ; // X/2 +1意思就是 x的平方根不会大于这个值，可以在0 到这个值之间二分查找
             while (left < right)
             {
                 int mid = left + (right - left) / 2;//每次还是取中间值，注意，这里不是下标是值本身
@@ -33,7 +33,7 @@ namespace Leetcode.Easy
         {
             if (x == 0) return 0;
             for (int i = 1; i <= x / i; i++) //i平方小于x 但是 （i+1）的平方大于x，i就是解 i.xxx是解
-                if (i <= x / i && (i + 1) > x / (i + 1))// Look for the critical point: i*i <= x && (i+1)(i+1) > x
+                if (i <= x / i && (i + 1) > x / (i + 1))// Look for the critical point: i*i <= X && (i+1)(i+1) > X
                     return i;
             return -1;
         }

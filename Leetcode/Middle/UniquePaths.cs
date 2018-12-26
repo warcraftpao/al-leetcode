@@ -60,7 +60,7 @@ namespace Leetcode.Middle
 
         //只用一维度数组
         //思路就是j从1开始循环，因为第一列是1不会变
-        //dp[x]的值 = dp[x] + dp[x-1]： dp[x-1]就是上一行当前列那个格子的值，dp[x]此时还代表了前一列当前行的值，还没被更新掉
+        //dp[X]的值 = dp[X] + dp[X-1]： dp[X-1]就是上一行当前列那个格子的值，dp[X]此时还代表了前一列当前行的值，还没被更新掉
         //按列扫秒，数组物尽其用。。。。
         public static int GetPathNumer_dp_d1(int m, int n)
         {

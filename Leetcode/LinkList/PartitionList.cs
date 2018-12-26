@@ -9,7 +9,7 @@ namespace Leetcode.LinkList
 {
     public class PartitionList
     {
-        //Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+        //Given a linked list and a value X, partition it such that all nodes less than X come before nodes greater than or equal to X.
         // You should preserve the original relative order of the nodes in each of the two partitions.
         public static MyLinkList Do(MyLinkList head, int x)
         {

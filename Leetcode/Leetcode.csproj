@@ -55,8 +55,10 @@
     <Compile Include="BinaryTree\SymmeticTree.cs" />
     <Compile Include="BinaryTree\UniqueBinarySearchTrees.cs" />
     <Compile Include="BinaryTree\ValidateBinarySearchTree.cs" />
+    <Compile Include="CommonTools\MyMath.cs" />
     <Compile Include="CommonTools\Tools.cs" />
     <Compile Include="DataStructure\MyLinkList.cs" />
+    <Compile Include="DataStructure\Point.cs" />
     <Compile Include="DataStructure\RandomListNode.cs" />
     <Compile Include="DataStructure\TreeLinkNode.cs" />
     <Compile Include="DataStructure\TreeNode.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Easy\ClimbingStairs.cs" />
     <Compile Include="Easy\CountAndSay.cs" />
     <Compile Include="Easy\LengthOfLastWord.cs" />
+    <Compile Include="Hard\MaxPointsInLine.cs" />
     <Compile Include="LinkList\InsertionSortList.cs" />
     <Compile Include="LinkList\LinkListCycle.cs" />
     <Compile Include="Easy\LongestCommonPrefix.cs" />

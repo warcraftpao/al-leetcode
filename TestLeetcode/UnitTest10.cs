@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using Leetcode.CommonTools;
 using Leetcode.DataStructure;
 using Leetcode.Easy;
+using Leetcode.Hard;
 using Leetcode.LinkList;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -88,6 +90,38 @@ namespace TestLeetcode
             var result = WordBreak2.Isvalid("catsanddog", new List<string> {"cat", "cats", "and", "sand", "dog"});
             Assert.AreEqual(result.Contains("cats and dog"),true);
             Assert.AreEqual(result.Contains("cat sand dog"), true);
+        }
+
+        [TestMethod]
+        public void TestMaxPointsInLine()
+        {
+            var points = new [] {new Point(1, 1), new Point(2, 2), new Point(3, 3)};
+            var result = MaxPointsInLine.Get(points);
+            Assert.AreEqual(result, 3);
+            // [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]
+            points = new[] { new Point(1, 1), new Point(3, 2), new Point(5, 3), new Point(4, 1), new Point(2, 3), new Point(1, 4) };
+            result = MaxPointsInLine.Get(points);
+            Assert.AreEqual(result,4);
+
+        }
+
+        [TestMethod]
+        public void TestGcd()
+        {
+            var r = MyMath.GetGcd(15, 5);
+            Assert.AreEqual(r,5);
+
+            r = MyMath.GetGcd(15, 11);
+            Assert.AreEqual(r, 1);
+
+            r = MyMath.GetGcd(18, 18);
+            Assert.AreEqual(r, 18);
+
+            r = MyMath.GetGcd(36, 24);
+            Assert.AreEqual(r, 12);
+
+            r = MyMath.GetGcd(100, 55);
+            Assert.AreEqual(r, 5);
         }
 
         [TestMethod]

@@ -32,7 +32,7 @@ namespace Leetcode.Easy
         public static bool IsPalindrome(int x)
         {
             // Special cases:
-            // As discussed above, when x < 0, x is not a palindrome.
+            // As discussed above, when X < 0, X is not a palindrome.
             // Also if the last digit of the number is 0, in order to be a palindrome,
             // the first digit of the number also needs to be 0.
             // Only 0 satisfy this property.
@@ -49,7 +49,7 @@ namespace Leetcode.Easy
             }
 
             // When the length is an odd number, we can get rid of the middle digit by revertedNumber/10
-            // For example when the input is 12321, at the end of the while loop we get x = 12, revertedNumber = 123,
+            // For example when the input is 12321, at the end of the while loop we get X = 12, revertedNumber = 123,
             // since the middle digit doesn't matter in palidrome(it will always equal to itself), we can simply get rid of it.
             //长度偶数123321最终变成x123=revert123
             //长度奇数1234321最终变成 x123 revert1234，revert多一位（中间那位去小数点了）
