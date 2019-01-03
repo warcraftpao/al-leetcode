@@ -140,6 +140,7 @@
     <Compile Include="Matrix\SetMatrixZero.cs" />
     <Compile Include="Matrix\SpiralMatrix.cs" />
     <Compile Include="Middle\RestoreIpAddresses.cs" />
+    <Compile Include="Middle\ReverseWordsInString.cs" />
     <Compile Include="Middle\SortColors.cs" />
     <Compile Include="Middle\StringToInteger.cs" />
     <Compile Include="LinkList\SwapNodeInPair.cs" />

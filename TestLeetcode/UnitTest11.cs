@@ -22,5 +22,12 @@ namespace TestLeetcode
             r = EvaluateReversePolishNotation.EvalRPN(tokens);
             Assert.AreEqual(r, 22d);
         }
+
+        [TestMethod]
+        public void TestReverseWordsInString()
+        {
+            var r = ReverseWordsInString.ReserveWords("  I am the   king  ");
+            Assert.AreEqual(r, "king the am I");
+        }
     }
 }
