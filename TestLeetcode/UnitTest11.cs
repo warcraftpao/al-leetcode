@@ -29,5 +29,21 @@ namespace TestLeetcode
             var r = ReverseWordsInString.ReserveWords("  I am the   king  ");
             Assert.AreEqual(r, "king the am I");
         }
+
+        [TestMethod]
+        public void TestMaximumProductSubarray()
+        {
+            var r = MaximumProductSubarray.Calc(new[] {2, 3, -2, 4});
+            Assert.AreEqual(r,6);
+
+            r = MaximumProductSubarray.Calc(new[] { -2, 0, -1 });
+            Assert.AreEqual(r, 0);
+
+
+            r = MaximumProductSubarray.Calc(new[] { 6,5, -1,-100,0,2,49 ,22});
+            Assert.AreEqual(r, 3000);
+        }
+
+
     }
 }

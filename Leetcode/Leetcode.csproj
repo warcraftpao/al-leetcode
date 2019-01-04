@@ -125,6 +125,7 @@
     <Compile Include="Middle\GroupAnagrams.cs" />
     <Compile Include="Middle\IntegerAndRoman.cs" />
     <Compile Include="Middle\JumpGame.cs" />
+    <Compile Include="Middle\MaximumProductSubarray.cs" />
     <Compile Include="Middle\MaxSubstringWithoutRepeatChar.cs" />
     <Compile Include="Middle\Intervals.cs" />
     <Compile Include="LinkList\MergeTwoSortedList.cs" />
