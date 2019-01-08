@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -44,6 +45,32 @@ namespace TestLeetcode
             Assert.AreEqual(r, 3000);
         }
 
+        [TestMethod]
+        public void TestDungeonGame()
+        {
+            var dungeon = new int[,]
+            {
+                {-2, -3, 3},
+                {-5, -10, 1},
+                {10, 30, -5},
+            };
+            var r = DungeonGame.RescurePrincess(dungeon);
 
+            Assert.AreEqual(r, 7);
+
+
+            dungeon = new int[,]
+            {
+                {-1, -2, -3,-4,-5},
+                {-6, -7, -8,-9,-10},
+                {-11, -12, -13,-14,-15},
+                {-16, -17, -18,-19,-20},
+                {-21, -22, -23,-24,-25},
+
+            };
+            r = DungeonGame.RescurePrincess(dungeon);
+
+            Assert.AreEqual(r, 86);
+        }
     }
 }
