@@ -72,5 +72,25 @@ namespace TestLeetcode
 
             Assert.AreEqual(r, 86);
         }
+
+        [TestMethod]
+        public void TestMinInRotatedSortedArrayLevel1()
+        {
+            var r =  FindMinimumInRotatedSortedArray.Level1(new[] {6, 7, 8, 9, 10, 1, 2, 3, 4, 5});
+            Assert.AreEqual(r, 1);
+
+            r = FindMinimumInRotatedSortedArray.Level1(new[] {5, 6, 7, 8, 9, 10, 1, 2, 3, 4});
+            Assert.AreEqual(r, 1);
+
+            r = FindMinimumInRotatedSortedArray.Level1(new[] { 10,1,2,3,4,5,6,7,8,9 });
+            Assert.AreEqual(r, 1);
+
+
+            r = FindMinimumInRotatedSortedArray.Level1(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 });
+            Assert.AreEqual(r, 1);
+
+            r = FindMinimumInRotatedSortedArray.Level1(new[] { 8, 9, 1, 2, 3, 4, 5, 6, 7 });
+            Assert.AreEqual(r, 1);
+        }
     }
 }
