@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.Easy;
 using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -110,6 +111,23 @@ namespace TestLeetcode
 
             r = FindMinimumInRotatedSortedArray.Level2(new[] { 8, 8, 1, 1, 3, 4, 4, 4, 4 });
             Assert.AreEqual(r, 1);
+        }
+
+        [TestMethod]
+        public void TestMinStack()
+        {
+            var stack= new MinStack();
+            stack.Push(-2);
+            stack.Push(0);
+            stack.Push(-3);
+            var min = stack.GetMin();
+            Assert.AreEqual(min, -3);
+            stack.Pop();
+            var value = stack.Top(); 
+            Assert.AreEqual(value , 0);
+             min = stack.GetMin();
+            Assert.AreEqual(min, -2);
+
         }
     }
 }

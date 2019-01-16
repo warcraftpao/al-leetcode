@@ -72,6 +72,7 @@
     <Compile Include="Easy\ClimbingStairs.cs" />
     <Compile Include="Easy\CountAndSay.cs" />
     <Compile Include="Easy\LengthOfLastWord.cs" />
+    <Compile Include="Easy\MinStack.cs" />
     <Compile Include="Hard\DungeonGame.cs" />
     <Compile Include="Hard\MaxPointsInLine.cs" />
     <Compile Include="LinkList\InsertionSortList.cs" />
