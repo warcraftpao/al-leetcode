@@ -12,7 +12,6 @@ namespace Leetcode.Middle
     {
 
         //假设没有重复数字,不用考虑等于
-
         //这样的数组，从中间切一下，总有一部分是排序，一部分是还是乱的
         //先判断left<right，成立可以直接返回
         //如果left> right:那么得到mid，
@@ -25,8 +24,8 @@ namespace Leetcode.Middle
 
             while (left < right)
             {
-                //特殊情况,某一段左边更小了，肯定可以返回
-                if (arr[left] <= arr[right])
+                //特殊情况,某一段左边更小了，肯定可以返回，
+                if (arr[left] <  arr[right])
                     return arr[left];
 
                 var mid = (left + right)/2;
@@ -35,11 +34,43 @@ namespace Leetcode.Middle
                 //这时候right是最小值
                 if (arr[left] <= arr[mid] )
                     left = mid + 1; //因为既然值比mid小，那说明mid肯定不是最小值。。。。
-                else
-                    right = mid;//舍弃右边的时候，因为mid是较小值，不能+1舍弃，看就是最小值
+                else 
+                    right = mid; //舍弃右边的时候，因为mid是较小值，不能+1舍弃，看就是最小值
+               
             }
 
             return arr[left];
         }
+
+        //多加了一个if 分支考虑了有重复的情况
+        public static int Level2(int[] arr)
+        {
+
+            var left = 0;
+            var right = arr.Length - 1;
+
+            while (left < right)
+            {
+
+                //特殊情况,某一段左边更小了，肯定可以返回
+                if (arr[left] <  arr[right])
+                    return arr[left];
+
+                var mid = (left + right) / 2;
+
+                //剩下2个元素的时候，mid会等于left，但是旋转数组，必然是最大值贴着最小值的，除非是没有旋转的情况会被先排除也走不到这里
+                //这时候right是最小值
+                if (arr[left] < arr[mid])
+                    left = mid +1; 
+                else if (arr[left] > arr[mid])
+                    right = mid; //舍弃右边的时候，因为mid是较小值，不能+1舍弃，看就是最小值
+                else
+                    left++; //考虑有重复的情况,既然left和mid相等，抛弃left必然没有关系
+            }
+
+            return arr[left];
+        }
+
+
     }
 }
