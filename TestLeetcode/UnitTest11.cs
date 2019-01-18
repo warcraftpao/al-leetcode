@@ -129,5 +129,16 @@ namespace TestLeetcode
             Assert.AreEqual(min, -2);
 
         }
+
+        [TestMethod]
+        public void TestLongestSubstringTwoDistinct()
+        {
+            var r = LongestSubstringTwoDistinct.GetLenght("aaabbbbccddddddddddd");
+            Assert.AreEqual(r, 13);
+
+
+            r = LongestSubstringTwoDistinct.GetLenght("acacccbbccaacc");
+            Assert.AreEqual(r, 7);
+        }
     }
 }
