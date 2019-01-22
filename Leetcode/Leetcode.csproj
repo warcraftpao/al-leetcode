@@ -126,6 +126,7 @@
     <Compile Include="Middle\DivideTwoIntegers.cs" />
     <Compile Include="Middle\EvaluateReversePolishNotation.cs" />
     <Compile Include="Middle\FindMinimumInRotatedSortedArray.cs" />
+    <Compile Include="Middle\FindPeakElement.cs" />
     <Compile Include="Middle\GasStation.cs" />
     <Compile Include="Middle\GenerateParentheses.cs" />
     <Compile Include="Middle\GroupAnagrams.cs" />
