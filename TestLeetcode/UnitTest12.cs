@@ -47,5 +47,28 @@ namespace TestLeetcode
             Assert.AreEqual(r, 3);
         }
 
+
+        [TestMethod]
+        public void TestMissingRanges()
+        {
+            var r = MissingRanges.GetRanges(new[] { 0, 1, 3, 50, 75 },0, 99);
+            Assert.AreEqual(r[0], "2");
+            Assert.AreEqual(r[1], "4->49");
+            Assert.AreEqual(r[2], "51->74");
+            Assert.AreEqual(r[3], "76->99");
+
+            r = MissingRanges.GetRanges(new int[] {}, 0, 99);
+            Assert.AreEqual(r[0], "0->99");
+
+            r = MissingRanges.GetRanges(new int[] { 1,5,44,98 }, 0, 99);
+            Assert.AreEqual(r[0], "2->4");
+            Assert.AreEqual(r[1], "6->43");
+            Assert.AreEqual(r[2], "45->97");
+
+            r = MissingRanges.GetRanges(new int[] { 1, 5, 44, 99}, 0, 99);
+            Assert.AreEqual(r[0], "2->4");
+            Assert.AreEqual(r[1], "6->43");
+            Assert.AreEqual(r[2], "45->98");
+        }
     }
 }
