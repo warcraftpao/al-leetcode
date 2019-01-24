@@ -87,5 +87,25 @@ namespace TestLeetcode
             var r =  MaxGap.GetGap(arr);
             Assert.AreEqual(r, 56);
         }
+
+
+        [TestMethod]
+        public void TestCompareVersionNumbers()
+        {
+            var r =CompareVersionNumbers.Compare("0.1", "1.1");
+            Assert.AreEqual(r, -1);
+
+            r = CompareVersionNumbers.Compare("1.0.1", "1");
+            Assert.AreEqual(r, 1);
+
+            r = CompareVersionNumbers.Compare("7.5.2.4", "7.5.3");
+            Assert.AreEqual(r, -1);
+
+            r = CompareVersionNumbers.Compare("1.01.1", "1.0001.1");
+            Assert.AreEqual(r, 0);
+
+            r = CompareVersionNumbers.Compare("1.0.0", "1.0");
+            Assert.AreEqual(r, 0);
+        }
     }
 }
