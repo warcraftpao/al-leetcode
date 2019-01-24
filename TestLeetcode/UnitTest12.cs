@@ -70,5 +70,22 @@ namespace TestLeetcode
             Assert.AreEqual(r[1], "6->43");
             Assert.AreEqual(r[2], "45->98");
         }
+
+        [TestMethod]
+        public void TestRadixSort()
+        {
+            var arr = new[] {122, 39, 42, 547, 79, 48, 61, 62, 965, 55, 232};
+            MaxGap.RadixSort(arr, 3);
+            Assert.AreEqual(arr[0],39);
+        }
+
+
+        [TestMethod]
+        public void TestMaxGap()
+        {
+            var arr = new[] { 4,10,3,100,44 };
+            var r =  MaxGap.GetGap(arr);
+            Assert.AreEqual(r, 56);
+        }
     }
 }

@@ -8,7 +8,6 @@ namespace Leetcode.Middle
 {
     public class MissingRanges
     {
-        //arr已经排序，arr元素在lower
         //潜在要求：arr 的头大于等于lower arr的尾小于等于upper ，arr排序，lower小于upper
         //暂时不考虑int溢出？
         public static List<string> GetRanges(int[] arr, int lower, int upper)
