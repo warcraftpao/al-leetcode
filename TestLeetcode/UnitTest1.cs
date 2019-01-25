@@ -14,17 +14,23 @@ namespace TestLeetcode
         [TestMethod]
         public void TestTwoSum()
         {
-            //diffent way leads different result
-            var target = 12;
-            var arr = new int[] {1, 3, 4, 5, 6, 7, 9};
-            var result = TwoSum.TwoSum2(arr, target);
-            Assert.IsTrue(result.Contains(5) && result.Contains(7));
+            var arr = new int[] { 633, 3, 15, 6, 52, 150,1  };
+           
+            var    result = TwoSum.TwoSum1(arr, 67);
+            Assert.IsTrue(result.Contains(2) && result.Contains(4));
 
-            result = TwoSum.TwoSum1(arr, target);
-            Assert.IsTrue(result.Contains(3) && result.Contains(9));
+            result = TwoSum.TwoSum2(arr, 67);
+            Assert.IsTrue(result.Contains(2) && result.Contains(4));
         }
 
-       
+        [TestMethod]
+        public void TestTwoSum2()
+        {
+            var arr = new int[] {1,3,6,15,52,150,633 };
+            var result = TwoSum2.Calc(arr, 67);
+            Assert.IsTrue(result.Contains(4) && result.Contains(5));
+        }
+
 
         [TestMethod]
         public void TestMaxSubstringWithoutRepeatChar()
