@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Leetcode.Easy;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -106,6 +107,20 @@ namespace TestLeetcode
 
             r = CompareVersionNumbers.Compare("1.0.0", "1.0");
             Assert.AreEqual(r, 0);
+        }
+
+        [TestMethod]
+        public void TestExcelSheetColumnTitle()
+        {
+            var r = ExcelSheetColumnTitle.GetTitle(701);
+            Assert.AreEqual(r, "ZY");
+
+            r = ExcelSheetColumnTitle.GetTitle(28);
+            Assert.AreEqual(r, "AB");
+
+
+            r = ExcelSheetColumnTitle.GetTitle(2317);
+            Assert.AreEqual(r, "CKC");
         }
     }
 }
