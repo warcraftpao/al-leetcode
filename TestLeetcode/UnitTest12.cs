@@ -122,5 +122,12 @@ namespace TestLeetcode
             r = ExcelSheetColumnTitle.GetTitle(2317);
             Assert.AreEqual(r, "CKC");
         }
+
+        [TestMethod]
+        public void TestMajorityElement()
+        {
+            var r= MajorityElement.BitCalc(new[] {1000, 30, 30,1000, 10001,1000,30,1000,1000});
+            Assert.AreEqual(r, 1000);
+        }
     }
 }
