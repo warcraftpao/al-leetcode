@@ -129,5 +129,15 @@ namespace TestLeetcode
             var r= MajorityElement.BitCalc(new[] {1000, 30, 30,1000, 10001,1000,30,1000,1000});
             Assert.AreEqual(r, 1000);
         }
+
+        [TestMethod]
+        public void TestFactorialTrailingZeroes()
+        {
+            var r = FactorialTrailingZeroes.Count(135);
+            Assert.AreEqual(r, 33);
+
+            r = FactorialTrailingZeroes.Count(631);
+            Assert.AreEqual(r, 157);
+        }
     }
 }
