@@ -31,6 +31,22 @@ namespace TestLeetcode
             Assert.IsTrue(result.Contains(4) && result.Contains(5));
         }
 
+        [TestMethod]
+        public void TestTwoSum3()
+        {
+            
+            var tsd =new  TwoSumDataStructure();
+            tsd.Add(1);
+            tsd.Add(2);
+            Assert.AreEqual(tsd.Find(3), true);
+            Assert.AreEqual(tsd.Find(1),false);
+            tsd.Add(2);
+            Assert.AreEqual(tsd.Find(4),true);
+            tsd.Add(3);
+            Assert.AreEqual(tsd.Find(3), true);
+            Assert.AreEqual(tsd.Find(6), false);
+        }
+
 
         [TestMethod]
         public void TestMaxSubstringWithoutRepeatChar()

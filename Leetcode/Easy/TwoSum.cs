@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
@@ -71,6 +72,44 @@ namespace Leetcode.Easy
             }
 
             return new [] {left+1, right+1};
+        }
+    }
+
+
+    //two sum 数据结构，way1双指针，add的时候内部list排序，find的时候按照双指针查找
+
+    //way2 字典，add的时候统计每个数字出现的频率，find的时候循环字典表，注意出现大于1次说明这个数字可以用2次
+    public class TwoSumDataStructure
+    {
+        //实际上因为只有add和find，可以给find方法再加一个缓存，找到过一次下次就不用再计算了
+        private Dictionary<int, int> _dic = new Dictionary<int, int>();
+
+        public void Add(int x)
+        {
+            if (_dic.ContainsKey(x))
+                _dic[x] = 2;
+            else
+                _dic.Add(x,1);  
+        }
+        //Find if there exists any pair of numbers which sum is equal to the value.
+        public bool Find(int target)
+        {
+            foreach (var kv in _dic)
+            {
+                var left = target - kv.Key;
+                foreach (var leftKv in _dic)
+                {
+                    if(leftKv.Key != left)
+                        continue;
+                    //key不同，但是剩余值在字典里找到，或者有2个相同的数字
+                    if ((kv.Key != leftKv.Key ) || (kv.Key == leftKv.Key && leftKv.Value == 2))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }
