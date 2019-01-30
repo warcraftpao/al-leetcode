@@ -26,5 +26,19 @@ namespace Leetcode.Easy
             }
             return count;
         }
+
+        //这样写可能更好理解点，n里面含有多少5个，多少个25，多少个125
+        public static int Count2(int n)
+        {
+            var x = 5;
+            var count = 0;
+            while (x < n)
+            {
+                count = count + n/x;
+                x = x*5;
+            }
+
+            return count;
+        }
     }
 }

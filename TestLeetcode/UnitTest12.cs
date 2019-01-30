@@ -138,6 +138,13 @@ namespace TestLeetcode
 
             r = FactorialTrailingZeroes.Count(631);
             Assert.AreEqual(r, 157);
+            
+            ////////////way2////////////////////////
+            r = FactorialTrailingZeroes.Count2(135);
+            Assert.AreEqual(r, 33);
+
+            r = FactorialTrailingZeroes.Count2(631);
+            Assert.AreEqual(r, 157);
         }
     }
 }
