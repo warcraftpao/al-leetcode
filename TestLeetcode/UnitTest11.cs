@@ -32,6 +32,18 @@ namespace TestLeetcode
             Assert.AreEqual(r, "king the am I");
         }
 
+
+
+        [TestMethod]
+        public void TestReverseWordsInString2()
+        {
+            var compare = new [] {'b', 'l', 'u', 'e', ' ', 'i', 's', ' ', 's', 'k', 'y', ' ', 't', 'h', 'e'};
+            var r = ReverseWordsInString2.ReserveWords(new [] {'t','h','e',' ','s','k','y',' ','i','s',' ','b','l','u','e'});
+
+            //something new！
+            CollectionAssert.AreEqual(r, compare);
+        }
+
         [TestMethod]
         public void TestMaximumProductSubarray()
         {
