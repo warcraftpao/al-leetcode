@@ -94,5 +94,10 @@ namespace Leetcode.Easy
             return maxProfit;
         }
 
+
+        public static int MaxProfit_ktransactions(int[] arr , int k)
+        {
+            
+        }
     }
 }
