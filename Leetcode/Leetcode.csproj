@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BinaryTree\BalancedTree.cs" />
     <Compile Include="BinaryTree\BinarySearchTreeIterator.cs" />
+    <Compile Include="BinaryTree\BinaryTreeRightSideView.cs" />
     <Compile Include="BinaryTree\BinaryTreeTravle.cs" />
     <Compile Include="BinaryTree\BinaryTreeUpsideDown.cs" />
     <Compile Include="BinaryTree\ConstructTree.cs" />

@@ -55,6 +55,7 @@
     <Compile Include="Backtracing\UnitTest1.cs" />
     <Compile Include="BinaryTree\TestBinarySearchTreeIterator.cs" />
     <Compile Include="BinaryTree\TestBinaryTreeConstructor.cs" />
+    <Compile Include="BinaryTree\TestBinaryTreeRightView.cs" />
     <Compile Include="BinaryTree\TestBinaryTreeTravle.cs" />
     <Compile Include="BinaryTree\TestMoreTree.cs" />
     <Compile Include="BinaryTree\TestTree.cs" />
