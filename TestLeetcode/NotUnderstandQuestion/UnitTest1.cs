@@ -20,5 +20,12 @@ namespace TestLeetcode.NotUnderstandQuestion
             var r = GrayCode.GetNLengthGrayCode(4);
             Assert.AreEqual(r.Count, 16);
         }
+
+        [TestMethod]
+        public void TestTransposeFile()
+        {
+            var r = TransposeFile.Convert();
+            Assert.AreEqual(r[0].ToString(), "name alice ryan test ");
+        }
     }
 }
