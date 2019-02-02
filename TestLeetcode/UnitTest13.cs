@@ -34,5 +34,12 @@ namespace TestLeetcode
 
             Assert.AreEqual(string.Join("", arr), "45123");
         }
+
+        [TestMethod]
+        public void TestReverseBits()
+        {
+            var r = ReverseBits.Reserve(43261596);
+            Assert.AreEqual(r, 964176192u);
+        }
     }
 }
