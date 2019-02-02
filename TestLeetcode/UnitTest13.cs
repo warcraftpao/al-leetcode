@@ -53,5 +53,15 @@ namespace TestLeetcode
             r = NumberOf1Bit.Count(819);
             Assert.AreEqual(r, 6);
         }
+
+        [TestMethod]
+        public void TestHouseRobber()
+        {
+            var r = HouseRobber.Rob(new [] { 2, 7, 9, 3, 1 });
+            Assert.AreEqual(r, 12);
+
+            r = HouseRobber.Rob(new[] { 3, 5, 1, 9, 20 });
+            Assert.AreEqual(r, 25);
+        }
     }
 }

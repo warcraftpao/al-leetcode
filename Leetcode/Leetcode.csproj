@@ -137,6 +137,7 @@
     <Compile Include="Middle\GasStation.cs" />
     <Compile Include="Middle\GenerateParentheses.cs" />
     <Compile Include="Middle\GroupAnagrams.cs" />
+    <Compile Include="Middle\HouseRobber.cs" />
     <Compile Include="Middle\IntegerAndRoman.cs" />
     <Compile Include="Middle\JumpGame.cs" />
     <Compile Include="Middle\LargestNumber.cs" />
