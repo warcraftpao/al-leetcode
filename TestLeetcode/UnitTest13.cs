@@ -41,5 +41,17 @@ namespace TestLeetcode
             var r = ReverseBits.Reserve(43261596);
             Assert.AreEqual(r, 964176192u);
         }
+
+
+        [TestMethod]
+        public void TestNumberOf1Bit()
+        {
+            var r = NumberOf1Bit.Count(4294967293);
+            Assert.AreEqual(r, 31);
+
+
+            r = NumberOf1Bit.Count(819);
+            Assert.AreEqual(r, 6);
+        }
     }
 }
