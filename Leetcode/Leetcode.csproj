@@ -77,6 +77,7 @@
     <Compile Include="Easy\FactorialTrailingZeroes.cs" />
     <Compile Include="Easy\LengthOfLastWord.cs" />
     <Compile Include="Easy\MinStack.cs" />
+    <Compile Include="Easy\RotateArray.cs" />
     <Compile Include="Hard\DungeonGame.cs" />
     <Compile Include="Hard\LongestSubstringTwoDistinct.cs" />
     <Compile Include="Hard\MaxPointsInLine.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="LinkList\RotateLinkedList.cs" />
     <Compile Include="Matrix\SetMatrixZero.cs" />
     <Compile Include="Matrix\SpiralMatrix.cs" />
+    <Compile Include="Middle\RepeatedDNASequences.cs" />
     <Compile Include="Middle\RestoreIpAddresses.cs" />
     <Compile Include="Middle\ReverseWordsInString.cs" />
     <Compile Include="Middle\SortColors.cs" />

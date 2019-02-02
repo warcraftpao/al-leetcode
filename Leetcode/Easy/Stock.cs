@@ -95,9 +95,9 @@ namespace Leetcode.Easy
         }
 
 
-        public static int MaxProfit_ktransactions(int[] arr , int k)
-        {
+        //public static int MaxProfit_ktransactions(int[] arr , int k)
+        //{
             
-        }
+        //}
     }
 }
