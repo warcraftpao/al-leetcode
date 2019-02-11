@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Leetcode.DataStructure;
+using Leetcode.LinkList;
 
 namespace Leetcode.BinaryTree
 {
@@ -36,6 +37,27 @@ namespace Leetcode.BinaryTree
             }
 
             return list;
+        }
+
+        //先判断右子树的深度优先，如果层数小于list个数，说明需要加一个元素
+        //因为没有右子树，左子树就会被考察，如果这时候左子树层数不够，就不会被记录，直到层数超过list数
+        public static List<int> DfsWay(TreeNode root)
+        {
+            var list=  new List<int>();
+            DfsWayHelper(root, 1, list);
+            return list;
+        }
+
+        private static void DfsWayHelper(TreeNode node, int level, List<int> list )
+        {
+            if (node == null)
+                return;
+
+            if(level> list.Count)
+                list.Add(node.Val);
+
+            DfsWayHelper(node.Right, level + 1, list);
+            DfsWayHelper(node.Left, level + 1, list);
         }
     }
 }
