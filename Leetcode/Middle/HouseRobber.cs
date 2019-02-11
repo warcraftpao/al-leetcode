@@ -10,7 +10,7 @@ namespace Leetcode.Middle
     public class HouseRobber
     { 
          //动态规划思路 dp的某个值代表打劫某个屋子时能获得最大钱数
-         //因为必须不能挨着抢，所以dp[i]只依赖2个情况，如果抢了i-1 就不能抢i如果抢了i-2就可以抢2
+         //因为必须不能挨着抢，所以dp[i]只依赖2个情况，如果抢了i-1 就不能抢i如果抢了i-2就可以抢i
          //有点像跳格子每次只能跳1或者2格，求跳到终点的方法
         public static int Rob(int[] nums)
         {

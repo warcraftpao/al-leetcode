@@ -63,5 +63,23 @@ namespace TestLeetcode
             r = HouseRobber.Rob(new[] { 3, 5, 1, 9, 20 });
             Assert.AreEqual(r, 25);
         }
+
+        
+
+
+        //只要连续长度稍微大一点肯定结果都是0了
+        [TestMethod]
+        public void TestBitwiseANDofNumbersRange()
+        {
+            var r = BitwiseANDofNumbersRange.Calc(5, 7);
+            Assert.AreEqual(r, 4);
+
+            r = BitwiseANDofNumbersRange.Calc(100, 154);
+            Assert.AreEqual(r, 0);
+
+
+            r = BitwiseANDofNumbersRange.Calc(1000, 1015);
+            Assert.AreEqual(r, 992);
+        }
     }
 }

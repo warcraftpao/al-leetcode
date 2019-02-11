@@ -123,6 +123,7 @@
     <Compile Include="Hard\TextJustification.cs" />
     <Compile Include="LinkList\AddTwoNumbers.cs" />
     <Compile Include="Matrix\Searcha2dMatrix.cs" />
+    <Compile Include="Middle\BitwiseANDofNumbersRange.cs" />
     <Compile Include="Middle\CloneGraph.cs" />
     <Compile Include="Middle\Combinations.cs" />
     <Compile Include="Middle\CombinationSum.cs" />
