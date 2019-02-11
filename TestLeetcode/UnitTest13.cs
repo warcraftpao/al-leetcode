@@ -81,5 +81,16 @@ namespace TestLeetcode
             r = BitwiseANDofNumbersRange.Calc(1000, 1015);
             Assert.AreEqual(r, 992);
         }
+
+
+        [TestMethod]
+        public void TestHappyNumber()
+        {
+            var r = HappyNumber.IsHappy(19);
+            Assert.AreEqual(r, true);
+
+            r = HappyNumber.IsHappy(381);
+            Assert.AreEqual(r, false);
+        }
     }
 }
