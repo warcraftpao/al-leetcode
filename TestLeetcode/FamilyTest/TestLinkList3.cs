@@ -91,5 +91,13 @@ namespace TestLeetcode.FamilyTest
 
             return new List<MyLinkList> {head1,head2};
         }
+
+        [TestMethod]
+        public void TestRemoveLinkedListElements()
+        {
+            var list = MyLinkList.BuildListNodeFromArray(new[] {9, 1, 2, 9, 9, 3, 9, 4, 5, 6, 7, 8, 9});
+            var r = RemoveLinkedListElements.Remove(list, 9);
+            Assert.AreEqual(r.Length(), 8);
+        }
     }
 }
