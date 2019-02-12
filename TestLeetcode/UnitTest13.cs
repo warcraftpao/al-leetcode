@@ -92,5 +92,15 @@ namespace TestLeetcode
             r = HappyNumber.IsHappy(381);
             Assert.AreEqual(r, false);
         }
+
+        [TestMethod]
+        public void TestPrimeNumber()
+        {
+            var r = PrimeNumber.Count(10000);
+            Assert.AreEqual(r, 1229);
+
+            r = PrimeNumber.Count(100);
+            Assert.AreEqual(r, 25);
+        }
     }
 }

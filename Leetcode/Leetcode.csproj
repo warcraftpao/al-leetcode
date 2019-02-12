@@ -80,6 +80,7 @@
     <Compile Include="Easy\LengthOfLastWord.cs" />
     <Compile Include="Easy\MinStack.cs" />
     <Compile Include="Easy\NumberOf1Bit.cs" />
+    <Compile Include="Easy\PrimeNumber.cs" />
     <Compile Include="Easy\ReverseBits.cs" />
     <Compile Include="Easy\RotateArray.cs" />
     <Compile Include="Hard\DungeonGame.cs" />
