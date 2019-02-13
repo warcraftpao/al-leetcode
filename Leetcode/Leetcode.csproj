@@ -77,6 +77,7 @@
     <Compile Include="Easy\ExcelSheetColumnTitle.cs" />
     <Compile Include="Easy\FactorialTrailingZeroes.cs" />
     <Compile Include="Easy\HappyNumber.cs" />
+    <Compile Include="Easy\IsomorphicStrings.cs" />
     <Compile Include="Easy\LengthOfLastWord.cs" />
     <Compile Include="Easy\MinStack.cs" />
     <Compile Include="Easy\NumberOf1Bit.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Area\ContainerWithMostWater.cs" />
     <Compile Include="Middle\CompareVersionNumbers.cs" />
     <Compile Include="Middle\CopyListwithRandomPointer.cs" />
+    <Compile Include="Middle\CourseSchedule.cs" />
     <Compile Include="Middle\DecodingWays.cs" />
     <Compile Include="Middle\DivideTwoIntegers.cs" />
     <Compile Include="Middle\EvaluateReversePolishNotation.cs" />

@@ -102,5 +102,15 @@ namespace TestLeetcode
             r = PrimeNumber.Count(100);
             Assert.AreEqual(r, 25);
         }
+
+        [TestMethod]
+        public void TestIsomorphicStrings()
+        {
+            var r = IsomorphicStrings.YesOrNo("paperi", "txtyic");
+            Assert.AreEqual(r, true);
+
+            r = IsomorphicStrings.YesOrNo("paperia", "txtyicy");
+            Assert.AreEqual(r, false);
+        }
     }
 }

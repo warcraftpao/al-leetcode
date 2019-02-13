@@ -62,6 +62,7 @@
     <Compile Include="BinaryTree\TestTreePath.cs" />
     <Compile Include="DP\TestPascalTriangle.cs" />
     <Compile Include="DP\UnitTest1.cs" />
+    <Compile Include="FamilyTest\TestCourseSchedule.cs" />
     <Compile Include="FamilyTest\TestIslandNumber.cs" />
     <Compile Include="FamilyTest\TestJump.cs" />
     <Compile Include="FamilyTest\TestCombinations.cs" />
