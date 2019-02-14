@@ -82,6 +82,7 @@
     <Compile Include="TestTools.cs" />
     <Compile Include="TestValidNumber.cs" />
     <Compile Include="TreeLinkNodeRelated\UnitTest1.cs" />
+    <Compile Include="TrieTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest10.cs" />
