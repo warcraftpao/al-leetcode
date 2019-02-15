@@ -53,5 +53,52 @@ namespace TestLeetcode
             Assert.AreEqual(res, true);
 
         }
+
+        [TestMethod]
+        public void TestWordDictionary()
+        {
+        //    addWord("bad")
+        //    addWord("dad")
+        //    addWord("mad")
+        //    search("pad")-> false
+        //    search("bad")-> true
+        //    search(".ad")-> true
+        //    search("b..")-> true
+            var dic= new WordDictionary();
+            dic.AddWord("bad");
+            dic.AddWord("dad");
+            dic.AddWord("mad");
+            var r = dic.Search("pad");
+            Assert.AreEqual(r, false);
+
+            r = dic.Search("bad");
+            Assert.AreEqual(r, true);
+
+            r = dic.Search(".ad");
+            Assert.AreEqual(r, true);
+
+            r = dic.Search("b..");
+            Assert.AreEqual(r, true);
+
+            r = dic.Search("..");
+            Assert.AreEqual(r, false);
+
+            r = dic.Search("bad.");
+            Assert.AreEqual(r, false);
+
+            r = dic.Search("b.d");
+            Assert.AreEqual(r, true);
+
+            r = dic.Search("b.d.");
+            Assert.AreEqual(r, false);
+
+            r = dic.Search("ba..");
+            Assert.AreEqual(r, false);
+
+            dic.AddWord("abc");
+            dic.AddWord("axy");
+            r = dic.Search("a.y");
+            Assert.AreEqual(r, true);
+        }
     }
 }
