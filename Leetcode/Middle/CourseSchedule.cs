@@ -61,5 +61,54 @@ namespace Leetcode.Middle
 
             return !degree.Any(d => d != 0);
         }
+
+
+        //自己的思路，参考level1，层层剥洋葱，先把入度0的点加入结果集，他们连到的点入度减1，循环到没有入度为0的点为止，如果结果数组长度不足课程数，就是没有线路
+        //ps：因为只需要找出一种线路，这样简单很多，如果需要所有线路，就复杂的多，涉及到1->0 2->0我可以先学1也可以选学2
+        public static int[] FindOrder(int numCourses, int[,] prerequisites)
+        {
+            //一个点可以连到哪些点
+            var graph = new Dictionary<int, List<int>>();
+            //题目设定课程编号是0到n-1，某个点有几个连过来的点，入度
+            var degree = new int[numCourses];
+            var result = new List<int>();
+            //初始化一个图和入度
+            for (var i = 0; i < prerequisites.GetLength(0); i++)
+            {
+                if (graph.ContainsKey(prerequisites[i, 1]))
+                {
+                    graph[prerequisites[i, 1]].Add(prerequisites[i, 0]);
+                }
+                else
+                {
+                    graph[prerequisites[i, 1]] = new List<int> { prerequisites[i, 0] };
+                }
+
+                degree[prerequisites[i, 0]]++;
+            }
+            var queue = new Queue<int>();
+            //入度为0的点入栈
+            for (var i = 0; i < degree.Length; i++)
+            {
+                if (degree[i] == 0)
+                    queue.Enqueue(i);
+            }
+
+            while (queue.Any())
+            {
+                var point = queue.Dequeue();
+                result.Add(point);
+                //这个点最初的时候就不连到任何其他点
+                if (!graph.ContainsKey(point)) continue;
+                foreach (var to in graph[point])
+                {
+                    degree[to]--;
+                    if (degree[to] == 0)
+                        queue.Enqueue(to);
+                }
+            }
+
+            return result.Count < numCourses ? new int[] {} : result.ToArray();
+        }
     }
 }
