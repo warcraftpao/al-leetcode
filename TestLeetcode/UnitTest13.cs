@@ -112,5 +112,21 @@ namespace TestLeetcode
             r = IsomorphicStrings.YesOrNo("paperia", "txtyicy");
             Assert.AreEqual(r, false);
         }
+
+        [TestMethod]
+        public void TestMinimumSizeSubarraySum()
+        {
+            var r = MinimumSizeSubarraySum.GetMinLength(new [] { 2, 3, 1, 2, 4, 3 }, 7);
+            Assert.AreEqual(r, 2);
+
+            r = MinimumSizeSubarraySum.GetMinLength(new[] { 2, 3,9, 2, 4, 3 }, 7);
+            Assert.AreEqual(r, 1);
+
+            r = MinimumSizeSubarraySum.GetMinLength(new[] { 2, 3, 9, 2, 4, 3 }, 1000);
+            Assert.AreEqual(r, 0);
+
+            r = MinimumSizeSubarraySum.GetMinLength(new[] { 2, 3, 9,5,7, 2, 4, 3,20,1 }, 21);
+            Assert.AreEqual(r, 2);
+        }
     }
 }
