@@ -27,5 +27,10 @@ namespace Leetcode.Middle
 
             return dp[nums.Length - 1];
         }
+
+        public static int HouseRobber2(int[] nums)
+        {
+            return Math.Max(Rob(nums.Skip(1).ToArray()), Rob(nums.Take(nums.Length - 1).ToArray()));
+        }
     }
 }

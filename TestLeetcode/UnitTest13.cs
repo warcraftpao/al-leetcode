@@ -62,9 +62,24 @@ namespace TestLeetcode
 
             r = HouseRobber.Rob(new[] { 3, 5, 1, 9, 20 });
             Assert.AreEqual(r, 25);
+
+            r = HouseRobber.Rob(new[] { 103, 5, 1, 9, 20, 100 });
+            Assert.AreEqual(r, 212);
         }
 
-        
+        [TestMethod]
+        public void TestHouseRobber2()
+        {
+            var r = HouseRobber.HouseRobber2(new[] { 2, 7, 9, 3, 1 });
+            Assert.AreEqual(r, 11);
+
+            r = HouseRobber.Rob(new[] { 3, 5, 1, 9, 20 });
+            Assert.AreEqual(r, 25);
+
+            r = HouseRobber.HouseRobber2(new[] { 103, 5, 1, 9, 20,100 });
+            Assert.AreEqual(r, 124);
+        }
+
 
 
         //只要连续长度稍微大一点肯定结果都是0了
