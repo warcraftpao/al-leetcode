@@ -60,6 +60,7 @@
     <Compile Include="BinaryTree\ValidateBinarySearchTree.cs" />
     <Compile Include="CommonTools\MyMath.cs" />
     <Compile Include="CommonTools\Tools.cs" />
+    <Compile Include="DataStructure\EngishTrieNodeSimple.cs" />
     <Compile Include="DataStructure\MyLinkList.cs" />
     <Compile Include="DataStructure\Point.cs" />
     <Compile Include="DataStructure\RandomListNode.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="TreeLinkNodeRelated\PopulatingNextToRight.cs" />
     <Compile Include="TrieTree\WordDictionary.cs" />
     <Compile Include="TrieTree\ImplementTrie.cs" />
+    <Compile Include="TrieTree\WordSearch2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

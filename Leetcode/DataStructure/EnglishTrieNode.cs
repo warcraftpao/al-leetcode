@@ -26,7 +26,6 @@ namespace Leetcode.DataStructure
         {
             IsEnd = true;
         }
-
          
 
         //这个是否含有key，是指children里面是否有特定字符位置的字典树节点是否是null

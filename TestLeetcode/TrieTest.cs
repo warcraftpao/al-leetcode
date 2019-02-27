@@ -100,5 +100,22 @@ namespace TestLeetcode
             r = dic.Search("a.y");
             Assert.AreEqual(r, true);
         }
+
+
+        [TestMethod]
+        public void TestWordSearch2()
+        {
+            var chars=  new char[,]
+            {
+                {'o', 'a', 'a', 'n','x'},
+                {'e', 't', 'a', 'e','e'},
+                {'i', 'h', 'k', 'r','e'},
+                {'i', 'f', 'l', 'v','o'}
+            };
+            var wordSearch2= new WordSearch2();
+            var  r=  wordSearch2.FindWords(chars, new[] { "aa", "oa", "oaa", "oaa","xeee", "xee","ihkaanxeeo" });
+
+            Assert.AreEqual(r.Count, 5);
+        }
     }
 }
