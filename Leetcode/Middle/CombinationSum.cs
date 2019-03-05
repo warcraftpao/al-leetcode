@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.XPath;
 
 namespace Leetcode.Middle
 {
@@ -10,12 +11,12 @@ namespace Leetcode.Middle
     {
         // 都是正数，candidates本身没有重复，但是可以重复利用
         // 结果集本身不允许重复
-        public  static List<List<int>> WithNumRepeat(int[] candidates, int target)
+        public  static List<List<int>> WithCandidatesNoRepeat(int[] candidates, int target)
         {
             Array.Sort(candidates);
             var results = new List<List<int>>();
             var currAnswer = new List<int>();
-            CalcWithNumRepeat(candidates, target , results, currAnswer, 0);
+            CalcWithCandidatesNoRepeat(candidates, target , results, currAnswer, 0);
             return results;
         }
 
@@ -23,7 +24,7 @@ namespace Leetcode.Middle
         //2 ;22;222;222尝试3失败，222回退到22，223成功
         //22回退到2，23，233失败，2回退，元素2的循环结束
         //3开始以此类推
-        private static void CalcWithNumRepeat(int[] candidates, int target, List<List<int>> results, List<int> currAnswer, int index)
+        private static void CalcWithCandidatesNoRepeat(int[] candidates, int target, List<List<int>> results, List<int> currAnswer, int index)
         {
             if (target == 0)
             {
@@ -40,7 +41,7 @@ namespace Leetcode.Middle
             for (var i = index; i < candidates.Length && candidates[i] <= target; i++)
             {
                 currAnswer.Add(candidates[i]);
-                CalcWithNumRepeat(candidates, target - candidates[i], results, currAnswer, i);
+                CalcWithCandidatesNoRepeat(candidates, target - candidates[i], results, currAnswer, i);
                 //回退方法放在递归之后说明，说明到某个数字不能再尝试的时候，再上一次的结果里回退，并且尝试下一个数字
                 //因为循环条件里每次target值变小了
                 currAnswer.RemoveAt(currAnswer.Count - 1);
@@ -85,6 +86,33 @@ namespace Leetcode.Middle
                 currAnswer.Add(candidates[i]);
                 CalcWithNoRepeat(candidates, target - candidates[i], results, currAnswer, i+1);//当前数字本身不允许重复，直接进入下一个数字的情况
                 currAnswer.RemoveAt(currAnswer.Count - 1);
+            }
+        }
+
+
+        //只用1到9，使用n，sum是k, 题意应该是每个数字只允许使用一次
+        public static List<List<int>> Sum3(int k, int target)
+        {
+            var results = new List<List<int>>();
+            var curr= new List<int>();
+              Sum3Dfs(k, target, results, curr, 1);
+
+            return results;
+        }
+
+        private static void Sum3Dfs(int k, int target, List<List<int>>  results, List<int> curr, int start)
+        {
+            if (curr.Count == k && target == 0)
+            {
+                var tmp = curr.ToList();
+                results.Add(tmp);
+            }
+
+            for (var i = start; i <= 9; i++)
+            {
+                curr.Add(i);
+                Sum3Dfs(k, target -i, results, curr, i+1);// start+1的话，变成每次从1开始取，数字可以重复使用
+                curr.RemoveAt(curr.Count -1);
             }
         }
 

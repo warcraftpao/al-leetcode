@@ -10,10 +10,10 @@ namespace TestLeetcode.FamilyTest
         [TestMethod]
         public void TestWithNumRepeat()
         {
-            var r = CombinationSum.WithNumRepeat(new[] { 2, 7, 3 }, 7);
+            var r = CombinationSum.WithCandidatesNoRepeat(new[] { 2, 7, 3 }, 7);
             Assert.AreEqual(r.Count, 2);
 
-            r = CombinationSum.WithNumRepeat(new[] { 2, 3, 5 }, 8);
+            r = CombinationSum.WithCandidatesNoRepeat(new[] { 2, 3, 5 }, 8);
             Assert.AreEqual(r.Count, 3);
 
         }
@@ -30,6 +30,16 @@ namespace TestLeetcode.FamilyTest
             r = CombinationSum.WithNoRepeat(new[] { 2, 5, 2, 1, 2 },5);
             Assert.AreEqual(r.Count, 2);
 
+        }
+
+        [TestMethod]
+        public void TestSum3()
+        {
+            var r = CombinationSum.Sum3(3, 7);
+            Assert.AreEqual(r.Count ,1);
+
+            r = CombinationSum.Sum3(3, 9);
+            Assert.AreEqual(r.Count, 3);
         }
     }
 }
