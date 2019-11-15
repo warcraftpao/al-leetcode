@@ -41,7 +41,11 @@ namespace Leetcode.Easy
 
 
     public class SingleNumber2
-    {
+    {/// <summary>
+    /// 每个数字出现3次。有一个不是
+    /// </summary>
+    /// <param name="nums"></param>
+    /// <returns></returns>
         public static int GetNumber(int[] nums)
         {
             var bits = new int[32];

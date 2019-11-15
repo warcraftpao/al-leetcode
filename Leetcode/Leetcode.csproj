@@ -75,6 +75,7 @@
     <Compile Include="DP\Triangle.cs" />
     <Compile Include="Easy\AddBinary.cs" />
     <Compile Include="Easy\ClimbingStairs.cs" />
+    <Compile Include="Easy\ContainsDulicate.cs" />
     <Compile Include="Easy\CountAndSay.cs" />
     <Compile Include="Easy\ExcelSheetColumnTitle.cs" />
     <Compile Include="Easy\FactorialTrailingZeroes.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Hard\DungeonGame.cs" />
     <Compile Include="Hard\LongestSubstringTwoDistinct.cs" />
     <Compile Include="Hard\MaxPointsInLine.cs" />
+    <Compile Include="Hard\SkylineProblem.cs" />
     <Compile Include="LinkList\InsertionSortList.cs" />
     <Compile Include="LinkList\IntersectionofTwoLinkedLists.cs" />
     <Compile Include="LinkList\LinkListCycle.cs" />

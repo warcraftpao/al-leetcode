@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.Hard;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -32,5 +33,28 @@ namespace TestLeetcode
 
           
         }
+
+        [TestMethod]
+        public void TestSkyline()
+        {
+            var buildings = new int[][]
+            {
+                new int[] {2, 9, 10}, new int[] {3, 7, 15}, new int[] {5, 12, 12}, new int[] {15, 20, 10},
+                new int[] {19, 24, 8}
+            };
+
+            var result = SkylineProblem.Calc(buildings);
+            Assert.AreEqual(result.Count, 7);
+            Assert.AreEqual(result[0][0],2);
+            Assert.AreEqual(result[0][1], 10);
+
+
+            Assert.AreEqual(result[2][0], 7);
+            Assert.AreEqual(result[2][1], 12);
+
+            Assert.AreEqual(result[6][0],24);
+            Assert.AreEqual(result[6][1], 0);
+        }
+
     }
 }
