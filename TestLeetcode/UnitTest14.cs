@@ -1,5 +1,6 @@
 ﻿using System;
 using Leetcode.Hard;
+using Leetcode.Matrix;
 using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -54,6 +55,38 @@ namespace TestLeetcode
 
             Assert.AreEqual(result[6][0],24);
             Assert.AreEqual(result[6][1], 0);
+        }
+
+
+        [TestMethod]
+        public void TestMaximalSqure()
+        {
+            var grid = new char[,]
+            {
+                {'1', '0', '1', '0', '0'},
+                {'1', '0', '1', '1', '1'},
+                {'1', '1', '1', '1', '1'},
+                {'1', '0', '0', '1', '0'},
+
+            };
+
+            var result = MaximalSquare.Calc(grid);
+            Assert.AreEqual(result, 4);
+
+
+            grid = new char[,]
+            {
+                {'1', '1', '1', '0', '0'},
+                {'1', '1', '1', '1', '1'},
+                {'1', '0', '1', '1', '1'},
+                {'1', '0', '1', '1', '1'},
+                {'1', '0', '1', '1', '1'},
+            };
+
+
+            result = MaximalSquare.Calc(grid);
+            Assert.AreEqual(result, 9);
+
         }
 
     }
