@@ -145,5 +145,20 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(root.Val, 3);
             Assert.AreEqual(root.Right.Left.Val, 4);
         }
+
+        [TestMethod]
+        public void TestCountCompleteTreeNodes()
+        {
+            //第4层有3个节点
+            var root = TreeNode.BuildRandomCompeleteTree(4 ,3);
+            var aa = CountCompleteTreeNodes.Calc(root);
+            Assert.AreEqual(aa, 10);
+
+            //第5层有11个节点
+             root = TreeNode.BuildRandomCompeleteTree(5, 11);
+             aa = CountCompleteTreeNodes.Calc(root);
+            Assert.AreEqual(aa, 26);
+
+        }
     }
 }
