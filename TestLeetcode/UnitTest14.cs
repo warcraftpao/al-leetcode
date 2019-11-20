@@ -89,5 +89,18 @@ namespace TestLeetcode
 
         }
 
+
+        [TestMethod]
+        public void TestRectanglArea()
+        {
+            var r= RectanglArea.Calc(-3, 0, 3, 4, 0, -1, 9, 2);
+
+           Assert.AreEqual(r,45);
+
+            r = RectanglArea.Calc(2, 3, 10, 6,11, 1, 15, 5);
+
+            Assert.AreEqual(r, 40);
+        }
+
     }
 }
