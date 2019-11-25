@@ -189,5 +189,25 @@ namespace TestLeetcode
             var stack = new MyStatck2();
             stack.Top();
         }
+
+
+
+        //测试抛出异常
+        [TestMethod]
+        public void TestSummaryRanges()
+        {
+
+            var result = SummaryRanges.Build(new[] {0, 1, 2, 4, 5, 7});
+            Assert.AreEqual(result[0], "0->2");
+            Assert.AreEqual(result[1], "4->5");
+            Assert.AreEqual(result[2], "7");
+
+            result = SummaryRanges.Build(new[] { -1, 1, 2, 4, 5, 7,3,4,5 });
+            Assert.AreEqual(result[0], "-1");
+            Assert.AreEqual(result[1], "1->2");
+            Assert.AreEqual(result[2], "4->5");
+            Assert.AreEqual(result[3], "7");
+            Assert.AreEqual(result[4], "3->5");
+        }
     }
 }

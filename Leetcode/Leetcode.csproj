@@ -187,6 +187,7 @@
     <Compile Include="Middle\StringToInteger.cs" />
     <Compile Include="LinkList\SwapNodeInPair.cs" />
     <Compile Include="Middle\Sudoku.cs" />
+    <Compile Include="Middle\SummaryRanges.cs" />
     <Compile Include="Middle\SurroundedRegions.cs" />
     <Compile Include="Middle\UniquePaths.cs" />
     <Compile Include="Middle\WordBreak.cs" />
