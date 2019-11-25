@@ -70,6 +70,61 @@ namespace Leetcode.Hard
 
             return result;
         }
+
+        /// <summary>
+        /// level2  字符串表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格  。 整数除法仅保留整数部分。
+        /// 没有括号 第一有效字符不会是 符号，且不会有 * -5 这样的表达式？
+        /// +号很容易处理，主要是处理负号和乘除，用一个变量记录当前符号，遇到数字的时候，如果之前的符号是加减号，入栈一个正数或者负数
+        /// 当遇到一个乘除号的时候，出栈一个数字，做乘除法，然后再入栈
+        /// </summary>
+        /// <param name="exp"></param>
+        /// <returns></returns>
+        public static int Level2(string exp)
+        {
+            var result = 0;
+            var sign = '+';
+            var stack = new Stack<int>();
+            for (var i = 0; i < exp.Length; i++)
+            {
+                var c = exp[i];
+                //遇到数字入栈,且需要考虑之前的操作符
+                if (c >= '0' && c <= '9')
+                {
+                    var number = c - '0';
+                    while (i + 1 < exp.Length && exp[i + 1] >= '0' && exp[i + 1] <= '9')
+                    {
+                        number = number * 10 + exp[i + 1] - '0';
+                        i++;
+                    }
+                    if(sign == '+')
+                        stack.Push(number);
+                    else if (sign == '-')
+                        stack.Push(-number);
+                    else if (sign == '*')
+                    {
+                        var pre = stack.Pop();
+                        stack.Push(pre * number);
+                    }
+                    else if (sign == '/')
+                    {
+                        var pre = stack.Pop();
+                        stack.Push(pre / number);
+                    }
+
+                }
+                else if (c != ' ')
+                {
+                    sign = c;
+                }
+            }
+
+            while (stack.Count > 0)
+            {
+                result += stack.Pop();
+            }
+
+            return result;
+        }
     }
 }
 

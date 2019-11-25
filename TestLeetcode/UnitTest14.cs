@@ -180,5 +180,14 @@ namespace TestLeetcode
 
 
         }
+
+        //测试抛出异常
+        [TestMethod]
+       [ExpectedException(typeof(Exception))]
+        public void TestException()
+        {
+            var stack = new MyStatck2();
+            stack.Top();
+        }
     }
 }

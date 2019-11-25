@@ -143,5 +143,46 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(r, 1026);
         }
         #endregion
+
+        [TestMethod]
+        public void TestInvent()
+        {
+            //完整的情况
+            var root = new TreeNode(4);
+            root.Left = new TreeNode(2);
+            root.Right = new TreeNode(7);
+            root.Left.Left = new TreeNode(1);
+            root.Left.Right = new TreeNode(3);
+            root.Right.Left = new TreeNode(6);
+            root.Right.Right = new TreeNode(9);
+
+            root = InvertBinaryTree.Invent(root);
+
+            Assert.AreEqual(root.Left.Val, 7);
+            Assert.AreEqual(root.Right.Val, 2);
+            Assert.AreEqual(root.Left.Left.Val, 9);
+            Assert.AreEqual(root.Left.Right.Val, 6);
+            Assert.AreEqual(root.Right.Left.Val, 3);
+            Assert.AreEqual(root.Right.Right.Val, 1);
+
+            //不完整的情况
+            root = new TreeNode(1);
+            root.Left = new TreeNode(2);
+            root.Right = new TreeNode(3);
+            root.Left.Left = new TreeNode(4);
+            root.Left.Right = new TreeNode(5);
+            root.Right.Right = new TreeNode(6);
+            root.Left.Right.Left = new TreeNode(7);
+
+
+            root = InvertBinaryTree.Invent(root);
+
+            Assert.AreEqual(root.Left.Val, 3);
+            Assert.AreEqual(root.Right.Val, 2);
+            Assert.AreEqual(root.Left.Left.Val, 6);
+            Assert.AreEqual(root.Right.Left.Val,5);
+            Assert.AreEqual(root.Right.Right.Val, 4);
+            Assert.AreEqual(root.Right.Left.Right.Val, 7);
+        }
     }
 }
