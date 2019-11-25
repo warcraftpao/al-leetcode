@@ -1,4 +1,5 @@
 ﻿using System;
+using Leetcode.Easy;
 using Leetcode.Hard;
 using Leetcode.Matrix;
 using Leetcode.Middle;
@@ -102,5 +103,82 @@ namespace TestLeetcode
             Assert.AreEqual(r, 40);
         }
 
+
+        [TestMethod]
+        //[ExpectedException(typeof(Exception))]
+        public void TestMyStack1()
+        {
+            var stack = new MyStatck1();
+
+            var empty = stack.Empty();
+            Assert.AreEqual(empty, true);
+
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+
+            var r = stack.Top();
+            Assert.AreEqual(r, 5);
+
+            stack.Pop();
+            r= stack.Pop();
+
+            Assert.AreEqual(r, 4);
+
+            stack.Pop();
+            stack.Pop();
+
+            empty = stack.Empty();
+            Assert.AreEqual(empty, false);
+
+
+            stack.Pop();
+
+            empty = stack.Empty();
+            Assert.AreEqual(empty, true);
+
+
+        }
+
+
+        [TestMethod]
+        //[ExpectedException(typeof(Exception))]
+        public void TestMyStack2()
+        {
+            var stack = new MyStatck2();
+
+            var empty = stack.Empty();
+            Assert.AreEqual(empty, true);
+
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+
+            var r = stack.Top();
+            Assert.AreEqual(r, 5);
+
+            stack.Pop();
+            r = stack.Pop();
+
+            Assert.AreEqual(r, 4);
+
+            stack.Pop();
+            stack.Pop();
+
+            empty = stack.Empty();
+            Assert.AreEqual(empty, false);
+
+
+            stack.Pop();
+
+            empty = stack.Empty();
+            Assert.AreEqual(empty, true);
+
+
+        }
     }
 }

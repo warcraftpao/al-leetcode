@@ -81,6 +81,7 @@
     <Compile Include="Easy\ExcelSheetColumnTitle.cs" />
     <Compile Include="Easy\FactorialTrailingZeroes.cs" />
     <Compile Include="Easy\HappyNumber.cs" />
+    <Compile Include="Easy\ImplementStackusingQueues.cs" />
     <Compile Include="Easy\IsomorphicStrings.cs" />
     <Compile Include="Easy\LengthOfLastWord.cs" />
     <Compile Include="Easy\MinStack.cs" />
