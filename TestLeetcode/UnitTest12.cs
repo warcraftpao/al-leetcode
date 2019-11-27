@@ -126,8 +126,37 @@ namespace TestLeetcode
         [TestMethod]
         public void TestMajorityElement()
         {
-            var r= MajorityElement.BitCalc(new[] {1000, 30, 30,1000, 10001,1000,30,1000,1000});
+            var r= MajorityElement.Level1_BitCalc(new[] {1000, 30, 30,1000, 10001,1000,30,1000,1000});
             Assert.AreEqual(r, 1000);
+        }
+
+
+        [TestMethod]
+        public void TestMajorityElement2()
+        {
+            var r = MajorityElement.Level2(new[] { 3, 2, 3 });
+            Assert.AreEqual(r[0], 3);
+
+
+            r = MajorityElement.Level2(new[] { 1, 1, 1, 3, 3, 2, 2, 2 });
+            r.Sort();
+            Assert.AreEqual(r[0], 1);
+            Assert.AreEqual(r[1], 2);
+
+
+            r = MajorityElement.Level2(new[] { 1,2,3,1,2,3,1,2,3});
+            r.Sort();
+            Assert.AreEqual(r.Count, 0);
+
+
+            r = MajorityElement.Level2(new[] { 1, 2, 3, 1, 2, 3, 1, 2, 3,4,1 });
+            r.Sort();
+            Assert.AreEqual(r[0], 1);
+
+            r = MajorityElement.Level2(new[] { 1, 1, 3, 1, 2, 3, 1, 2, 3, 4, 1,3,3,3 });
+            r.Sort();
+            Assert.AreEqual(r[0], 1);
+            Assert.AreEqual(r[1], 3);
         }
 
         [TestMethod]
