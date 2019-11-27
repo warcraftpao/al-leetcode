@@ -184,5 +184,18 @@ namespace TestLeetcode.BinaryTree
             Assert.AreEqual(root.Right.Right.Val, 4);
             Assert.AreEqual(root.Right.Left.Right.Val, 7);
         }
+
+
+        [TestMethod]
+        public void TestKthSmallestElementInBST()
+        {
+            var root = TreeNode.BuildBSTFromArray(new[] {3, 1, 4, 2});
+            var rusult = KthSmallestElementInBST.Find(root,1);
+            Assert.AreEqual(rusult, 1); 
+
+            root = TreeNode.BuildBSTFromArray(new[] { 5, 3, 6, 2, 4,   1 });
+            rusult = KthSmallestElementInBST.Find(root, 3);
+            Assert.AreEqual(rusult, 3);
+        }
     }
 }

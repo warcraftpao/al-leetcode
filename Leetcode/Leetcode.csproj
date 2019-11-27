@@ -50,6 +50,7 @@
     <Compile Include="BinaryTree\ConstructTree.cs" />
     <Compile Include="BinaryTree\CountCompleteTreeNodes.cs" />
     <Compile Include="BinaryTree\InvertBinaryTree.cs" />
+    <Compile Include="BinaryTree\KthSmallestElementInBST.cs" />
     <Compile Include="BinaryTree\MaximumDepthofBinaryTree.cs" />
     <Compile Include="BinaryTree\MaximumPathSum.cs" />
     <Compile Include="BinaryTree\MinimumDepth.cs" />
