@@ -83,11 +83,13 @@
     <Compile Include="Easy\ExcelSheetColumnTitle.cs" />
     <Compile Include="Easy\FactorialTrailingZeroes.cs" />
     <Compile Include="Easy\HappyNumber.cs" />
+    <Compile Include="Easy\ImplementQueueusingStacks.cs" />
     <Compile Include="Easy\ImplementStackusingQueues.cs" />
     <Compile Include="Easy\IsomorphicStrings.cs" />
     <Compile Include="Easy\LengthOfLastWord.cs" />
     <Compile Include="Easy\MinStack.cs" />
     <Compile Include="Easy\NumberOf1Bit.cs" />
+    <Compile Include="Easy\PowerofTwo.cs" />
     <Compile Include="Easy\PrimeNumber.cs" />
     <Compile Include="Easy\ReverseBits.cs" />
     <Compile Include="Easy\RotateArray.cs" />

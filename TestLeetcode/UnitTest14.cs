@@ -190,9 +190,50 @@ namespace TestLeetcode
             stack.Top();
         }
 
+        [TestMethod]
+        public void TestMyQueue()
+        {
+            var queue = new MyQueue();
 
 
-        //测试抛出异常
+            var empty = queue.Empty();
+            Assert.AreEqual(empty, true);
+
+
+            queue.Push(1);
+            queue.Push(2);
+            queue.Push(3);
+            queue.Push(4);
+            queue.Push(5);
+
+            var r = queue.Peek();
+            Assert.AreEqual(r, 1);
+
+            queue.Pop();//out 1
+            r = queue.Pop();//out 2
+            Assert.AreEqual(r, 2);
+
+            queue.Pop();//out 3
+            queue.Pop();//out 4
+
+            empty = queue.Empty();
+            Assert.AreEqual(empty, false);
+
+            queue.Push(6);
+            r= queue.Pop(); //out 5
+            Assert.AreEqual(r, 5);
+
+            queue.Push(7);
+            r = queue.Pop(); //out 6
+            Assert.AreEqual(r, 6);
+
+            empty = queue.Empty();
+            Assert.AreEqual(empty, false);
+
+        }
+
+
+
         [TestMethod]
         public void TestSummaryRanges()
         {
