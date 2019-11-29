@@ -97,6 +97,7 @@
     <Compile Include="Hard\DungeonGame.cs" />
     <Compile Include="Hard\LongestSubstringTwoDistinct.cs" />
     <Compile Include="Hard\MaxPointsInLine.cs" />
+    <Compile Include="Hard\NumberofDigitOne.cs" />
     <Compile Include="Hard\SkylineProblem.cs" />
     <Compile Include="LinkList\InsertionSortList.cs" />
     <Compile Include="LinkList\IntersectionofTwoLinkedLists.cs" />

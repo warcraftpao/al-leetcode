@@ -1,5 +1,6 @@
 ﻿using System;
 using Leetcode.Easy;
+using Leetcode.Hard;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestLeetcode
@@ -33,6 +34,32 @@ namespace TestLeetcode
 
             r = PowerofTwo.S3(2088);
             Assert.AreEqual(r, false);
+        }
+
+        [TestMethod]
+        public void TestNumberofDigitOne()
+        {
+            var r = NumberofDigitOne.Calc(13);
+            Assert.AreEqual(r, 6);
+
+            r = NumberofDigitOne.Calc(20555);
+            Assert.AreEqual(r, 18216);
+
+            r = NumberofDigitOne.Calc(21555);
+            Assert.AreEqual(r, 19072);
+
+            r = NumberofDigitOne.Calc(22555);
+            Assert.AreEqual(r, 19816);
+
+
+            var r1 = NumberofDigitOne.Calc_copyway(20555);
+            Assert.AreEqual(r1, 18216);
+
+            r1 = NumberofDigitOne.Calc_copyway(21555);
+            Assert.AreEqual(r1, 19072);
+
+            r1 = NumberofDigitOne.Calc_copyway(22555);
+            Assert.AreEqual(r1, 19816);
         }
     }
 }
