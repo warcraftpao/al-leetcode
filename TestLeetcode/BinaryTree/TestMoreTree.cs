@@ -190,12 +190,25 @@ namespace TestLeetcode.BinaryTree
         public void TestKthSmallestElementInBST()
         {
             var root = TreeNode.BuildBSTFromArray(new[] {3, 1, 4, 2});
-            var rusult = KthSmallestElementInBST.Find(root,1);
-            Assert.AreEqual(rusult, 1); 
+            var result = KthSmallestElementInBST.Find(root,1);
+            Assert.AreEqual(result, 1); 
 
             root = TreeNode.BuildBSTFromArray(new[] { 5, 3, 6, 2, 4,   1 });
-            rusult = KthSmallestElementInBST.Find(root, 3);
-            Assert.AreEqual(rusult, 3);
+            result = KthSmallestElementInBST.Find(root, 3);
+            Assert.AreEqual(result, 3);
+        }
+        
+
+        [TestMethod]
+        public void TestLowestCommonAncestorofBST()
+        {
+            var root = TreeNode.BuildBSTFromArray(new[] { 6, 2, 8, 0, 4, 7, 9,   3, 5 });
+            var result = LowestCommonAncestorofBST.Search(root,new TreeNode(2), new TreeNode(8) );
+            Assert.AreEqual(result.Val, 6);
+
+            root = TreeNode.BuildBSTFromArray(new[] { 6, 2, 8, 0, 4, 7, 9,  3, 5 });
+            result = LowestCommonAncestorofBST.Search(root, new TreeNode(2), new TreeNode(4));
+            Assert.AreEqual(result.Val, 2);
         }
     }
 }
