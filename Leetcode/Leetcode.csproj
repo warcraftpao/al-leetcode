@@ -116,6 +116,7 @@
     <Compile Include="Hard\LongestConsecutiveSequence.cs" />
     <Compile Include="Hard\ScrambleString.cs" />
     <Compile Include="Hard\ValidNumber.cs" />
+    <Compile Include="LinkList\PalindromeLinkedList.cs" />
     <Compile Include="LinkList\PartitionList.cs" />
     <Compile Include="LinkList\RecordList.cs" />
     <Compile Include="LinkList\RemoveDuplicatesFromSortedList.cs" />

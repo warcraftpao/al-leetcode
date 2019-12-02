@@ -99,5 +99,25 @@ namespace TestLeetcode.FamilyTest
             var r = RemoveLinkedListElements.Remove(list, 9);
             Assert.AreEqual(r.Length(), 8);
         }
+
+        [TestMethod]
+        public void TestPalindromeLinkedList()
+        {
+            var list = MyLinkList.BuildListNodeFromArray(new[] { 1,2,3,4,5,4,3,2,1 });
+            var r = PalindromeLinkedList.Check(list);
+           Assert.AreEqual(r, true);
+
+            list = MyLinkList.BuildListNodeFromArray(new[] { 1, 2, 3, 4,   4, 3, 2, 1 });
+             r = PalindromeLinkedList.Check(list);
+            Assert.AreEqual(r, true);
+
+            list = MyLinkList.BuildListNodeFromArray(new[] { 1, 2, 3,4,6,7, 4, 3, 2, 1 });
+            r = PalindromeLinkedList.Check(list);
+            Assert.AreEqual(r, false);
+
+            list = MyLinkList.BuildListNodeFromArray(new[] { 1, 2, 3, 4, 6, 9,7, 4, 3, 2, 1 });
+            r = PalindromeLinkedList.Check(list);
+            Assert.AreEqual(r, false);
+        }
     }
 }
