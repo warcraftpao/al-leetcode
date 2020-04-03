@@ -185,6 +185,7 @@
     <Compile Include="LinkList\RotateLinkedList.cs" />
     <Compile Include="Matrix\SetMatrixZero.cs" />
     <Compile Include="Matrix\SpiralMatrix.cs" />
+    <Compile Include="Middle\ProductofArrayExceptSelf.cs" />
     <Compile Include="Middle\RectanglArea.cs" />
     <Compile Include="Middle\RepeatedDNASequences.cs" />
     <Compile Include="Middle\RestoreIpAddresses.cs" />

@@ -47,5 +47,41 @@ namespace Leetcode.Matrix
 
             return false;
         }
+
+
+        /// <summary>
+        ///  行左小右大升序
+        ///  列从上到下升序
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        public static bool SearchLevel2(int[,] matrix, int target)
+        {
+            //可以从左下角开始查，因为如果目标比这个值大就往右，比他小就往上，这样就可以一行一列的切割掉矩阵
+            //同理 也可以从右上角开始
+            var row = matrix.GetLength(0) -1 ;
+            var col = 0;
+            while (true)
+            {
+                if (target == matrix[row, col])
+                {
+                    return true;
+                }
+
+                if (target > matrix[row, col] )
+                {
+                    col++;
+                }
+                else if(target < matrix[row, col]  )
+                {
+                    row--;
+                }
+
+                if (row < 0 || col > matrix.GetLength(1) - 1) break;
+            }
+
+            return false;
+        }
     }
 }

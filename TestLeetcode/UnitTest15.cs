@@ -1,6 +1,7 @@
 ﻿using System;
 using Leetcode.Easy;
 using Leetcode.Hard;
+using Leetcode.Middle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestLeetcode
@@ -60,6 +61,16 @@ namespace TestLeetcode
 
             r1 = NumberofDigitOne.Calc_copyway(22555);
             Assert.AreEqual(r1, 19816);
+        }
+
+        [TestMethod]
+        public void TestProductofArrayExceptSelf()
+        {
+            var res = ProductofArrayExceptSelf.Calc(new int[] {1, 2, 3, 4});
+            Assert.AreEqual(res[0],24);
+            Assert.AreEqual(res[1], 12);
+            Assert.AreEqual(res[2], 8);
+            Assert.AreEqual(res[3], 6);
         }
     }
 }

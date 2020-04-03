@@ -78,5 +78,26 @@ namespace TestLeetcode.FamilyTest
 
 	        Assert.AreEqual(r, true);
 	    }
-	}
+
+
+        [TestMethod]
+        public void TestSearcha2dMatrixLevel2()
+        {
+            var arr = new int[,]
+            {
+                {1, 4, 7, 11,15},
+                {2,   5,  8, 12, 19},
+                {3,   6,  9, 16, 22},
+                {10, 13, 14, 17, 24},
+                {18, 21, 23, 26, 30},
+            };
+            var r = Searcha2dMatrix.SearchLevel2(arr, 5);
+
+            Assert.AreEqual(r, true);
+
+            r = Searcha2dMatrix.SearchLevel2(arr, 20);
+
+            Assert.AreEqual(r, false);
+        }
+    }
 }
