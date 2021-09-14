@@ -218,6 +218,7 @@
     <Folder Include="KMP\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NewStart2\1.txt" />
     <Content Include="NotUnderstandQuestion\1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
