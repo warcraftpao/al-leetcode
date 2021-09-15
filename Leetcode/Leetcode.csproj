@@ -201,6 +201,8 @@
     <Compile Include="Middle\WordLadder.cs" />
     <Compile Include="Middle\WordSearch.cs" />
     <Compile Include="Middle\ZigZag.cs" />
+    <Compile Include="NewStart2\Search_a_2D_Matrix2_240.cs" />
+    <Compile Include="NewStart2\SlidingWindowMaximum_239.cs" />
     <Compile Include="NotUnderstandQuestion\GrayCode.cs" />
     <Compile Include="NotUnderstandQuestion\SimplifyPath.cs" />
     <Compile Include="NotUnderstandQuestion\TransposeFile.cs" />
